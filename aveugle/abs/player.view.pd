@@ -1,4 +1,4 @@
-#N canvas 552 683 450 363 10;
+#N canvas 327 565 450 363 10;
 #X obj 154 113 j.remote play;
 #X obj 135 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -17,7 +17,7 @@
 #X obj 135 197 symbol;
 #X obj 158 28 j.message;
 #X obj 158 50 j.return;
-#X obj 134 153 j.send open;
+#X obj 134 153 j.remote open;
 #X connect 0 0 1 0;
 #X connect 1 0 0 0;
 #X connect 2 0 12 0;

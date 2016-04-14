@@ -1,4 +1,4 @@
-#N canvas 88 424 1905 722 10;
+#N canvas 727 213 1905 722 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
 #X declare -path ../abs_light;
@@ -78,7 +78,7 @@
 -1 -1 8 256;
 #X obj 289 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 40 256;
-#N canvas 338 261 559 378 send_DMX 1;
+#N canvas 338 261 559 378 send_DMX 0;
 #N canvas 51 135 341 328 list-creation 0;
 #X obj 234 215 l;
 #X obj 118 -15 t b b b;
@@ -853,7 +853,7 @@ allumé).;
 #X obj 439 346 sendParam track.7;
 #X obj 509 346 sendParam track.8;
 #X obj 669 346 sendParam track.9;
-#X obj 588 0 player.model player.1;
+#X obj 588 1 player.model player.1;
 #X obj 589 21 dac~ 1 2;
 #X obj 729 111 env-follower env.9;
 #X obj 729 346 sendParam track.9;
@@ -910,11 +910,10 @@ allumé).;
 #X obj 519 191 j.cue;
 #X msg 757 406 write cue-list.txt;
 #X text 576 76 Read and write cue files;
-#X obj 606 307 c.menu @size 172 14 @fontname "Helvetica" @fontweight
+#X obj 606 307 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
-@presetname "(null)" @hover 0 @items "foo" "init" "blbal" @states 0
-0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor 0 0
-0 1;
+@presetname "(null)" @hover 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5
+0.5 0.5 1 @textcolor 0 0 0 1;
 #N canvas 333 202 469 357 fillmenu 0;
 #X msg 200 112 clear;
 #X obj 144 220 list;
@@ -957,11 +956,10 @@ allumé).;
 #X obj 2 1 cnv 15 400 200 empty empty empty 400 300 0 14 -261682 -66577
 0;
 #N canvas 772 372 806 427 select 0;
-#X obj 106 119 c.menu @size 172 14 @fontname "Helvetica" @fontweight
+#X obj 106 119 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
-@presetname "(null)" @hover 0 @items "foo" "init" "blbal" @states 0
-0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor 0 0
-0 1;
+@presetname "(null)" @hover 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5
+0.5 0.5 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;
 #X obj 144 220 list;
@@ -1011,7 +1009,7 @@ allumé).;
 #X obj 194 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 273 237 list trim;
-#X msg 246 339 update foo;
+#X msg 246 339 update test audio;
 #X obj 194 189 t b b;
 #X obj 246 384 s \$0-to-j.cue;
 #X obj 273 217 list prepend set update;
@@ -1022,17 +1020,16 @@ allumé).;
 #X text 210 139 update state;
 #X obj 423 237 list trim;
 #X obj 134 189 t b b;
-#X msg 423 337 delete foo;
+#X msg 423 337 delete test audio;
 #X obj 573 237 list trim;
 #X obj 573 217 list prepend set update;
 #X msg 573 337 delete blbal;
 #N canvas 0 108 450 300 cue-move 0;
 #N canvas 0 136 450 300 cue-move 0;
-#X obj 106 107 c.menu @size 172 14 @fontname "Helvetica" @fontweight
+#X obj 106 107 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
-@presetname "(null)" @hover 0 @items "foo" "init" "blbal" @states 0
-0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor 0 0
-0 1;
+@presetname "(null)" @hover 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5
+0.5 0.5 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;
 #X obj 144 220 list;
@@ -1169,6 +1166,8 @@ allumé).;
 #X msg 196 132 move init 1 \, dump;
 #X msg 283 60 delete foo;
 #X msg 362 213 rename blbal foo;
+#X obj 802 241 iemguts/savebangs;
+#X obj 772 211 iemguts/savebangs 1;
 #X connect 0 1 4 0;
 #X connect 0 1 25 0;
 #X connect 1 0 24 0;
@@ -1200,6 +1199,8 @@ allumé).;
 #X connect 32 0 0 0;
 #X connect 33 0 0 0;
 #X connect 34 0 0 0;
+#X connect 35 0 5 0;
+#X connect 36 0 5 0;
 #X coords 0 -1 1 1 200 80 2 600 300;
 #X restore 70 419 pd cues;
 #X obj 71 399 j.minuit_device;

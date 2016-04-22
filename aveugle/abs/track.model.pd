@@ -1,0 +1,56 @@
+#N canvas 30 463 1219 316 10;
+#X declare -stdpath grrrr;
+#X obj 263 8 inlet~;
+#X obj 100 173 env-follower.model env-follower;
+#X obj 782 57 constantq.model constantq;
+#X obj 324 133 tID/specBrightness~;
+#X floatatom 286 229 5 0 0 0 - - -, f 5;
+#X obj 324 95 bang~;
+#X obj 324 215 mapping/iir 5;
+#X obj 324 257 * 127;
+#X obj 676 108 unpack;
+#X obj 721 160 mapping/iir 5;
+#X obj 606 86 fiddle~ 2048 1 1 0;
+#X obj 676 130 moses 30;
+#X obj 835 195 j.return pitch @description "Tracked pitch after iir"
+;
+#X obj 721 257 vague24 pitch;
+#X obj 837 112 j.parameter pitch/filter @type decimal @default 5 @description
+"iir filter coefficient";
+#X floatatom 795 118 5 0 0 0 - - -, f 5;
+#X floatatom 334 175 5 0 0 0 - - -, f 5;
+#X obj 376 169 j.parameter spec/filter @type decimal @default 5 @description
+"iir filter coefficient";
+#X obj 367 257 j.return brightness @description "Brightness after iir"
+;
+#X obj 100 243 send.model send;
+#X obj 324 299 spot.model spec;
+#X obj 1031 12 inlet;
+#X obj 1031 34 j.model;
+#X obj 1031 56 outlet;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 0 0 10 0;
+#X connect 1 0 13 1;
+#X connect 1 0 19 0;
+#X connect 1 0 20 1;
+#X connect 3 0 6 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 6 0 18 0;
+#X connect 7 0 4 0;
+#X connect 7 0 20 0;
+#X connect 8 0 11 0;
+#X connect 9 0 12 0;
+#X connect 9 0 13 0;
+#X connect 10 2 8 0;
+#X connect 11 1 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 14 0;
+#X connect 15 0 9 1;
+#X connect 16 0 6 1;
+#X connect 16 0 17 0;
+#X connect 17 0 16 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;

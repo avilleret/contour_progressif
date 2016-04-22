@@ -24,8 +24,8 @@
 #X obj 103 111 nbx 3 14 0 1000 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 158 251 mapping/env+ 20;
-#X obj 158 308 j.return env @type decimal @dataspace gain @unit dB
-@range 0 100 @description "loudness in dB";
+#X obj 158 308 j.return loudness @type decimal @dataspace gain @unit
+dB @range 0 100 @description "loudness in dB";
 #X connect 0 0 14 0;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;

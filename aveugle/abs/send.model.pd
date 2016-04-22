@@ -1,4 +1,4 @@
-#N canvas 541 22 1050 859 10;
+#N canvas 167 212 1050 859 10;
 #X obj 0 0 numbox3;
 #X obj 0 20 numbox3;
 #X obj 0 40 numbox3;
@@ -44,7 +44,7 @@
 #X obj -102 -7 t f;
 #X obj -102 -31 inlet;
 #X obj 74 -1 j.parameter send/1 @type decimal @range 0 100;
-#X obj 74 -22 j.model @description "Multi out parameter sender";
+#X obj 420 44 j.model @description "Multi out parameter sender";
 #X obj 1 804 numbox3;
 #X obj 75 803 j.parameter send/fx/vague.1/level @type decimal @range
 0 100;
@@ -717,6 +717,8 @@
 #X obj 74 739 j.parameter send/38 @type decimal @range 0 100;
 #X obj 74 759 j.parameter send/39 @type decimal @range 0 100;
 #X obj 74 779 j.parameter send/40 @type decimal @range 0 100;
+#X obj 421 17 inlet;
+#X obj 420 66 outlet;
 #X connect 0 0 92 1;
 #X connect 0 0 44 0;
 #X connect 1 0 92 2;
@@ -780,6 +782,7 @@
 #X connect 42 0 18 0;
 #X connect 43 0 42 0;
 #X connect 44 0 0 0;
+#X connect 45 0 117 0;
 #X connect 46 0 47 0;
 #X connect 46 0 71 1;
 #X connect 47 0 46 0;
@@ -874,4 +877,5 @@
 #X connect 113 0 89 0;
 #X connect 114 0 90 0;
 #X connect 115 0 91 0;
+#X connect 116 0 45 0;
 #X coords 0 859 1 858 56 1005 0;

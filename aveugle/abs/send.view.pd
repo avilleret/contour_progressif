@@ -1,4 +1,4 @@
-#N canvas 151 224 683 641 10;
+#N canvas 448 63 683 641 10;
 #X obj 101 101 numbox3;
 #X obj 101 121 numbox3;
 #X obj 101 141 numbox3;
@@ -41,40 +41,40 @@
 #X obj 175 461 j.remote send/19 @type decimal @range 0 100;
 #X obj 175 480 j.remote send/20 @type decimal @range 0 100;
 #X obj 175 100 j.remote send/1 @type decimal @range 0 100;
-#X obj 102 905 numbox3;
-#X obj 176 904 j.remote send/fx/vague.1/level @type decimal @range
+#X obj 100 903 numbox3;
+#X obj 174 902 j.remote send/fx/vague.1/level @type decimal @range
 0 100;
-#X obj 102 925 numbox3;
-#X obj 176 924 j.remote send/fx/vague.1/largeur @type decimal @range
+#X obj 100 923 numbox3;
+#X obj 174 922 j.remote send/fx/vague.1/largeur @type decimal @range
 0 100, f 63;
-#X obj 102 945 numbox3;
-#X text 95 973 -------;
-#X obj 102 965 numbox3;
-#X obj 102 985 numbox3;
-#X text 95 1013 -------;
-#X obj 102 1005 numbox3;
-#X obj 102 1025 numbox3;
-#X text 95 1053 -------;
-#X obj 102 1045 numbox3;
-#X obj 176 944 j.remote send/fx/vague.2/level @type decimal @range
+#X obj 100 943 numbox3;
+#X text 93 971 -------;
+#X obj 100 963 numbox3;
+#X obj 100 983 numbox3;
+#X text 93 1011 -------;
+#X obj 100 1003 numbox3;
+#X obj 100 1023 numbox3;
+#X text 93 1051 -------;
+#X obj 100 1043 numbox3;
+#X obj 174 942 j.remote send/fx/vague.2/level @type decimal @range
 0 100;
-#X obj 176 964 j.remote send/fx/vague.2/largeur @type decimal @range
+#X obj 174 962 j.remote send/fx/vague.2/largeur @type decimal @range
 0 100, f 63;
-#X obj 176 984 j.remote send/fx/vague.3/level @type decimal @range
+#X obj 174 982 j.remote send/fx/vague.3/level @type decimal @range
 0 100;
-#X obj 177 1004 j.remote send/fx/vague.3/largeur @type decimal @range
+#X obj 175 1002 j.remote send/fx/vague.3/largeur @type decimal @range
 0 100, f 63;
-#X obj 176 1024 j.remote send/fx/foret/level @type decimal @range 0
+#X obj 174 1022 j.remote send/fx/foret/level @type decimal @range 0
 100;
-#X obj 176 1044 j.remote send/fx/foret/speed @type decimal @range 0
+#X obj 174 1042 j.remote send/fx/foret/speed @type decimal @range 0
 100;
-#X text 95 933 -------;
-#X obj 102 1065 numbox3;
-#X text 95 1093 -------;
-#X obj 102 1085 numbox3;
-#X obj 176 1064 j.remote send/fx/Rwalk/level @type decimal @range 0
+#X text 93 931 -------;
+#X obj 100 1063 numbox3;
+#X text 93 1091 -------;
+#X obj 100 1083 numbox3;
+#X obj 174 1062 j.remote send/fx/Rwalk/level @type decimal @range 0
 100;
-#X obj 176 1084 j.remote send/fx/Rwalk/speed @type decimal @range 0
+#X obj 174 1082 j.remote send/fx/Rwalk/speed @type decimal @range 0
 100;
 #X obj 101 501 numbox3;
 #X obj 101 521 numbox3;
@@ -116,9 +116,8 @@
 #X obj 175 840 j.remote send/38 @type decimal @range 0 100;
 #X obj 175 860 j.remote send/39 @type decimal @range 0 100;
 #X obj 175 880 j.remote send/40 @type decimal @range 0 100;
-#X obj 503 65 j.view;
-#X obj 502 45 inlet;
-#X obj 503 87 outlet;
+#X msg 224 76 dump;
+#X obj 449 119 print remote_dump;
 #X connect 0 0 41 0;
 #X connect 1 0 10 0;
 #X connect 2 0 11 0;
@@ -159,6 +158,7 @@
 #X connect 39 0 37 0;
 #X connect 40 0 38 0;
 #X connect 41 0 0 0;
+#X connect 41 1 108 0;
 #X connect 42 0 43 0;
 #X connect 43 0 42 0;
 #X connect 44 0 45 0;
@@ -219,6 +219,5 @@
 #X connect 104 0 84 0;
 #X connect 105 0 85 0;
 #X connect 106 0 86 0;
-#X connect 107 0 109 0;
-#X connect 108 0 107 0;
-#X coords 0 -1 1 1 56 1005 1 100 100;
+#X connect 107 0 41 0;
+#X coords 0 -1 1 1 56 1005 2 100 100;

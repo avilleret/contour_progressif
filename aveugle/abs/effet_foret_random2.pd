@@ -9,7 +9,7 @@
 #X floatatom 486 257 5 0 0 0 amplitude - -, f 5;
 #X obj 468 171 > 0;
 #X obj 257 11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 270.416 256;
+-262144 -1 -1 0 256;
 #X obj 496 143 t f f;
 #X obj 220 455 bus effet10;
 #X floatatom 543 187 5 0 0 0 - - -, f 5;
@@ -53,7 +53,6 @@
 #X obj 210 205 random 6;
 #X obj 220 387 route 0 1 2 3 4 5;
 #X obj 276 -19 j.parameter speed @type integer @range 0 255;
-#X obj 499 431 j.model;
 #X connect 1 0 41 0;
 #X connect 2 1 30 0;
 #X connect 3 0 2 0;

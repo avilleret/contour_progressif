@@ -62,9 +62,9 @@
 #X obj 528 186 / 5;
 #X obj 277 397 tabread4 gauss;
 #X obj 356 264 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 12.1569 256;
+-262144 -1 -1 0 256;
 #X obj 432 129 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 -7.41176 256;
+-262144 -1 -1 -10 256;
 #X obj 325 9 loadbang;
 #X obj 277 466 tabwrite lointain-face;
 #X obj 345 622 route 1;
@@ -80,7 +80,7 @@
 #N canvas 802 43 252 179 table-loin-face 1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array lointain-face 10 float 3;
-#A 0 0.0245645 0.0333413 0.0446633 0.104851 0.352063 0.745665 0.996196
+#A 0 0.161365 0.161365 0.161365 0.104851 0.352063 0.745665 0.996196
 0.839504 0.446249 0.149627;
 #X coords 0 1 10 -1 200 140 1 0 0;
 #X restore 15 19 graph;
@@ -150,7 +150,6 @@
 #X restore 131 5 pd lointain-face;
 #X msg 169 303 \; pd-table-loin-face vis 1;
 #X obj 169 281 r display-vague-loin-face;
-#X obj 343 55 loadbang;
 #X obj 23 25 vague 1 9 8 3;
 #X obj 23 65 vague 3 13 12 5;
 #X obj 23 45 vague 2 10 11 4;
@@ -179,7 +178,3 @@
 #X connect 20 0 22 0;
 #X connect 21 0 23 0;
 #X connect 27 0 26 0;
-#X connect 28 0 22 0;
-#X connect 28 0 23 0;
-#X connect 28 0 24 0;
-#X connect 28 0 26 0;

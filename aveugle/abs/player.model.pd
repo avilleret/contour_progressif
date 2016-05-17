@@ -1,29 +1,29 @@
-#N canvas 395 182 795 400 10;
-#X obj 30 238 readsf~ 2;
-#X msg 30 218 open \$1;
-#X obj 30 88 openpanel;
-#X obj 30 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 395 182 855 407 10;
+#X obj 87 238 readsf~ 2;
+#X msg 87 218 open \$1;
+#X obj 87 88 openpanel;
+#X obj 87 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 170 352 outlet~;
-#X obj 201 25 j.parameter play @type boolean @priority 2;
-#X obj 31 352 outlet~;
-#X obj 30 332 *~;
-#X obj 81 352 outlet~;
-#X obj 80 332 *~;
-#X obj 397 86 t f f;
-#X obj 424 107 sel 1;
-#X obj 397 149 line~;
-#X msg 397 128 \$1 10;
-#X obj 30 128 j.parameter file @type string @priority 1;
-#X obj 397 54 j.parameter gain @type decimal @dataspace gain @unit
+#X obj 227 352 outlet~;
+#X obj 258 25 j.parameter play @type boolean @priority 2;
+#X obj 88 352 outlet~;
+#X obj 87 332 *~;
+#X obj 138 352 outlet~;
+#X obj 137 332 *~;
+#X obj 454 86 t f f;
+#X obj 481 107 sel 1;
+#X obj 454 149 line~;
+#X msg 454 128 \$1 10;
+#X obj 87 128 j.parameter file @type string @priority 1;
+#X obj 454 54 j.parameter gain @type decimal @dataspace gain @unit
 linear @default 0;
-#X obj 30 150 route none;
-#X obj 87 172 symbol;
-#X obj 30 25 j.parameter open @type none;
-#X obj 30 47 route bang;
-#X obj 201 45 change -1;
-#X obj 30 196 symbol;
-#X obj 201 66 sel 1;
+#X obj 87 150 route none;
+#X obj 144 172 symbol;
+#X obj 87 25 j.parameter open @type none;
+#X obj 87 47 route bang;
+#X obj 258 45 change -1;
+#X obj 87 196 symbol;
+#X obj 258 66 sel 1;
 #X connect 0 0 4 0;
 #X connect 0 0 7 0;
 #X connect 0 1 9 0;

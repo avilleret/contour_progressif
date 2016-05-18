@@ -1,0 +1,29 @@
+#N canvas 281 184 701 435 10;
+#X obj 180 78 nrpnin;
+#X obj 180 118 spigot;
+#X obj 213 98 == \$1;
+#X obj 180 342 nrpnout \$1;
+#X floatatom 123 179 5 0 0 0 - - -, f 5;
+#X obj 180 180 j.remote \$2;
+#X obj 180 143 j.map @input/min 0 @input/max 255 @output/min \$3 @output/max
+\$4, f 64;
+#X obj 180 268 j.map @input/min \$3 @input/max \$4 @output/min 0 @output/max
+255, f 64;
+#X text 339 56 \$1 : NRPN number;
+#X text 339 76 \$2 : jamoma parameter address;
+#X text 339 96 \$3/\$4 : parameter min and max;
+#X floatatom 115 140 5 0 0 0 - - -, f 5;
+#X obj 180 290 clip 0 255;
+#X floatatom 213 318 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 11 0;
+#X connect 0 1 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 1;
+#X connect 4 0 5 0;
+#X connect 5 0 4 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 12 0;
+#X connect 12 0 3 0;
+#X connect 12 0 13 0;

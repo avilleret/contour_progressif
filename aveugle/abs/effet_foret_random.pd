@@ -20,8 +20,8 @@
 -1;
 #X obj 241 251 sel 1;
 #X obj 241 297 +;
-#X floatatom 362 268 5 0 0 0 offset - -;
-#X floatatom 364 242 5 0 0 0 amplitude - -;
+#X floatatom 362 268 5 0 0 0 offset - -, f 5;
+#X floatatom 364 242 5 0 0 0 amplitude - -, f 5;
 #X obj 356 94 * 5;
 #X obj 423 166 > 0;
 #X obj 220 382 unpack f f f f f f f f f f;
@@ -44,9 +44,11 @@
 #X obj 247 82 random 9;
 #X obj 93 134 sel 0;
 #X msg 93 156 0 0 0 0 0 0 0 0 0;
-#X obj 496 120 bus_master /foret/level;
-#X obj 356 11 bus_master /foret/speed;
 #X obj 496 143 t f f;
+#X floatatom 355 13 5 0 0 0 - - -, f 5;
+#X text 389 11 speed;
+#X floatatom 496 119 5 0 0 0 - - -, f 5;
+#X text 529 118 level;
 #X connect 1 0 17 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
@@ -93,7 +95,7 @@
 #X connect 38 0 12 0;
 #X connect 39 0 40 0;
 #X connect 40 0 10 0;
-#X connect 41 0 43 0;
+#X connect 41 0 21 0;
+#X connect 41 1 19 0;
 #X connect 42 0 37 0;
-#X connect 43 0 21 0;
-#X connect 43 1 19 0;
+#X connect 44 0 41 0;

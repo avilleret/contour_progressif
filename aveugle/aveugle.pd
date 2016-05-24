@@ -1,4 +1,4 @@
-#N canvas 530 74 375 505 10;
+#N canvas 105 23 375 505 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
 #X declare -stdpath grrrr;
@@ -625,8 +625,8 @@ allumé).;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 981 73 882 611 effet 1;
-#N canvas 1392 193 612 1008 sends 1;
+#N canvas 577 109 875 802 effet 1;
+#N canvas 1224 23 612 1008 sends 1;
 #X obj 3 42 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
 #X obj 3 62 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
@@ -803,7 +803,7 @@ allumé).;
 #X obj 175 23 send.view /celia;
 #X coords 0 1008 1 1007 1000 1255 0;
 #X restore 100 505 pd sends;
-#N canvas 268 732 553 170 audiograph 0;
+#N canvas 268 732 553 170 audiograph 1;
 #X obj 53 76 track.model alex;
 #N canvas 0 391 1280 480 audio-input 0;
 #X obj 53 188 adc~ 1;
@@ -817,7 +817,7 @@ allumé).;
 #X obj 323 212 readsf~ 3, f 30;
 #X obj 323 167 openpanel;
 #X obj 235 124 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X obj 53 288 *~ 1;
 #X obj 113 288 *~ 1;
 #X obj 173 288 *~ 1;
@@ -987,7 +987,7 @@ allumé).;
 #X text 28 356 freq max;
 #X text 34 376 scale 1;
 #X text 34 396 scale 2;
-#N canvas 35 206 453 676 Readme 0;
+#N canvas 386 77 453 676 Readme 0;
 #X text 32 20 Réglage des entrées audio :;
 #X text 57 39 Changer le seuil de sorte que seul le son utile fasse
 monter le slider (quand on n'utilise pas le micro \, le son ambiant
@@ -1025,7 +1025,7 @@ plus ou moins large sur plusieurs projecteurs. L'amplitude contrôle
 l'intensité de la tâche.;
 #X restore 100 565 pd Readme;
 #X obj 21 497 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
--1 0;
+-1 1;
 #X text 37 512 audiofile;
 #X text 38 497 micros;
 #X text 46 415 level;
@@ -1042,11 +1042,36 @@ l'intensité de la tâche.;
 #X obj 190 22 track.view /celia;
 #X obj 410 22 track.view /nico.1;
 #X obj 522 22 track.view /nico.2;
+#X obj 519 511 j.remote /master/brightness;
+#X obj 519 607 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 7620 1;
+#X obj 539 607 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 559 607 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4333 1;
+#X obj 579 607 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2092 1;
+#X text 460 619 master;
+#X text 485 742 bright;
+#X text 525 762 pitch;
+#X text 573 763 send;
+#X text 548 742 freq;
+#X obj 539 531 j.remote /master/pitch;
+#X obj 559 551 j.remote /master/spec;
+#X obj 579 571 j.remote /master/send;
 #X connect 2 0 33 0;
 #X connect 3 0 2 0;
 #X connect 22 0 1 0;
 #X connect 32 0 3 0;
 #X connect 33 0 32 0;
+#X connect 39 0 40 0;
+#X connect 40 0 39 0;
+#X connect 41 0 49 0;
+#X connect 42 0 50 0;
+#X connect 43 0 51 0;
+#X connect 49 0 41 0;
+#X connect 50 0 42 0;
+#X connect 51 0 43 0;
 #X restore 80 145 pd effet;
 #N canvas 106 71 976 624 cues 0;
 #X obj 519 191 j.cue;
@@ -1057,7 +1082,7 @@ l'intensité de la tâche.;
 @presetname "(null)" @hover 0 @items "sorciere celia" "1-Roucoule"
 "0-Noir" "01-Alex-5kW" "02-Roucoule_Celia" "roucole-celia-OK" "Alex-d�ebut"
 "nina-debut" "000-debut" "001-Nina_solo" "003-Solo_alex+nina" "004-Sorciere_Celia"
-@states 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor
+"new" @states 0 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor
 0.5 0.5 0.5 1 @textcolor 0 0 0 1;
 #N canvas 333 202 469 357 fillmenu 0;
 #X msg 200 112 clear;
@@ -1106,7 +1131,7 @@ l'intensité de la tâche.;
 @presetname "(null)" @hover 0 @items "sorciere celia" "1-Roucoule"
 "0-Noir" "01-Alex-5kW" "02-Roucoule_Celia" "roucole-celia-OK" "Alex-d�ebut"
 "nina-debut" "000-debut" "001-Nina_solo" "003-Solo_alex+nina" "004-Sorciere_Celia"
-@states 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor
+"new" @states 0 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor
 0.5 0.5 0.5 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;
@@ -1157,7 +1182,7 @@ l'intensité de la tâche.;
 #X obj 194 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 273 237 list trim;
-#X msg 246 339 update sorciere celia;
+#X msg 246 339 update new;
 #X obj 194 189 t b b;
 #X obj 246 384 s \$0-to-j.cue;
 #X obj 273 217 list prepend set update;
@@ -1168,7 +1193,7 @@ l'intensité de la tâche.;
 #X text 210 139 update state;
 #X obj 423 237 list trim;
 #X obj 134 189 t b b;
-#X msg 423 337 delete sorciere celia;
+#X msg 423 337 delete new;
 #X obj 573 237 list trim;
 #X obj 573 217 list prepend set update;
 #X msg 573 337 delete blbal;
@@ -1179,7 +1204,7 @@ l'intensité de la tâche.;
 @presetname "(null)" @hover 0 @items "sorciere celia" "1-Roucoule"
 "0-Noir" "01-Alex-5kW" "02-Roucoule_Celia" "roucole-celia-OK" "Alex-d�ebut"
 "nina-debut" "000-debut" "001-Nina_solo" "003-Solo_alex+nina" "004-Sorciere_Celia"
-@states 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor
+"new" @states 0 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor
 0.5 0.5 0.5 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;

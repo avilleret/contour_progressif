@@ -6,14 +6,14 @@
 #X obj 406 131 nbx 3 14 -99 100 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 22 256;
 #X obj 406 151 nbx 3 14 0 1000 0 1 empty empty empty 0 -8 0 10 -262144
--1 -1 275 256;
+-1 -1 39.2157 256;
 #X obj 406 171 nbx 3 14 0 1000 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 29 256;
+-1 -1 0 256;
 #X floatatom 471 81 5 0 0 0 - - -, f 5;
 #X obj 673 151 print env-follower;
 #X msg 490 106 dump;
 #X obj 464 106 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 607 1;
+-1 -1 0 1;
 #X text 342 130 threshold;
 #X text 372 150 gain;
 #X text 354 171 release;
@@ -52,7 +52,7 @@
 #X obj 489 288 j.remote \$1/pitch/input/min;
 #X obj 489 308 j.remote \$1/pitch/input/max;
 #X obj 489 348 j.remote \$1/pitch/level;
-#X obj 130 268 j.remote \$1/brightness/proj/width;
+#X obj 131 267 j.remote \$1/brightness/proj/width;
 #X obj 130 288 j.remote \$1/brightness/input/min;
 #X obj 130 308 j.remote \$1/brightness/input/max;
 #X obj 130 348 j.remote \$1/brightness/level;
@@ -62,22 +62,25 @@
 #X obj 489 453 j.remote \$1/constantq/scale.1;
 #X obj 464 59 j.receive \$1/env-follower/loudness;
 #X obj 489 473 j.remote \$1/constantq/scale.2;
-#X floatatom 443 494 5 0 200 0 - - -, f 5;
-#X text 345 492 level;
+#X floatatom 443 514 5 0 200 0 - - -, f 5;
+#X text 345 512 level;
 #X floatatom 409 329 5 0 0 0 - - -, f 5;
 #X floatatom 443 329 5 0 0 0 - - -, f 5;
 #X text 342 327 in smooth;
 #X obj 489 328 j.remote \$1/pitch/input/smoothing;
 #X obj 95 328 j.remote \$1/brightness/input/smoothing;
-#X obj 489 493 j.remote \$1/constantq/proj/level;
+#X obj 489 513 j.remote \$1/constantq/proj/level;
 #X obj 489 393 j.remote \$1/constantq/proj/offset;
 #X obj 444 106 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2734 1;
+-1 -1 730 1;
 #X obj 424 39 j.receive \$1/env-follower/loudness_pre;
 #X obj 490 231 cyclone/speedlim 100;
 #X obj 264 76 cyclone/speedlim 100;
 #X floatatom 264 98 5 0 0 0 - - -, f 5;
 #X text 402 250 bright pitch;
+#X floatatom 443 494 5 0 200 0 - - -, f 5;
+#X obj 489 493 j.remote \$1/constantq/proj/speedlimiter;
+#X text 278 493 taux de croissance;
 #X connect 1 0 2 0;
 #X connect 4 0 40 0;
 #X connect 5 0 41 0;
@@ -129,4 +132,6 @@
 #X connect 70 0 0 0;
 #X connect 71 0 68 0;
 #X connect 71 0 72 0;
+#X connect 74 0 75 0;
+#X connect 75 0 74 0;
 #X coords 0 -1 1 1 80 450 1 400 100;

@@ -482,6 +482,7 @@ gain @unit dB @description "level" @default 0;
 #X connect 78 0 57 1;
 #X connect 79 0 24 0;
 #X connect 79 0 26 0;
+#X connect 79 0 87 0;
 #X connect 80 0 4 0;
 #X connect 81 0 4 0;
 #X connect 82 0 4 0;

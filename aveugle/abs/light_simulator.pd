@@ -1,4 +1,4 @@
-#N canvas 470 282 766 678 10;
+#N canvas 525 262 766 678 10;
 #X obj 42 42 nbx 4 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -2 256;
 #X obj 83 42 nbx 4 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -353,6 +353,10 @@
 #X obj 302 619 simlight 47;
 #X obj 432 619 simlight 48;
 #X obj 611 481 r simulation_light_0;
+#X obj 666 27 r invert;
+#X obj 666 49 sel 0 1;
+#X msg 666 120 255 255 255;
+#X msg 676 90 0 0 0;
 #X connect 0 0 108 0;
 #X connect 1 0 108 1;
 #X connect 2 0 108 2;
@@ -511,3 +515,8 @@
 #X connect 189 0 207 1;
 #X connect 190 0 207 2;
 #X connect 191 0 194 1;
+#X connect 209 0 210 0;
+#X connect 210 0 211 0;
+#X connect 210 1 212 0;
+#X connect 211 0 102 1;
+#X connect 212 0 102 1;

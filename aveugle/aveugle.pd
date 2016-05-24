@@ -1,4 +1,4 @@
-#N canvas 342 51 386 544 10;
+#N canvas 101 90 386 544 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
 #X declare -stdpath grrrr;
@@ -9,7 +9,7 @@
 #X declare -path ../abs_light;
 #X declare -path ../abs_light;
 #X declare -path ../abs_light;
-#N canvas 550 575 1135 441 master 1;
+#N canvas 550 575 1135 441 master 0;
 #N canvas 704 417 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -324,6 +324,8 @@
 #X obj 1703 80 enttec_out;
 #X obj 1703 200 enttec_out;
 #X obj 1703 140 enttec_out;
+#X obj 645 369 loadbang;
+#X obj 645 391 del 1000;
 #X connect 1 0 109 1;
 #X connect 2 0 110 1;
 #X connect 3 0 111 1;
@@ -422,6 +424,8 @@
 #X connect 104 0 154 0;
 #X connect 105 0 114 0;
 #X connect 107 0 106 0;
+#X connect 156 0 157 0;
+#X connect 157 0 107 0;
 #X restore 70 199 pd master;
 #N canvas 745 440 508 200 init 0;
 #X msg 62 131 dsp 1;
@@ -634,7 +638,7 @@ allumé).;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 793 76 741 798 effet 1;
+#N canvas 507 23 741 798 effet 1;
 #N canvas 1224 23 612 1008 sends 1;
 #X obj 3 42 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
@@ -812,7 +816,7 @@ allumé).;
 #X obj 175 23 send.view /celia;
 #X coords 0 1008 1 1007 1000 1255 0;
 #X restore 100 505 pd sends;
-#N canvas 268 732 553 170 audiograph 1;
+#N canvas 268 732 553 170 audiograph 0;
 #X obj 53 76 track.model alex;
 #N canvas 0 391 1280 480 audio-input 0;
 #X obj 53 188 adc~ 1;
@@ -1057,7 +1061,7 @@ l'intensité de la tâche.;
 #X obj 341 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 361 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 50 1;
+-1 -1 0 1;
 #X obj 381 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X text 262 610 master;
@@ -1154,8 +1158,8 @@ l'intensité de la tâche.;
 "0-Noir" "01-Alex-5kW" "02-Roucoule_Celia" "roucole-celia-OK" "Alex-d�ebut"
 "nina-debut" "000-debut" "001-Nina_solo" "003-Solo_alex+nina" "004-Sorciere_Celia"
 "new" "test" "test2" "test5" "vgjfgh" "kgkjhg" "jhvjgfh" "test-fader"
-@states 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75
-0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor 0 0 0 1;
+"003-bis" @states 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 @bgcolor
+0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;
 #X obj 144 220 list;

@@ -3507,6 +3507,7 @@ newDevice:/nina/constantq/freq/max 4000.000000
 newDevice:/nina/constantq/freq/min 400.000000
 newDevice:/nina/constantq/scale.1 100.000000
 newDevice:/nina/constantq/scale.2 100.000000
+newDevice:/nina/constantq/proj/level 0.000000
 newDevice:/nina/env-follower/gain 505.882355
 newDevice:/nina/env-follower/release 26.000000
 newDevice:/nina/env-follower/threshold 7.000000

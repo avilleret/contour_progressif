@@ -523,12 +523,6 @@ allumé).;
 #X floatatom 433 273 5 0 0 0 - - -, f 5;
 #X obj 342 241 NRPNin;
 #X obj 24 25 BCFjamoma 0 /alex/env-follower/gain 0 1000;
-#X obj 24 65 BCFjamoma 2 /nina/env-follower/gain 0 1000;
-#X obj 24 45 BCFjamoma 1 /celia/env-follower/gain 0 1000;
-#X obj 24 125 BCFjamoma 5 /master/pitch 0 1;
-#X obj 24 105 BCFjamoma 4 /master/brightness 0 1;
-#X obj 24 145 BCFjamoma 6 /master/spec 0 1;
-#X obj 24 165 BCFjamoma 7 /master/send 0 1;
 #X obj 544 274 nrpnout;
 #X floatatom 589 244 5 0 0 0 - - -, f 5;
 #X floatatom 543 248 5 0 0 0 - - -, f 5;
@@ -538,6 +532,12 @@ allumé).;
 #X text 86 280 encoder 1-8 grp 2 : cc 16 à 23;
 #X text 86 290 encoder 1-8 grp 3 : cc 24 à 31;
 #X text 86 300 encoder 1-8 grp 4 : cc 32 à 39;
+#X obj 24 65 BCFjamoma 2 /nina/env-follower/gain 0 1000;
+#X obj 24 45 BCFjamoma 1 /celia/env-follower/gain 0 1000;
+#X obj 24 125 BCFjamoma 5 /master/pitch 0 1;
+#X obj 24 105 BCFjamoma 4 /master/brightness 0 1;
+#X obj 24 145 BCFjamoma 6 /master/spec 0 1;
+#X obj 24 165 BCFjamoma 7 /master/send 0 1;
 #X obj 305 70 BCFjamoma 10 /celia/brightness/input/min 0 100;
 #X obj 305 30 BCFjamoma 8 /alex/brightness/input/min 0 100;
 #X obj 305 50 BCFjamoma 9 /alex/brightness/input/max 0 100;
@@ -574,8 +574,8 @@ allumé).;
 #X obj 24 85 BCFjamoma 3 /master/limit 0 255;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
-#X connect 12 0 11 1;
-#X connect 13 0 11 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 0;
 #X restore 70 350 pd BCF2000;
 #X text 59 197 >;
 #X text 80 329 Aveuglement - 2016;
@@ -1055,7 +1055,7 @@ l'intensité de la tâche.;
 #X obj 321 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 341 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 50 1;
+-1 -1 0 1;
 #X obj 361 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 381 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144

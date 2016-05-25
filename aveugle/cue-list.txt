@@ -300,8 +300,8 @@ newDevice:/nina/constantq/scale.1 100.000000
 newDevice:/nina/constantq/scale.2 100.000000
 newDevice:/nina/env-follower/release 29.000000
 newDevice:/nina/env-follower/threshold 16.000000
-newDevice:/nina/pitch/input/max 70.000000
-newDevice:/nina/pitch/input/min 45.000000
+newDevice:/nina/pitch/input/max 74.000000
+newDevice:/nina/pitch/input/min 48.000000
 newDevice:/nina/pitch/input/smoothing 5.000000
 newDevice:/nina/pitch/level 50.000000
 newDevice:/nina/pitch/proj/width 184.000000
@@ -373,8 +373,8 @@ newDevice:/nina/constantq/scale.1 100.000000
 newDevice:/nina/constantq/scale.2 100.000000
 newDevice:/nina/env-follower/release 29.000000
 newDevice:/nina/env-follower/threshold 16.000000
-newDevice:/nina/pitch/input/max 70.000000
-newDevice:/nina/pitch/input/min 45.000000
+newDevice:/nina/pitch/input/max 74.000000
+newDevice:/nina/pitch/input/min 48.000000
 newDevice:/nina/pitch/input/smoothing 5.000000
 newDevice:/nina/pitch/level 50.000000
 newDevice:/nina/pitch/proj/offset 21
@@ -590,8 +590,8 @@ newDevice:/nina/constantq/scale.1 100.000000
 newDevice:/nina/constantq/scale.2 100.000000
 newDevice:/nina/env-follower/release 29.000000
 newDevice:/nina/env-follower/threshold 16.000000
-newDevice:/nina/pitch/input/max 70.000000
-newDevice:/nina/pitch/input/min 45.000000
+newDevice:/nina/pitch/input/max 74.000000
+newDevice:/nina/pitch/input/min 48.000000
 newDevice:/nina/pitch/input/smoothing 5.000000
 newDevice:/nina/pitch/level 50.000000
 newDevice:/nina/pitch/proj/width 184.000000
@@ -663,8 +663,8 @@ newDevice:/nina/constantq/scale.1 100.000000
 newDevice:/nina/constantq/scale.2 100.000000
 newDevice:/nina/env-follower/release 29.000000
 newDevice:/nina/env-follower/threshold 16.000000
-newDevice:/nina/pitch/input/max 70.000000
-newDevice:/nina/pitch/input/min 45.000000
+newDevice:/nina/pitch/input/max 74.000000
+newDevice:/nina/pitch/input/min 48.000000
 newDevice:/nina/pitch/input/smoothing 5.000000
 newDevice:/nina/pitch/level 50.000000
 newDevice:/nina/pitch/proj/offset 21

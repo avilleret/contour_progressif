@@ -15,6 +15,7 @@ newDevice:/alex/constantq/freq/max 2000.000000
 newDevice:/alex/constantq/freq/min 200.000000
 newDevice:/alex/constantq/scale.1 144.000000
 newDevice:/alex/constantq/scale.2 100.000000
+newDevice:/alex/constantq/proj/level 0.000000
 newDevice:/alex/env-follower/release 31.000000
 newDevice:/alex/env-follower/threshold 32.000000
 newDevice:/alex/pitch/input/max 78.000000
@@ -219,8 +220,8 @@ newDevice:/alex/send-fx/vague.2/largeur 0.000000
 newDevice:/alex/send-fx/vague.2/level 0.000000
 newDevice:/alex/send-fx/vague.3/largeur 0.000000
 newDevice:/alex/send-fx/vague.3/level 0.000000
-newDevice:/celia/brightness/input/max 84.313728
-newDevice:/celia/brightness/input/min 30.588236
+newDevice:/celia/brightness/input/max 97.313728
+newDevice:/celia/brightness/input/min 7.588236
 newDevice:/celia/brightness/input/smoothing 5.000000
 newDevice:/celia/brightness/level 55.000000
 newDevice:/celia/brightness/proj/width 150.000000
@@ -509,8 +510,8 @@ newDevice:/alex/send-fx/vague.2/largeur 0.000000
 newDevice:/alex/send-fx/vague.2/level 0.000000
 newDevice:/alex/send-fx/vague.3/largeur 0.000000
 newDevice:/alex/send-fx/vague.3/level 0.000000
-newDevice:/celia/brightness/input/max 84.313728
-newDevice:/celia/brightness/input/min 30.588236
+newDevice:/celia/brightness/input/max 97.313728
+newDevice:/celia/brightness/input/min 7.588236
 newDevice:/celia/brightness/input/smoothing 5.000000
 newDevice:/celia/brightness/level 55.000000
 newDevice:/celia/brightness/proj/width 150.000000
@@ -732,14 +733,14 @@ newDevice:/speed 0
 newDevice:/alex/brightness/input/max 101.000000
 newDevice:/alex/brightness/input/min 2.000000
 newDevice:/alex/brightness/input/smoothing 5.000000
-newDevice:/alex/brightness/level 20.000000
+newDevice:/alex/brightness/level 0.000000
 newDevice:/alex/brightness/proj/offset 8
 newDevice:/alex/brightness/proj/range 8
 newDevice:/alex/brightness/proj/width 262.000000
 newDevice:/alex/constantq/freq/bandnumber 33
 newDevice:/alex/constantq/freq/max 4000.000000
 newDevice:/alex/constantq/freq/min 400.000000
-newDevice:/alex/constantq/proj/level 32.000000
+newDevice:/alex/constantq/proj/level 69.000000
 newDevice:/alex/constantq/scale.1 396.000000
 newDevice:/alex/constantq/scale.2 73.000000
 newDevice:/alex/env-follower/release 600.000000
@@ -954,7 +955,7 @@ newDevice:/speed 0
 # 
 newDevice:/alex/brightness/input/max 101.000000
 newDevice:/alex/brightness/input/min 2.000000
-newDevice:/alex/brightness/input/smoothing -95.000000
+newDevice:/alex/brightness/input/smoothing 5.000000
 newDevice:/alex/brightness/level 0.000000
 newDevice:/alex/brightness/proj/offset 8
 newDevice:/alex/brightness/proj/range 8

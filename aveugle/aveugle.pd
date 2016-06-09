@@ -1,4 +1,4 @@
-#N canvas 136 60 386 544 10;
+#N canvas 105 48 386 544 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
 #X declare -stdpath grrrr;
@@ -7,7 +7,7 @@
 #X declare -path ../abs_light;
 #X declare -path ../abs_light;
 #X declare -path ../abs_light;
-#N canvas 405 555 1135 441 master 0;
+#N canvas 260 670 1135 441 master 1;
 #N canvas 704 417 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -150,11 +150,11 @@
 #X obj 479 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 20 256;
 #X obj 479 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 26 256;
+-1 -1 14 256;
 #X obj 479 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 16 256;
 #X obj 479 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 14 256;
+-1 -1 26 256;
 #X obj 659 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 15 256;
 #X obj 659 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
@@ -325,8 +325,8 @@
 #X obj 1703 140 enttec_out;
 #X obj 645 369 loadbang;
 #X obj 645 391 del 1000;
-#N canvas 195 238 450 300 check 0;
-#X obj 181 242 pack f f;
+#N canvas 195 238 534 317 check 0;
+#X obj 181 262 pack f f;
 #N canvas 0 22 1920 301 output 0;
 #X obj 63 141 bus effet1;
 #X obj 103 171 bus effet2;
@@ -429,10 +429,10 @@
 #X connect 49 45 46 0;
 #X connect 49 46 47 0;
 #X connect 49 47 48 0;
-#X restore 181 263 pd output;
+#X restore 181 283 pd output;
 #X obj 181 170 t f b b b;
 #X floatatom 217 206 5 0 0 0 - - -, f 5;
-#X msg 259 206 0;
+#X msg 259 236 0;
 #X obj 181 121 f;
 #X obj 181 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -446,6 +446,13 @@
 #X obj 181 52 spigot;
 #X obj 227 53 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X text 253 204 niveau de test (10);
+#X obj 286 153 loadbang;
+#X msg 286 175 10;
+#X obj 285 48 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
+-262144 -1 -1 21 256;
+#X obj 285 79 j.remote /master/limit;
+#X text 279 27 Ne pas oublié de monter le limiteur;
 #X connect 0 0 1 0;
 #X connect 2 0 0 0;
 #X connect 2 1 3 0;
@@ -464,7 +471,15 @@
 #X connect 12 0 2 0;
 #X connect 13 0 6 0;
 #X connect 14 0 13 1;
+#X connect 16 0 17 0;
+#X connect 17 0 3 0;
+#X connect 18 0 19 0;
+#X connect 19 0 18 0;
 #X restore 225 14 pd check;
+#X text 148 78 5kW;
+#X text 701 197 2kW;
+#X text 891 321 5kW;
+#X text 1066 259 2kW;
 #X connect 1 0 109 1;
 #X connect 2 0 110 1;
 #X connect 3 0 111 1;
@@ -777,8 +792,8 @@ allumé).;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 660 46 741 798 effet 1;
-#N canvas 1248 36 612 1008 sends 0;
+#N canvas 498 32 741 798 effet 1;
+#N canvas 1248 36 612 1008 sends 1;
 #X obj 3 42 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
 #X obj 3 62 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
@@ -955,9 +970,9 @@ allumé).;
 #X obj 175 23 send.view /celia;
 #X coords 0 1008 1 1007 1000 1255 0;
 #X restore 100 505 pd sends;
-#N canvas 268 732 487 144 audiograph 0;
+#N canvas 268 732 487 144 audiograph 1;
 #X obj 53 76 track.model alex;
-#N canvas 0 391 1280 480 audio-input 0;
+#N canvas 0 391 1280 480 audio-input 1;
 #X obj 53 188 adc~ 1;
 #X obj 183 344 outlet~;
 #X obj 243 344 outlet~;
@@ -966,7 +981,7 @@ allumé).;
 #X obj 173 188 adc~ 3;
 #X obj 235 215 == 0;
 #X obj 274 215 == 1;
-#X obj 323 212 readsf~ 3, f 30;
+#X obj 323 222 readsf~ 3, f 30;
 #X obj 323 167 openpanel;
 #X obj 235 124 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -978,7 +993,7 @@ allumé).;
 #X obj 441 287 *~ 0;
 #X text 252 122 adc;
 #X text 251 139 audiofile;
-#X msg 323 189 open \$1 \, 1;
+#X msg 323 199 open \$1 \, 1;
 #X obj 323 103 sel 1, f 6;
 #X obj 885 100 player.model player.1;
 #X obj 886 140 dac~ 1 2;
@@ -1017,6 +1032,8 @@ allumé).;
 #X obj 1173 354 j.remote /player.*/play;
 #X msg 1173 333 0;
 #X obj 323 125 ggee/getdir, f 71;
+#X msg 463 52 open /Users/contourprogressif/Documents/contour_progressif/aveugle/record/2-solo-Nina_2.wav
+8.64e+06 \, 1;
 #X connect 0 0 11 0;
 #X connect 4 0 12 0;
 #X connect 5 0 13 0;
@@ -1087,6 +1104,7 @@ allumé).;
 #X connect 53 2 46 0;
 #X connect 55 0 54 0;
 #X connect 56 0 30 0;
+#X connect 57 0 8 0;
 #X restore 53 43 pd audio-input;
 #X obj 53 16 inlet;
 #N canvas 41 190 450 300 master 0;
@@ -1192,13 +1210,13 @@ l'intensité de la tâche.;
 #X obj 80 22 track.view /alex;
 #X obj 321 502 j.remote /master/brightness;
 #X obj 321 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6674 1;
 #X obj 341 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 100 1;
+-1 -1 50 1;
 #X obj 361 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 448 1;
 #X obj 381 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1195 1;
 #X text 262 610 master;
 #X text 287 733 bright;
 #X text 327 753 pitch;
@@ -1215,8 +1233,11 @@ l'intensité de la tâche.;
 #X obj 522 22 track.view /nico.2;
 #X text -41 418 limiteur de vitesse;
 #X obj 198 501 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
--262144 -1 -1 0 256;
+-262144 -1 -1 21 256;
 #X obj 198 532 j.remote /master/limit;
+#X obj 489 670 mtof;
+#X floatatom 487 639 5 0 0 0 - - -, f 5;
+#X floatatom 489 692 5 0 0 0 - - -, f 5;
 #X connect 2 0 31 0;
 #X connect 3 0 2 0;
 #X connect 20 0 1 0;
@@ -1232,6 +1253,8 @@ l'intensité de la tâche.;
 #X connect 45 0 37 0;
 #X connect 53 0 54 0;
 #X connect 54 0 53 0;
+#X connect 55 0 57 0;
+#X connect 56 0 55 0;
 #X restore 80 145 pd effet;
 #N canvas 106 71 976 624 cues 0;
 #X obj 519 191 j.cue;
@@ -1239,7 +1262,7 @@ l'intensité de la tâche.;
 #X text 576 76 Read and write cue files;
 #X obj 606 307 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
-@presetname "(null)" @hover 0 @items "000-debut" "0000-solo_Nina+Alex"
+@presetname "(null)" @hover 0 @items "000-debut" "001-solo_Nina+Alex"
 "003-Solo_alex+nina" "004-Sorciere_Celia" "Noir - Reset" @states 0
 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor
 0 0 0 1;
@@ -1287,7 +1310,7 @@ l'intensité de la tâche.;
 #N canvas 872 381 806 427 select 0;
 #X obj 106 119 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
-@presetname "(null)" @hover 0 @items "000-debut" "0000-solo_Nina+Alex"
+@presetname "(null)" @hover 0 @items "000-debut" "001-solo_Nina+Alex"
 "003-Solo_alex+nina" "004-Sorciere_Celia" "Noir - Reset" @states 0
 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor
 0 0 0 1;
@@ -1359,7 +1382,7 @@ l'intensité de la tâche.;
 #N canvas 0 136 450 300 cue-move 0;
 #X obj 106 107 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
-@presetname "(null)" @hover 0 @items "000-debut" "0000-solo_Nina+Alex"
+@presetname "(null)" @hover 0 @items "000-debut" "001-solo_Nina+Alex"
 "003-Solo_alex+nina" "004-Sorciere_Celia" "Noir - Reset" @states 0
 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5 1 @textcolor
 0 0 0 1;

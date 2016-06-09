@@ -34,7 +34,7 @@ newDevice:/alex/send-14 0.000000
 newDevice:/alex/send-15 0.000000
 newDevice:/alex/send-16 0.000000
 newDevice:/alex/send-17 0.000000
-newDevice:/alex/send-18 0.000000
+newDevice:/alex/send-18 30.000000
 newDevice:/alex/send-19 0.000000
 newDevice:/alex/send-2 0.000000
 newDevice:/alex/send-20 0.000000
@@ -144,8 +144,53 @@ newDevice:/celia/send-fx/vague.2/largeur 0.000000
 newDevice:/celia/send-fx/vague.2/level 0.000000
 newDevice:/celia/send-fx/vague.3/largeur 0.000000
 newDevice:/celia/send-fx/vague.3/level 0.000000
+newDevice:/nina/send-1 0.000000
+newDevice:/nina/send-10 0.000000
+newDevice:/nina/send-11 0.000000
+newDevice:/nina/send-12 0.000000
+newDevice:/nina/send-13 0.000000
+newDevice:/nina/send-14 0.000000
+newDevice:/nina/send-15 0.000000
+newDevice:/nina/send-16 0.000000
+newDevice:/nina/send-17 0.000000
+newDevice:/nina/send-18 0.000000
+newDevice:/nina/send-19 0.000000
+newDevice:/nina/send-2 0.000000
+newDevice:/nina/send-20 0.000000
+newDevice:/nina/send-21 0.000000
+newDevice:/nina/send-22 0.000000
+newDevice:/nina/send-23 0.000000
+newDevice:/nina/send-24 0.000000
+newDevice:/nina/send-25 0.000000
+newDevice:/nina/send-26 0.000000
+newDevice:/nina/send-27 0.000000
+newDevice:/nina/send-28 0.000000
+newDevice:/nina/send-29 30.000000
+newDevice:/nina/send-3 0.000000
+newDevice:/nina/send-30 0.000000
+newDevice:/nina/send-31 0.000000
+newDevice:/nina/send-32 0.000000
+newDevice:/nina/send-33 0.000000
+newDevice:/nina/send-34 0.000000
+newDevice:/nina/send-35 0.000000
+newDevice:/nina/send-36 0.000000
+newDevice:/nina/send-37 0.000000
+newDevice:/nina/send-38 0.000000
+newDevice:/nina/send-39 0.000000
+newDevice:/nina/send-4 0.000000
+newDevice:/nina/send-40 0.000000
+newDevice:/nina/send-5 0.000000
+newDevice:/nina/send-6 0.000000
+newDevice:/nina/send-7 0.000000
+newDevice:/nina/send-8 0.000000
+newDevice:/nina/send-9 0.000000
+newDevice:/nina/brightness/level 0.000000
+newDevice:/nina/pitch/level 0.000000
+newDevice:/nina/constantq/proj/level 0.000000
 
-- cue "0000-solo_Nina+Alex"
+
+
+- cue "001-solo_Nina+Alex"
 - description "something about this cue"
 # ###########################################
 # 

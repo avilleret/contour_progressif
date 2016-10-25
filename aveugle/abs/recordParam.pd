@@ -1,0 +1,5 @@
+#N canvas 0 22 517 299 10;
+#X obj 149 140 j.remote \$1;
+#X obj 230 140 j.parameter record/\$1 @type decimal;
+#X connect 0 0 1 0;
+#X connect 1 0 0 0;

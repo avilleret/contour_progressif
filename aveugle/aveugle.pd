@@ -1,4 +1,4 @@
-#N canvas 105 48 386 544 10;
+#N canvas 103 48 386 544 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
 #X declare -stdpath grrrr;
@@ -7,7 +7,7 @@
 #X declare -path ../abs_light;
 #X declare -path ../abs_light;
 #X declare -path ../abs_light;
-#N canvas 455 664 1135 441 master 1;
+#N canvas 114 489 1135 441 master 1;
 #N canvas 704 417 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -28,15 +28,15 @@
 #X connect 7 0 3 0;
 #X restore 43 8 pd metro;
 #X obj 109 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 50 256;
+-1 -1 56 256;
 #X obj 109 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 30 256;
+-1 -1 4 256;
 #X obj 109 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 29 256;
+-1 -1 3 256;
 #X obj 109 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 13 256;
+-1 -1 5 256;
 #X obj 109 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 31 256;
+-1 -1 2 256;
 #N canvas 654 94 450 300 panic 0;
 #X obj 73 14 inlet;
 #X obj 75 40 s dmx-reset;
@@ -48,16 +48,16 @@
 #X text 3 361 Pour chaque circuit entrer le;
 #X text 12 375 numéro de grada dans la case dmx_ch;
 #X obj 289 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 25 256;
+-1 -1 6 256;
 #X obj 289 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 28 256;
+-1 -1 9 256;
 #X obj 289 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 27 256;
+-1 -1 8 256;
 #X obj 289 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 7 256;
+-1 -1 10 256;
 #X obj 289 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 12 256;
-#N canvas 1047 245 559 378 send_DMX 0;
+-1 -1 7 256;
+#N canvas 611 261 559 378 send_DMX 0;
 #N canvas 54 478 341 328 list-creation 0;
 #X msg 236 81 231;
 #X obj 137 85 until;
@@ -146,59 +146,59 @@
 #X connect 20 0 21 0;
 #X restore 43 28 pd send_DMX;
 #X obj 479 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 21 256;
+-1 -1 11 256;
 #X obj 479 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 20 256;
-#X obj 479 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 14 256;
+#X obj 479 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 13 256;
 #X obj 479 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 16 256;
-#X obj 479 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 26 256;
-#X obj 659 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 15 256;
+#X obj 479 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 12 256;
+#X obj 659 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 16 256;
 #X obj 659 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 32 256;
-#X obj 659 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 17 256;
-#X obj 659 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 19 256;
-#X obj 659 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+#X obj 659 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 18 256;
+#X obj 659 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 20 256;
+#X obj 659 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 17 256;
 #X text 316 359 1 - 9 : cyliodes;
 #X text 316 392 13 - 15 : PAR COUR;
 #X text 316 379 10 - 12 : PAR JARDIN;
 #X text 316 404 16 - 18 : PC;
 #X obj 849 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 8 256;
+-1 -1 21 256;
 #X obj 849 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 10 256;
+-1 -1 24 256;
 #X obj 849 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 23 256;
 #X obj 849 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 49 256;
+-1 -1 55 256;
 #X obj 849 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 9 256;
-#X obj 1029 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 22 256;
+#X obj 1029 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 26 256;
 #X obj 1029 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 29 256;
 #X obj 1029 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 24 256;
+-1 -1 28 256;
 #X obj 1029 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 5 256;
+-1 -1 30 256;
 #X obj 1029 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 4 256;
+-1 -1 27 256;
 #X obj 1219 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 3 256;
+-1 -1 31 256;
 #X obj 1219 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 1219 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 6 256;
+-1 -1 33 256;
 #X obj 1219 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 1219 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 2 256;
+-1 -1 32 256;
 #X obj 1399 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 1399 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
@@ -756,7 +756,7 @@
 #X restore 70 219 pd init;
 #X text 25 313 Antoine Villeret pour Contour Progressif / Mylène Benoit
 ;
-#N canvas 1361 519 465 446 README 0;
+#N canvas 81 519 465 446 README 0;
 #X text 30 128 Troubleshooting :;
 #X text 44 149 1- Le son ne controle pas les lumières ?;
 #X text 44 169 Vérifier le branchement de la carte son (Firewire +
@@ -784,10 +784,8 @@ son de 3 à 7;
 #X restore 32 87 pd bcf2000;
 #X text 46 277 2- la BCF2000 ne controle plus correctement le patch
 ?;
-#X text 48 296 Vérifier qu'elle est bien sur le preset 2 et que le
-groupe d'encodeur 1 est sélectionné (le bouton en haut à gauche
-de la partie "Encoder Group" en haut à droite de la BCF2000 doit être
-allumé).;
+#X text 48 296 Vérifier qu'elle est bien sur le preset 2 et que "BCF2000
+1" apparait dans les MIDI Settings.;
 #X restore 70 259 pd README;
 #X obj 149 198 bng 15 250 50 0 display-vague-1 empty display_vague_1
 17 7 0 10 -262144 -1 -1;
@@ -899,7 +897,7 @@ allumé).;
 #X connect 14 0 12 1;
 #X restore 80 125 pd audio-record;
 #X obj 70 371 j.minuit_device;
-#N canvas 909 184 462 215 simulation_light 0;
+#N canvas 564 240 462 215 simulation_light 0;
 #X obj 158 179 pd~ -ninsig 0 -noutsig 0, f 25;
 #X obj 158 44 loadbang;
 #X obj 158 66 del 10000;
@@ -914,185 +912,188 @@ allumé).;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 607 25 741 798 effet 1;
-#N canvas 1292 28 612 1008 sends 1;
-#X obj 3 42 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#N canvas 415 33 540 789 effet 1;
+#N canvas 407 95 612 923 sends 0;
+#X obj 3 -43 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 62 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 -23 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 82 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 -3 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 22 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 -63 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 102 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 17 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 122 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 37 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 142 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 57 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 162 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 77 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 182 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 97 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 202 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 117 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 222 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 137 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 242 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 157 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 262 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 177 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 282 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 197 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 302 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 217 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 322 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 237 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 342 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 257 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 362 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 277 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 382 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 297 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 402 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 317 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 422 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 337 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 442 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 357 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 462 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 377 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 482 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 397 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 502 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 417 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 522 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 437 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 542 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 457 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 562 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 477 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 582 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 497 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 602 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 517 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 622 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 537 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 642 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 557 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 662 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 577 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 682 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 597 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 702 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 617 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 722 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 637 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 742 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 657 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 762 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 677 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 782 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 697 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 802 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 717 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 822 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 737 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 842 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 757 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 862 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 777 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 882 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 797 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 902 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 817 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 922 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 837 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 942 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 857 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 962 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 877 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 982 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 897 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 1002 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 917 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 3 1022 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 3 937 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 3 1042 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
+#X obj 3 957 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X text 77 23 1;
-#X text 4 824 Vague.1 level;
-#X text 4 844 Vague.1 largeur;
-#X text 4 946 foret level;
-#X text 4 966 foret speed;
-#X text 4 985 Rwalk level;
-#X text 4 1006 Rwalk speed;
-#X text 4 864 Vague.2 level;
-#X text 4 905 Vague.3 level;
-#X text 4 925 Vague.3 largeur;
-#X text 4 884 Vague.2 largeur;
-#X text 77 43 2;
-#X text 77 63 3;
-#X text 77 83 4;
-#X text 77 103 5;
-#X text 77 123 6;
-#X text 77 143 7;
-#X text 77 163 8;
-#X text 77 183 9;
-#X text 77 203 10;
-#X text 77 223 11;
-#X text 77 243 12;
-#X text 77 263 13;
-#X text 77 283 14;
-#X text 77 303 15;
-#X text 77 323 16;
-#X text 77 343 17;
-#X text 77 363 18;
-#X text 77 383 19;
-#X text 77 403 20;
-#X text 77 423 21;
-#X text 77 443 22;
-#X text 77 463 23;
-#X text 77 483 24;
-#X text 77 503 25;
-#X text 77 523 26;
-#X text 77 543 27;
-#X text 77 563 28;
-#X text 77 583 29;
-#X text 77 603 30;
-#X text 77 623 31;
-#X text 77 643 32;
-#X text 77 663 33;
-#X text 77 683 34;
-#X text 77 703 35;
-#X text 77 723 36;
-#X text 77 743 37;
-#X text 77 763 38;
-#X text 77 783 39;
-#X text 77 803 40;
-#X text 109 4 alex;
-#X text 179 4 celia;
-#X text 252 4 nina;
-#X text 321 6 nico.1;
-#X text 389 5 nico.2;
-#X text 456 5 nico.3;
-#X text 534 5 nico.4;
-#X obj 104 23 send.view /alex;
-#X obj 175 23 send.view /celia;
-#X obj 244 23 send.view /nina;
-#X obj 314 23 send.view /player.1;
-#X obj 384 23 send.view /player.2;
-#X obj 454 23 send.view /player.3;
-#X obj 524 23 send.view /player.4;
-#X obj 175 23 send.view /celia;
-#X obj 175 23 send.view /celia;
-#X obj 175 23 send.view /celia;
-#X obj 175 23 send.view /celia;
-#X obj 175 23 send.view /celia;
-#X obj 175 23 send.view /celia;
-#X coords 0 1008 1 1007 1000 1255 0;
+#X text 77 -62 1;
+#X text 4 739 Vague.1 level;
+#X text 4 759 Vague.1 largeur;
+#X text 4 861 foret level;
+#X text 4 881 foret speed;
+#X text 4 900 Rwalk level;
+#X text 4 921 Rwalk speed;
+#X text 4 779 Vague.2 level;
+#X text 4 820 Vague.3 level;
+#X text 4 840 Vague.3 largeur;
+#X text 4 799 Vague.2 largeur;
+#X text 77 -42 2;
+#X text 77 -22 3;
+#X text 77 -2 4;
+#X text 77 18 5;
+#X text 77 38 6;
+#X text 77 58 7;
+#X text 77 78 8;
+#X text 77 98 9;
+#X text 77 118 10;
+#X text 77 138 11;
+#X text 77 158 12;
+#X text 77 178 13;
+#X text 77 198 14;
+#X text 77 218 15;
+#X text 77 238 16;
+#X text 77 258 17;
+#X text 77 278 18;
+#X text 77 298 19;
+#X text 77 318 20;
+#X text 77 338 21;
+#X text 77 358 22;
+#X text 77 378 23;
+#X text 77 398 24;
+#X text 77 418 25;
+#X text 77 438 26;
+#X text 77 458 27;
+#X text 77 478 28;
+#X text 77 498 29;
+#X text 77 518 30;
+#X text 77 538 31;
+#X text 77 558 32;
+#X text 77 578 33;
+#X text 77 598 34;
+#X text 77 618 35;
+#X text 77 638 36;
+#X text 77 658 37;
+#X text 77 678 38;
+#X text 77 698 39;
+#X text 77 718 40;
+#X text 109 -81 alex;
+#X text 179 -81 celia;
+#X text 252 -81 nina;
+#X text 321 -79 nico.1;
+#X text 389 -80 nico.2;
+#X text 456 -80 nico.3;
+#X text 534 -80 nico.4;
+#X obj 104 -62 send.view /alex;
+#X obj 175 -62 send.view /celia;
+#X obj 244 -62 send.view /nina;
+#X obj 314 -62 send.view /player.1;
+#X obj 384 -62 send.view /player.2;
+#X obj 454 -62 send.view /player.3;
+#X obj 524 -62 send.view /player.4;
+#X obj 175 -62 send.view /celia;
+#X obj 175 -62 send.view /celia;
+#X obj 175 -62 send.view /celia;
+#X obj 175 -62 send.view /celia;
+#X obj 175 -62 send.view /celia;
+#X obj 175 -62 send.view /celia;
+#X text 48 -59 5kW;
+#X text 45 419 5kW;
+#X text 43 496 2kW;
+#X coords 0 923 1 922 1000 1255 0;
 #X restore 100 505 pd sends;
-#N canvas 116 627 487 144 audiograph 1;
+#N canvas 116 627 487 144 audiograph 0;
 #N canvas 0 391 1280 480 audio-input 0;
 #X obj 53 188 adc~ 1;
 #X obj 183 344 outlet~;
@@ -1280,14 +1281,14 @@ allumé).;
 #X text 34 92 release;
 #X text 46 116 pitch;
 #X text 16 135 brightness;
-#X text 46 188 width;
-#X text 46 269 level;
-#X text 40 228 in max;
-#X text 40 208 in min;
-#X text 46 296 range;
-#X text 28 316 position;
-#X text 28 336 freq min;
-#X text 28 356 freq max;
+#X text 46 211 width;
+#X text 46 292 level;
+#X text 40 251 in max;
+#X text 40 231 in min;
+#X text 46 314 range;
+#X text 28 334 position;
+#X text 28 354 freq min;
+#X text 28 374 freq max;
 #N canvas 386 77 453 676 Readme 0;
 #X text 32 20 Réglage des entrées audio :;
 #X text 57 39 Changer le seuil de sorte que seul le son utile fasse
@@ -1329,13 +1330,11 @@ l'intensité de la tâche.;
 -1 1;
 #X text 37 512 audiofile;
 #X text 38 497 micros;
-#X text 46 435 level;
-#X text 22 249 smoothing;
+#X text 46 453 level;
+#X text 22 272 smoothing;
 #X text 100 6 Alex;
 #X text 205 6 Celia;
 #X text 331 5 Nina;
-#X text 437 6 Nico.1;
-#X text 547 4 Nico.2;
 #X obj 59 592 * 100;
 #X obj 120 612 j.remote /master/send;
 #X obj 80 22 track.view /alex;
@@ -1343,9 +1342,9 @@ l'intensité de la tâche.;
 #X obj 321 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 341 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 100 1;
 #X obj 361 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 100 1;
 #X obj 381 598 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X text 262 610 master;
@@ -1356,36 +1355,34 @@ l'intensité de la tâche.;
 #X obj 341 522 j.remote /master/pitch;
 #X obj 361 542 j.remote /master/spec;
 #X obj 381 562 j.remote /master/send;
-#X text 34 376 salaire;
-#X text 34 396 profit;
-#X obj 300 22 track.view /nina;
-#X obj 190 22 track.view /celia;
-#X obj 410 22 track.view /nico.1;
-#X obj 522 22 track.view /nico.2;
-#X text -41 418 limiteur de vitesse;
+#X text 34 394 salaire;
+#X text 34 414 profit;
+#X text -41 436 limiteur de vitesse;
 #X obj 198 501 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
 -262144 -1 -1 0 256;
 #X obj 198 532 j.remote /master/limit;
-#X obj 489 670 mtof;
-#X floatatom 487 639 5 0 0 0 - - -, f 5;
-#X floatatom 489 692 5 0 0 0 - - -, f 5;
-#X connect 2 0 31 0;
+#X obj 184 698 mtof;
+#X floatatom 182 667 5 0 0 0 - - -, f 5;
+#X floatatom 184 720 5 0 0 0 - - -, f 5;
+#X obj 300 22 track.view /nina;
+#X obj 190 22 track.view /celia;
+#X connect 2 0 29 0;
 #X connect 3 0 2 0;
 #X connect 20 0 1 0;
-#X connect 30 0 3 0;
-#X connect 31 0 30 0;
-#X connect 33 0 34 0;
-#X connect 34 0 33 0;
+#X connect 28 0 3 0;
+#X connect 29 0 28 0;
+#X connect 31 0 32 0;
+#X connect 32 0 31 0;
+#X connect 33 0 41 0;
+#X connect 34 0 42 0;
 #X connect 35 0 43 0;
-#X connect 36 0 44 0;
-#X connect 37 0 45 0;
+#X connect 41 0 33 0;
+#X connect 42 0 34 0;
 #X connect 43 0 35 0;
-#X connect 44 0 36 0;
-#X connect 45 0 37 0;
-#X connect 53 0 54 0;
-#X connect 54 0 53 0;
-#X connect 55 0 57 0;
-#X connect 56 0 55 0;
+#X connect 47 0 48 0;
+#X connect 48 0 47 0;
+#X connect 49 0 51 0;
+#X connect 50 0 49 0;
 #X restore 80 145 pd effet;
 #N canvas 106 71 976 624 cues 0;
 #X obj 519 191 j.cue;

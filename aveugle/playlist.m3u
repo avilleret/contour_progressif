@@ -1,13 +1,11 @@
 #EXTM3U
 #EXTINF:3,multichannel_testfile.wav
 ./sound/multichannel_testfile.wav
-#EXTINF:238,Jaipur Kawa Brass Band - Man Chali
-/Users/contourprogressif/Music/Jaipur Kawa Brass Band - 01 - Man Chali.mp3
-#EXTINF:331,Jaipur Kawa Brass Band - Sujanava
-/Users/contourprogressif/Music/Jaipur Kawa Brass Band - 04 - Sujanava.mp3
-#EXTINF:255,Jaipur Kawa Brass Band - Obassanthi
-/Users/contourprogressif/Music/Jaipur Kawa Brass Band - 06 - Obassanthi.mp3
-#EXTINF:206,Jaipur Kawa Brass Band - Moriya
-/Users/contourprogressif/Music/Jaipur Kawa Brass Band - 07 - Moriya.mp3
-#EXTINF:410,Jaipur Kawa Brass Band - Shyam Bhaé
-/Users/contourprogressif/Music/Jaipur Kawa Brass Band - 08 - Shyam Bhaé.mp3
+#EXTINF:324,BlindHaikuALEXMulti.wav
+./sound/BlindHaikuALEXMulti.wav
+#EXTINF:152,BlindHaikuCELIAMulti.wav
+./sound/BlindHaikuCELIAMulti.wav
+#EXTINF:240,BlindHaikuNINAMulti.wav
+./sound/BlindHaikuNINAMulti.wav
+#EXTINF:438,BlindfinMulti.wav
+./sound/BlindfinMulti.wav

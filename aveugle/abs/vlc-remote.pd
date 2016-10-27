@@ -1,4 +1,4 @@
-#N canvas 44 311 773 556 12;
+#N canvas 384 210 773 556 12;
 #X msg 148 390 disconnect;
 #X obj 67 220 bng 25 250 50 0 empty empty empty 0 -6 0 10 -4034 -1
 -1;
@@ -33,6 +33,8 @@
 --playlist-autostart --play-and-pause --extraint rc --rc-host localhost:3000
 \$1/../playlist.m3u;
 #X obj 140 83 del 1000;
+#X obj 304 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 10 0;
 #X connect 1 0 12 0;
 #X connect 3 0 11 0;
@@ -63,3 +65,4 @@
 #X connect 26 0 27 0;
 #X connect 27 0 25 0;
 #X connect 28 0 9 0;
+#X connect 29 0 26 0;

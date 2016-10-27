@@ -90,7 +90,7 @@ newDevice:/celia/constantq/scale.2 2000.000000
 newDevice:/celia/env-follower/threshold 16.000000
 newDevice:/celia/pitch/input/max 110.000000
 newDevice:/celia/pitch/input/min 50.000000
-newDevice:/celia/pitch/input/smoothing 5.000000
+newDevice:/celia/pitch/input/smoothing 108.000000
 newDevice:/celia/pitch/level 20.000000
 newDevice:/celia/pitch/proj/offset 12
 newDevice:/celia/pitch/proj/range 6
@@ -206,7 +206,7 @@ newDevice:/alex/constantq/proj/offset 0
 newDevice:/alex/constantq/proj/speedlimiter 12.000000
 newDevice:/alex/constantq/scale.1 396.000000
 newDevice:/alex/constantq/scale.2 74.000000
-newDevice:/alex/env-follower/release 34.000000
+newDevice:/alex/env-follower/release 2.000000
 newDevice:/alex/env-follower/threshold 14.000000
 newDevice:/alex/pitch/input/max 78.000000
 newDevice:/alex/pitch/input/min 45.000000
@@ -345,7 +345,7 @@ newDevice:/nina/env-follower/release 29.000000
 newDevice:/nina/env-follower/threshold 16.000000
 newDevice:/nina/pitch/input/max 74.000000
 newDevice:/nina/pitch/input/min 48.000000
-newDevice:/nina/pitch/input/smoothing 5.000000
+newDevice:/nina/pitch/input/smoothing 1.000000
 newDevice:/nina/pitch/level 50.000000
 newDevice:/nina/pitch/proj/width 184.000000
 newDevice:/nina/send-10 0.000000
@@ -435,7 +435,7 @@ newDevice:/alex/send-14 0.000000
 newDevice:/alex/send-15 0.000000
 newDevice:/alex/send-16 0.000000
 newDevice:/alex/send-17 0.000000
-newDevice:/alex/send-18 52.000000
+newDevice:/alex/send-18 0.000000
 newDevice:/alex/send-19 0.000000
 newDevice:/alex/send-2 0.000000
 newDevice:/alex/send-20 0.000000

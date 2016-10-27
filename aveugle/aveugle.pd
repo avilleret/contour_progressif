@@ -395,7 +395,7 @@
 #X obj 286 153 loadbang;
 #X msg 286 175 10;
 #X obj 285 48 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
--262144 -1 -1 255 256;
+-262144 -1 -1 0 256;
 #X obj 285 79 j.remote /master/limit;
 #X text 279 27 Ne pas oublié de monter le limiteur;
 #X obj 447 256 pack f f;
@@ -831,7 +831,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 608 86 538 837 effet 1;
+#N canvas 609 104 571 894 effet 1;
 #N canvas 501 41 331 860 sends 0;
 #X obj 3 -106 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
@@ -1007,7 +1007,7 @@ son de 3 à 7;
 #X obj 323 222 readsf~ 3, f 30;
 #X obj 323 157 openpanel;
 #X obj 235 124 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 53 288 *~ 1;
 #X obj 113 288 *~ 1;
 #X obj 173 288 *~ 1;
@@ -1235,7 +1235,7 @@ plus ou moins large sur plusieurs projecteurs. L'amplitude contrôle
 l'intensité de la tâche.;
 #X restore 100 595 pd Readme;
 #X obj 21 527 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
--1 1;
+-1 0;
 #X text 37 542 audiofile;
 #X text 38 527 micros;
 #X text 46 483 level;
@@ -1252,14 +1252,14 @@ l'intensité de la tâche.;
 #X obj 341 628 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 361 628 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 11704 1;
+-1 -1 0 1;
 #X obj 381 628 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X text 262 640 master;
-#X text 287 763 bright;
-#X text 327 783 pitch;
-#X text 375 784 send;
-#X text 350 763 freq;
+#X text 293 762 bright;
+#X text 322 777 pitch;
+#X text 381 762 send;
+#X text 364 787 freq;
 #X obj 341 552 j.remote /master/pitch;
 #X obj 361 572 j.remote /master/spec;
 #X obj 381 592 j.remote /master/send;
@@ -1267,7 +1267,7 @@ l'intensité de la tâche.;
 #X text 34 444 profit;
 #X text -41 466 limiteur de vitesse;
 #X obj 198 531 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
--262144 -1 -1 255 256;
+-262144 -1 -1 0 256;
 #X obj 198 562 j.remote /master/limit;
 #X obj 184 728 mtof;
 #X floatatom 182 697 5 0 0 0 - - -, f 5;
@@ -1276,6 +1276,16 @@ l'intensité de la tâche.;
 #X obj 190 22 track.view /celia;
 #X floatatom 22 566 5 0 0 0 - - -, f 5;
 #X text -2 581 << audio >>;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X floatatom 102 102 5 0 0 0 - - -, f 5;
+#X obj 85 46 * 100;
+#X obj 84 69 i;
+#X obj 83 10 inlet;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X coords 0 -1 1 1 35 20 2 100 100;
+#X restore 361 812 pd;
 #X connect 2 0 29 0;
 #X connect 3 0 2 0;
 #X connect 20 0 1 0;
@@ -1285,6 +1295,7 @@ l'intensité de la tâche.;
 #X connect 32 0 31 0;
 #X connect 33 0 41 0;
 #X connect 34 0 42 0;
+#X connect 34 0 56 0;
 #X connect 35 0 43 0;
 #X connect 41 0 33 0;
 #X connect 42 0 34 0;

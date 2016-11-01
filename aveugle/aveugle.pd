@@ -4,7 +4,7 @@
 #X declare -stdpath grrrr;
 #X declare -stdpath grrrr;
 #X declare -stdpath grrrr;
-#N canvas 95 542 1135 441 master 0;
+#N canvas 88 199 1135 441 master 0;
 #N canvas 704 417 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -93,30 +93,31 @@
 #X connect 12 0 13 0;
 #X connect 14 0 1 0;
 #X connect 15 0 8 0;
-#X restore 267 46 pd list-creation;
-#X obj 295 103 l;
-#X obj 144 12 r value;
-#X obj 178 39 r index;
+#X restore 237 46 pd list-creation;
+#X obj 265 103 l;
+#X obj 114 12 r value;
+#X obj 148 39 r index;
 #X msg 249 213 devicename /dev/tty.usbserial-EN093215;
 #X obj 249 189 loadbang;
-#X obj 123 119 list;
-#X obj 69 75 r send-dmx;
-#X obj 123 180 route bang;
+#X obj 93 119 list;
+#X obj 39 75 r send-dmx;
+#X obj 93 180 route bang;
 #X obj 262 316 route open;
 #X obj 262 343 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 266 256 close;
 #X obj 320 349 print COMPORT;
-#X obj 199 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 169 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 144 76 list-abs/list-replace;
+#X obj 114 76 list-abs/list-replace;
 #X msg 310 257 devices;
 #X msg 333 157 open 1;
-#X obj 154 238 spigot 1;
+#X obj 124 238 spigot 1;
 #X obj 380 250 s dmx-reset;
 #X obj 211 283 comport 1;
-#X obj 169 117 list length;
-#X floatatom 169 139 5 0 0 0 - - -, f 5;
+#X obj 139 117 list length;
+#X floatatom 139 139 5 0 0 0 - - -, f 5;
+#X obj 169 186 r cut-dmx;
 #X connect 0 0 14 2;
 #X connect 0 0 6 1;
 #X connect 1 0 14 2;
@@ -141,6 +142,7 @@
 #X connect 17 0 19 0;
 #X connect 19 1 9 0;
 #X connect 20 0 21 0;
+#X connect 22 0 13 0;
 #X restore 43 28 pd send_DMX;
 #X obj 479 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 11 256;
@@ -395,7 +397,7 @@
 #X obj 286 153 loadbang;
 #X msg 286 175 10;
 #X obj 285 48 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
--262144 -1 -1 1 256;
+-262144 -1 -1 0 256;
 #X obj 285 79 j.remote /master/limit;
 #X text 279 27 Ne pas oublié de monter le limiteur;
 #X obj 447 256 pack f f;
@@ -621,8 +623,8 @@
 #X connect 81 0 80 0;
 #X connect 117 0 118 0;
 #X connect 118 0 81 0;
-#X restore 70 199 pd master;
-#N canvas 745 440 508 200 init 0;
+#X restore 30 209 pd master;
+#N canvas 745 440 508 200 init 1;
 #X msg 62 131 dsp 1;
 #X obj 62 25 loadbang;
 #X obj 62 45 del 1000;
@@ -672,8 +674,8 @@
 #X connect 6 0 0 0;
 #X connect 6 1 8 0;
 #X connect 6 2 5 0;
-#X restore 70 219 pd init;
-#X text 25 313 Antoine Villeret pour Contour Progressif / Mylène Benoit
+#X restore 30 229 pd init;
+#X text 22 313 Antoine Villeret pour Contour Progressif / Mylène Benoit
 ;
 #N canvas 81 519 465 446 README 0;
 #X text 30 128 Troubleshooting :;
@@ -705,7 +707,7 @@ son de 3 à 7;
 ?;
 #X text 48 296 Vérifier qu'elle est bien sur le preset 2 et que "BCF2000
 1" apparait dans les MIDI Settings.;
-#X restore 70 259 pd README;
+#X restore 30 269 pd README;
 #X obj 149 198 bng 15 250 50 0 display-vague-1 empty display_vague_1
 17 7 0 10 -262144 -1 -1;
 #X obj 149 218 bng 15 250 50 0 display-vague-2 empty display_vague_2
@@ -774,7 +776,7 @@ son de 3 à 7;
 #X connect 6 0 5 1;
 #X connect 7 0 5 0;
 #X restore 70 350 pd BCF2000;
-#X text 59 197 >;
+#X text 19 207 >;
 #X text 80 329 Aveuglement - 2016;
 #N canvas 40 417 431 324 audio-record 0;
 #X obj 101 122 adc~ 1 2 3;
@@ -816,7 +818,7 @@ son de 3 à 7;
 #X connect 14 0 12 1;
 #X restore 80 125 pd audio-record;
 #X obj 70 371 j.minuit_device;
-#N canvas 564 240 462 215 simulation_light 0;
+#N canvas 564 240 462 215 simulation_light 1;
 #X obj 158 179 pd~ -ninsig 0 -noutsig 0, f 25;
 #X obj 158 44 loadbang;
 #X obj 158 66 del 10000;
@@ -831,7 +833,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 685 23 571 894 effet 1;
+#N canvas 685 22 571 671 effet 1;
 #N canvas 501 41 331 860 sends 0;
 #X obj 3 -106 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
@@ -1187,7 +1189,7 @@ l'intensité de la tâche.;
 #X obj 361 628 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 381 628 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 349 1;
+-1 -1 0 1;
 #X text 262 640 master;
 #X text 293 762 bright;
 #X text 322 777 pitch;
@@ -1200,7 +1202,7 @@ l'intensité de la tâche.;
 #X text 34 444 profit;
 #X text -41 466 limiteur de vitesse;
 #X obj 198 531 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
--262144 -1 -1 1 256;
+-262144 -1 -1 0 256;
 #X obj 198 562 j.remote /master/limit;
 #X obj 184 728 mtof;
 #X floatatom 182 697 5 0 0 0 - - -, f 5;
@@ -1615,5 +1617,7 @@ l'intensité de la tâche.;
 #X connect 16 0 10 1;
 #X connect 17 0 0 0;
 #X connect 18 0 8 0;
-#X restore 70 239 pd table;
-#X obj 69 391 vlc-remote;
+#X restore 30 249 pd table;
+#X obj 70 391 vlc-remote;
+#X obj 30 191 tgl 15 0 cut-dmx cut-dmx_in stop_dmx 17 7 0 10 -262144
+-1 -1 0 1;

@@ -77,8 +77,8 @@ newDevice:/alex/send-fx/vague.3/largeur 0.000000
 newDevice:/alex/send-fx/vague.3/level 0.000000
 newDevice:/celia/brightness/input/max 100.098038
 newDevice:/celia/brightness/input/min 0.392159
-newDevice:/celia/brightness/input/smoothing 2000.000000
-newDevice:/celia/brightness/level 100.000000
+newDevice:/celia/brightness/input/smoothing 20.000000
+newDevice:/celia/brightness/level 24.000000
 newDevice:/celia/brightness/proj/offset 12
 newDevice:/celia/brightness/proj/range 6
 newDevice:/celia/brightness/proj/width 192.000000
@@ -88,10 +88,10 @@ newDevice:/celia/constantq/freq/min 360.000000
 newDevice:/celia/constantq/scale.1 5.000000
 newDevice:/celia/constantq/scale.2 2000.000000
 newDevice:/celia/env-follower/threshold 16.000000
-newDevice:/celia/pitch/input/max 110.000000
-newDevice:/celia/pitch/input/min 50.000000
-newDevice:/celia/pitch/input/smoothing 108.000000
-newDevice:/celia/pitch/level 20.000000
+newDevice:/celia/pitch/input/max 102.000000
+newDevice:/celia/pitch/input/min 55.000000
+newDevice:/celia/pitch/input/smoothing 16.000000
+newDevice:/celia/pitch/level 73.000000
 newDevice:/celia/pitch/proj/offset 12
 newDevice:/celia/pitch/proj/range 6
 newDevice:/celia/pitch/proj/width 164.000000
@@ -343,8 +343,8 @@ newDevice:/nina/constantq/scale.1 100.000000
 newDevice:/nina/constantq/scale.2 100.000000
 newDevice:/nina/env-follower/release 29.000000
 newDevice:/nina/env-follower/threshold 16.000000
-newDevice:/nina/pitch/input/max 74.000000
-newDevice:/nina/pitch/input/min 48.000000
+newDevice:/nina/pitch/input/max 79.000000
+newDevice:/nina/pitch/input/min 53.000000
 newDevice:/nina/pitch/input/smoothing 1.000000
 newDevice:/nina/pitch/level 50.000000
 newDevice:/nina/pitch/proj/width 184.000000
@@ -488,7 +488,7 @@ newDevice:/celia/constantq/freq/max 4000.000000
 newDevice:/celia/constantq/freq/min 400.000000
 newDevice:/celia/constantq/scale.1 5.000000
 newDevice:/celia/constantq/scale.2 500.000000
-newDevice:/celia/env-follower/threshold 19.000000
+newDevice:/celia/env-follower/threshold 28.000000
 newDevice:/celia/pitch/input/max 73.000000
 newDevice:/celia/pitch/input/min 50.000000
 newDevice:/celia/pitch/input/smoothing 5.000000
@@ -507,7 +507,7 @@ newDevice:/celia/send-17 0.000000
 newDevice:/celia/send-18 0.000000
 newDevice:/celia/send-19 0.000000
 newDevice:/celia/send-2 0.000000
-newDevice:/celia/send-20 90.000000
+newDevice:/celia/send-20 59.000000
 newDevice:/celia/send-21 0.000000
 newDevice:/celia/send-22 0.000000
 newDevice:/celia/send-23 0.000000

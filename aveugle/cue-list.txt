@@ -15,7 +15,7 @@ newDevice:/alex/constantq/freq/max 2011.000000
 newDevice:/alex/constantq/freq/min 200.000000
 newDevice:/alex/constantq/scale.1 144.000000
 newDevice:/alex/constantq/scale.2 100.000000
-newDevice:/alex/constantq/proj/level 26.000000
+newDevice:/alex/constantq/proj/level 0.000000
 newDevice:/alex/env-follower/release 31.000000
 newDevice:/alex/env-follower/threshold 18.000000
 newDevice:/alex/pitch/input/max 78.000000
@@ -275,8 +275,8 @@ newDevice:/celia/constantq/proj/speedlimiter 100.000000
 newDevice:/celia/constantq/scale.1 5.000000
 newDevice:/celia/constantq/scale.2 500.000000
 newDevice:/celia/env-follower/threshold 11.000000
-newDevice:/celia/pitch/input/max 73.000000
-newDevice:/celia/pitch/input/min 50.301960
+newDevice:/celia/pitch/input/max 77.000000
+newDevice:/celia/pitch/input/min 24.301960
 newDevice:/celia/pitch/input/smoothing 5.000000
 newDevice:/celia/pitch/level 0.000000
 newDevice:/celia/pitch/proj/width 231.000000

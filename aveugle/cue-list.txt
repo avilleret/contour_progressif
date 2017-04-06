@@ -345,7 +345,7 @@ newDevice:/nina/env-follower/release 29.000000
 newDevice:/nina/env-follower/threshold 16.000000
 newDevice:/nina/pitch/input/max 79.000000
 newDevice:/nina/pitch/input/min 53.000000
-newDevice:/nina/pitch/input/smoothing 1.000000
+newDevice:/nina/pitch/input/smoothing 5.000000
 newDevice:/nina/pitch/level 50.000000
 newDevice:/nina/pitch/proj/width 184.000000
 newDevice:/nina/send-10 0.000000

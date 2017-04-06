@@ -622,7 +622,6 @@ newDevice:/speed 0
 # 
 # ###########################################
 
-
 - cue "004-Sorciere_Celia-new"
 - description "something about this cue"
 # ###########################################

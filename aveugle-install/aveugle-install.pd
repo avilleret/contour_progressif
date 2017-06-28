@@ -6,7 +6,7 @@
 #X declare -stdpath grrrr;
 #X declare -stdpath grrrr;
 #X declare -stdpath grrrr;
-#N canvas 362 518 1280 975 master 1;
+#N canvas -274 126 1280 491 master 0;
 #N canvas 704 417 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -189,15 +189,15 @@
 #X obj 1029 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 1219 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 70 256;
+-1 -1 0 256;
 #X obj 1219 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 1219 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 71 256;
+-1 -1 0 256;
 #X obj 1219 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 1219 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 72 256;
+-1 -1 0 256;
 #X obj 43 108 bus_master 2;
 #X obj 43 168 bus_master 3;
 #X obj 43 228 bus_master 4;
@@ -738,7 +738,6 @@ son de 3 à 7;
 #X obj 24 145 BCFjamoma 6 /master/spec 0 1;
 #X obj 24 165 BCFjamoma 7 /master/send 0 1;
 #X obj 305 70 BCFjamoma 10 /celia/brightness/input/min 0 100;
-#X obj 305 30 BCFjamoma 8 /alex/brightness/input/min 0 100;
 #X obj 305 50 BCFjamoma 9 /alex/brightness/input/max 0 100;
 #X obj 305 90 BCFjamoma 11 /celia/brightness/input/max 0 100;
 #X obj 305 110 BCFjamoma 12 /nina/brightness/input/min 0 100;
@@ -770,10 +769,11 @@ son de 3 à 7;
 #X obj 1167 90 BCFjamoma 35 /celia/pitch/proj/width 100 300;
 #X obj 1167 50 BCFjamoma 33 /alex/pitch/proj/width 100 300;
 #X obj 1167 170 BCFjamoma 39 /nico.1/pitch/proj/width 100 300;
-#X obj 24 85 BCFjamoma 3 /master/limit 0 255;
 #X obj 24 25 BCFjamoma 0 /ch1/env-follower/gain 0 1000;
 #X obj 24 45 BCFjamoma 1 /ch2/env-follower/gain 0 1000;
 #X obj 24 65 BCFjamoma 2 /ch3/env-follower/gain 0 1000;
+#X obj 305 30 BCFjamoma 8 /master/limit 0 255;
+#X obj 24 85 BCFjamoma 3 /ch4/env-follower/gain 0 1000;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 5 0 4 1;
@@ -836,7 +836,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 598 44 664 917 effet 1;
+#N canvas 530 26 664 917 effet 1;
 #N canvas 715 200 431 789 sends 0;
 #X obj 3 -157 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -992,8 +992,8 @@ son de 3 à 7;
 #X text 77 -176 2;
 #X coords 0 789 1 788 1000 1255 0;
 #X restore 100 555 pd sends;
-#N canvas 116 627 585 175 audiograph 1;
-#N canvas 333 410 767 475 audio-input 1;
+#N canvas 116 627 585 175 audiograph 0;
+#N canvas 333 410 767 475 audio-input 0;
 #X obj -7 188 adc~ 1;
 #X obj 78 376 outlet~;
 #X obj 138 376 outlet~;
@@ -1033,7 +1033,7 @@ son de 3 à 7;
 #X obj 258 376 outlet~;
 #X obj 163 188 adc~ 4;
 #X obj 550 375 outlet~;
-#X obj 549 213 adc~ 5;
+#X obj 549 213 adc~ 5, f 64;
 #X connect 0 0 11 0;
 #X connect 4 0 12 0;
 #X connect 5 0 13 0;
@@ -1082,7 +1082,7 @@ son de 3 à 7;
 #X connect 34 0 35 0;
 #X connect 36 0 34 0;
 #X connect 38 0 37 0;
-#X restore 53 43 pd audio-input, f 64;
+#X restore 53 43 pd audio-input;
 #X obj 53 16 inlet;
 #N canvas 41 190 450 300 master 0;
 #X obj 87 58 j.parameter master/brightness @type decimal;
@@ -1188,11 +1188,11 @@ l'intensité de la tâche.;
 #X obj 120 662 j.remote /master/send;
 #X obj 321 552 j.remote /master/brightness;
 #X obj 321 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 341 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 361 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1444 1;
+-1 -1 0 1;
 #X obj 381 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X text 262 660 master;
@@ -1261,7 +1261,8 @@ l'intensité de la tâche.;
 #X obj 606 307 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @presetname "(null)" @hover 0 @items "pitch" "brightness" "freq" "all"
-"4mic" @states 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+"4mic" "bright-complementaire" "pitch-complementaire" "presentation-CT"
+@states 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
 0.5 1 @textcolor 0 0 0 1;
 #N canvas 333 202 469 357 fillmenu 0;
 #X msg 200 112 clear;
@@ -1308,7 +1309,8 @@ l'intensité de la tâche.;
 #X obj 106 119 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @presetname "(null)" @hover 0 @items "pitch" "brightness" "freq" "all"
-"4mic" @states 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+"4mic" "bright-complementaire" "pitch-complementaire" "presentation-CT"
+@states 0 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
 0.5 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;
@@ -1359,7 +1361,7 @@ l'intensité de la tâche.;
 #X obj 194 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 273 237 list trim;
-#X msg 246 339 update 4mic;
+#X msg 246 339 update presentation-CT;
 #X obj 194 189 t b b;
 #X obj 246 384 s \$0-to-j.cue;
 #X obj 273 217 list prepend set update;
@@ -1370,7 +1372,7 @@ l'intensité de la tâche.;
 #X text 210 139 update state;
 #X obj 423 237 list trim;
 #X obj 134 189 t b b;
-#X msg 423 337 delete 4mic;
+#X msg 423 337 delete presentation-CT;
 #X obj 573 237 list trim;
 #X obj 573 217 list prepend set update;
 #X msg 573 337 delete blbal;
@@ -1379,7 +1381,8 @@ l'intensité de la tâche.;
 #X obj 106 107 c.menu @size 172 17 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @presetname "(null)" @hover 0 @items "pitch" "brightness" "freq" "all"
-"4mic" @states 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5
+"4mic" "bright-complementaire" "pitch-complementaire" "presentation-CT"
+@states 0 0 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5
 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;
@@ -1634,3 +1637,39 @@ l'intensité de la tâche.;
 #X connect 17 0 0 0;
 #X connect 18 0 8 0;
 #X restore 70 239 pd table;
+#N canvas 88 469 305 291 light-ambiance 1;
+#X obj 83 64 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 13 256;
+#X obj 80 125 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 13 256;
+#X obj 83 180 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 100 256;
+#X obj 149 91 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 33 256;
+#X obj 83 90 enttec_out;
+#X obj 146 152 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 34 256;
+#X obj 80 151 enttec_out;
+#X obj 149 204 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
+-1 -1 35 256;
+#X obj 83 203 enttec_out;
+#X obj 156 28 sel 1;
+#X obj 156 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X floatatom 62 25 5 0 0 0 - - -, f 5;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 1;
+#X connect 5 0 6 1;
+#X connect 7 0 8 1;
+#X connect 9 0 0 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
+#X connect 9 1 4 0;
+#X connect 9 1 6 0;
+#X connect 9 1 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 0 0;
+#X connect 11 0 1 0;
+#X restore 66 284 pd light-ambiance;

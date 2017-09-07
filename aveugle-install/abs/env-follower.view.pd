@@ -5,9 +5,9 @@
 -1 -1 0 256;
 #X obj 103 111 nbx 3 14 0 1000 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
-#X obj 144 71 j.remote threshold;
-#X obj 144 91 j.remote gain;
-#X obj 144 111 j.remote release;
+#X obj 144 71 ossia.remote threshold;
+#X obj 144 91 ossia.remote gain;
+#X obj 144 111 ossia.remote release;
 #X obj 145 135 j.receive loudness;
 #X floatatom 145 157 5 0 0 0 - - -, f 5;
 #X obj 272 106 print env-follower;

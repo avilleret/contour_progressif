@@ -1,4 +1,4 @@
-#N canvas 243 61 967 896 10;
+#N canvas 243 122 967 896 10;
 #X declare -stdpath grrrr;
 #X obj 146 287 route bang;
 #X text 334 782 logarithmic sliders;
@@ -8,16 +8,16 @@
 #X obj 146 259 constantq~;
 #X obj 146 173 inlet~;
 #X obj 103 89 declare -stdpath grrrr;
-#X floatatom 350 37 5 0 0 0 - - -, f 5;
+#X floatatom 304 30 5 0 0 0 - - -, f 5;
 #X floatatom 350 87 5 0 0 0 - - -, f 5;
 #X msg 305 235 logfrqs \$1 \$2 \$3 \, reset;
 #X obj 304 214 pack f f f;
-#X obj 307 157 t b f;
-#X floatatom 350 157 5 0 0 0 - - -, f 5;
+#X obj 327 157 t b f;
+#X floatatom 371 157 5 0 0 0 - - -, f 5;
 #X msg 54 142 rate 20 \, logfrqs 500 5000 24 \, reset;
 #X obj 203 617 list-abs/list-pad;
 #X obj 301 543 loadbang;
-#N canvas 0 22 1898 434 output 0;
+#N canvas 0 50 1898 434 output 0;
 #X obj 63 291 bus effet1;
 #X obj 103 321 bus effet2;
 #X obj 133 291 bus effet3;
@@ -284,9 +284,9 @@
 #X connect 108 0 106 0;
 #X connect 108 0 107 0;
 #X restore 170 922 pd output;
-#X obj 203 647 list-abs/list-rot;
-#X floatatom 319 621 5 0 0 0 - - -, f 5;
-#X obj 319 648 * -1;
+#X obj 203 667 list-abs/list-rot;
+#X floatatom 333 618 5 0 0 0 - - -, f 5;
+#X obj 333 635 * -1;
 #X obj 319 286 route float;
 #X obj 203 331 list-abs/list-map;
 #X obj 340 392 rmstodb;
@@ -354,65 +354,58 @@
 #X obj 340 370 * 0;
 #X obj 340 424 * 0;
 #X obj 170 888 spigot 1;
-#X obj 394 25 j.parameter \$1/freq/min @type decimal @dataspace time
-@unit Hz @description "lower bound of frequencies range" @default 50
-;
-#X obj 394 78 j.parameter \$1/freq/max @type decimal @dataspace time
-@unit Hz @description "higher bound of frequencies range" @default
-5000;
-#X obj 394 147 j.parameter \$1/freq/bandnumber @type integer @dataspace
-time @unit Hz @description "higher bound of frequencies range" @default
-5000;
-#X obj 363 613 j.parameter \$1/proj/offset @type integer @dataspace
-time @unit Hz @description "higher bound of frequencies range" @default
-5000;
-#X obj 239 10 loadbang;
-#X msg 271 31 400;
-#X msg 304 32 4000;
-#X obj 468 246 loadbang;
+#X obj 478 242 loadbang;
 #X obj 340 486 * 1;
 #X obj 207 173 inlet;
 #X obj 207 195 / 100;
-#X floatatom 410 461 5 0 0 0 - - -, f 5;
+#X floatatom 410 462 5 0 0 0 - - -, f 5;
 #X obj 340 454 * 0;
-#X obj 454 453 j.parameter \$1/proj/level @type decimal @dataspace
-gain @unit dB @description "level" @default 0;
 #X obj 410 482 / 100;
-#X obj 411 311 j.parameter \$1/scale.1 @type decimal @dataspace gain
-@description "scale factor before dB conversion" @default 1;
-#X obj 480 370 j.parameter \$1/scale.2 @type decimal @dataspace gain
-@description "scale factor after dB conversion" @default 1;
 #X obj 439 393 / 100;
 #X obj 368 346 / 100;
-#X msg 468 268 100;
+#X msg 478 264 100;
 #X msg 20 189 rate 100;
 #X msg 17 216 reset;
 #X msg -202 48 31 63 125 250 500 1000 2000 4000 8000 16000;
-#X msg 302 565 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X msg 302 565 0;
 #X floatatom 239 228 5 0 0 0 - - -, f 5;
-#X msg 239 32 1;
-#X obj 505 506 j.parameter \$1/proj/speedlimiter @type decimal @description
+#X obj 527 506 ossia.param \$1/proj/speedlimiter @type float @description
 "proj brightness speed limiter" @default 100;
-#X floatatom 468 507 5 0 0 0 - - -, f 5;
 #X obj 13 670 switch~;
 #X msg 13 572 set 512 1 0.5;
 #X obj 13 542 loadbang;
 #X obj 40 612 > 0;
 #X obj 313 750 list-abs/list-rev;
-#X obj 358 666 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 366 695 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 313 724 spigot 0;
 #X obj 248 724 spigot 1;
-#X obj 482 712 j.parameter \$1/reverse @type bool @dataspace time @description
-"Reverse the list";
-#X obj 293 694 == 0;
+#X obj 301 688 == 0;
 #X obj 130 752 list length;
 #X floatatom 130 774 5 0 0 0 - - -, f 5;
 #X obj 552 237 until;
 #X msg 600 234 set;
-#X obj 351 185 t b f b;
+#X obj 371 185 t b f b;
 #X msg 552 259 add2 0;
 #X obj 552 282 t a;
+#X floatatom 527 541 5 0 0 0 - - -, f 5;
+#X obj 371 122 ossia.param \$1/freq/bandnumber @type int @description
+"number of frequency bands" @default 1;
+#X obj 333 570 ossia.param \$1/proj/offset @type int @description "Position
+offset in projector line" @default 0;
+#X obj 376 660 ossia.param \$1/reverse @type bool @description "Reverse
+the list";
+#X obj 509 419 ossia.param \$1/proj/level @type float @dataspace gain
+@unit gain.dB @description "level" @default 0;
+#X obj 350 39 ossia.param \$1/freq/max @type float @dataspace time
+@unit time.Hz @description "higher bound of frequencies range" @default
+5000;
+#X obj 511 365 ossia.param \$1/scale.2 @type float @description "scale
+factor after dB conversion" @default 100;
+#X obj 429 311 ossia.param \$1/scale.1 @type float @description "scale
+factor before dB conversion" @default 100;
+#X obj 304 -7 ossia.param \$1/freq/min @type float @unit time.Hz @description
+"lower bound of frequencies range" @default 50;
 #X connect 0 1 21 0;
 #X connect 2 0 29 0;
 #X connect 2 1 30 0;
@@ -442,92 +435,76 @@ gain @unit dB @description "level" @default 0;
 #X connect 4 0 0 0;
 #X connect 5 0 4 0;
 #X connect 7 0 10 0;
-#X connect 7 0 59 0;
 #X connect 8 0 11 0;
-#X connect 8 0 60 0;
 #X connect 9 0 4 0;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
 #X connect 11 1 10 1;
-#X connect 12 0 61 0;
-#X connect 12 0 101 0;
+#X connect 12 0 88 0;
 #X connect 13 0 4 0;
 #X connect 14 0 17 0;
-#X connect 15 0 82 0;
-#X connect 17 0 93 0;
-#X connect 17 0 94 0;
-#X connect 17 0 97 0;
+#X connect 15 0 72 0;
+#X connect 17 0 81 0;
+#X connect 17 0 82 0;
+#X connect 17 0 84 0;
 #X connect 18 0 19 0;
-#X connect 18 0 62 0;
 #X connect 19 0 17 1;
 #X connect 20 0 56 0;
 #X connect 20 1 21 1;
 #X connect 21 0 14 0;
 #X connect 21 1 20 0;
 #X connect 22 0 57 0;
-#X connect 23 0 74 0;
-#X connect 23 0 77 0;
+#X connect 23 0 67 0;
 #X connect 24 0 58 1;
-#X connect 25 0 75 0;
-#X connect 25 0 76 0;
+#X connect 25 0 66 0;
 #X connect 56 0 22 0;
-#X connect 57 0 71 0;
+#X connect 57 0 64 0;
 #X connect 58 0 16 0;
-#X connect 59 0 7 0;
-#X connect 60 0 8 0;
-#X connect 61 0 12 0;
-#X connect 62 0 18 0;
-#X connect 63 0 84 0;
-#X connect 63 0 64 0;
+#X connect 59 0 68 0;
+#X connect 60 0 21 1;
+#X connect 61 0 62 0;
+#X connect 62 0 60 1;
+#X connect 62 0 73 0;
 #X connect 63 0 65 0;
-#X connect 64 0 7 0;
-#X connect 65 0 8 0;
-#X connect 66 0 78 0;
-#X connect 67 0 21 1;
-#X connect 68 0 69 0;
-#X connect 69 0 67 1;
-#X connect 69 0 83 0;
-#X connect 70 0 72 0;
-#X connect 70 0 73 0;
-#X connect 71 0 67 0;
-#X connect 72 0 70 0;
-#X connect 72 0 90 0;
-#X connect 73 0 71 1;
-#X connect 74 0 23 0;
-#X connect 75 0 25 0;
-#X connect 76 0 57 1;
-#X connect 77 0 56 1;
-#X connect 78 0 23 0;
-#X connect 78 0 25 0;
-#X connect 78 0 86 0;
-#X connect 79 0 4 0;
-#X connect 80 0 4 0;
-#X connect 81 0 4 0;
-#X connect 82 0 14 1;
-#X connect 84 0 12 0;
-#X connect 85 0 86 0;
-#X connect 85 0 16 1;
-#X connect 86 0 85 0;
-#X connect 88 0 87 0;
-#X connect 89 0 88 0;
-#X connect 90 0 87 0;
-#X connect 91 0 58 0;
-#X connect 91 0 2 0;
-#X connect 92 0 93 1;
-#X connect 92 0 95 0;
-#X connect 92 0 96 0;
-#X connect 93 0 91 0;
-#X connect 94 0 58 0;
-#X connect 94 0 2 0;
-#X connect 95 0 92 0;
-#X connect 96 0 94 1;
-#X connect 97 0 98 0;
-#X connect 99 0 102 0;
-#X connect 100 0 103 0;
-#X connect 101 0 10 0;
-#X connect 101 0 103 0;
-#X connect 101 1 10 2;
-#X connect 101 1 99 0;
-#X connect 101 2 100 0;
-#X connect 102 0 103 0;
-#X connect 103 0 82 0;
+#X connect 64 0 60 0;
+#X connect 65 0 64 1;
+#X connect 66 0 57 1;
+#X connect 67 0 56 1;
+#X connect 68 0 23 0;
+#X connect 68 0 25 0;
+#X connect 69 0 4 0;
+#X connect 70 0 4 0;
+#X connect 71 0 4 0;
+#X connect 72 0 14 1;
+#X connect 74 0 16 1;
+#X connect 74 0 91 0;
+#X connect 76 0 75 0;
+#X connect 77 0 76 0;
+#X connect 78 0 75 0;
+#X connect 79 0 58 0;
+#X connect 79 0 2 0;
+#X connect 80 0 81 1;
+#X connect 80 0 83 0;
+#X connect 81 0 79 0;
+#X connect 82 0 58 0;
+#X connect 82 0 2 0;
+#X connect 83 0 82 1;
+#X connect 84 0 85 0;
+#X connect 86 0 89 0;
+#X connect 87 0 90 0;
+#X connect 88 0 10 0;
+#X connect 88 0 90 0;
+#X connect 88 1 10 2;
+#X connect 88 1 86 0;
+#X connect 88 2 87 0;
+#X connect 89 0 90 0;
+#X connect 90 0 72 0;
+#X connect 92 0 12 0;
+#X connect 93 0 18 0;
+#X connect 94 0 80 0;
+#X connect 95 0 63 0;
+#X connect 95 0 78 0;
+#X connect 96 0 8 0;
+#X connect 97 0 25 0;
+#X connect 98 0 23 0;
+#X connect 99 0 7 0;

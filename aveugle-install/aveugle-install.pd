@@ -1,13 +1,8 @@
-#N canvas 81 23 388 418 10;
+#N canvas 367 387 441 482 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
-#X declare -stdpath grrrr;
-#X declare -stdpath grrrr;
-#X declare -stdpath grrrr;
-#X declare -stdpath grrrr;
-#X declare -stdpath grrrr;
-#N canvas 362 518 1280 975 master 1;
-#N canvas 704 417 450 300 metro 0;
+#N canvas 337 577 1338 501 master 0;
+#N canvas 701 488 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
 #X obj 96 141 s metro_dmx_int;
@@ -56,7 +51,7 @@
 -1 -1 11 256;
 #X obj 289 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 14 256;
-#N canvas 611 261 559 378 send_DMX 0;
+#N canvas 605 374 559 378 send_DMX 0;
 #N canvas 54 478 341 328 list-creation 0;
 #X msg 236 81 231;
 #X obj 137 85 until;
@@ -114,35 +109,35 @@
 #X obj 144 76 list-abs/list-replace;
 #X msg 310 257 devices;
 #X msg 333 157 open 1;
-#X obj 154 238 spigot 1;
 #X obj 380 250 s dmx-reset;
 #X obj 211 283 comport 1;
 #X obj 169 117 list length;
 #X floatatom 169 139 5 0 0 0 - - -, f 5;
+#X obj 154 238 spigot 0;
 #X connect 0 0 14 2;
 #X connect 0 0 6 1;
 #X connect 1 0 14 2;
 #X connect 2 0 14 0;
 #X connect 3 0 14 1;
-#X connect 4 0 19 0;
+#X connect 4 0 18 0;
 #X connect 5 0 4 0;
-#X connect 5 0 18 0;
+#X connect 5 0 17 0;
 #X connect 6 0 8 0;
-#X connect 6 0 20 0;
+#X connect 6 0 19 0;
 #X connect 7 0 6 0;
-#X connect 8 1 17 0;
+#X connect 8 1 21 0;
 #X connect 9 0 10 0;
 #X connect 9 0 13 0;
 #X connect 9 1 12 0;
-#X connect 11 0 19 0;
-#X connect 13 0 17 1;
+#X connect 11 0 18 0;
+#X connect 13 0 21 1;
 #X connect 14 0 1 0;
 #X connect 14 0 6 1;
-#X connect 15 0 19 0;
-#X connect 16 0 19 0;
-#X connect 17 0 19 0;
-#X connect 19 1 9 0;
-#X connect 20 0 21 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 0;
+#X connect 18 1 9 0;
+#X connect 19 0 20 0;
+#X connect 21 0 18 0;
 #X restore 43 28 pd send_DMX;
 #X obj 479 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 10 256;
@@ -272,9 +267,9 @@
 #X obj 1153 140 enttec_out;
 #X obj 665 359 loadbang;
 #X obj 665 381 del 1000;
-#N canvas 195 238 668 341 check 0;
+#N canvas 195 267 668 341 check 0;
 #X obj 181 262 pack f f;
-#N canvas 0 22 1920 301 output 0;
+#N canvas 0 50 1920 301 output 0;
 #X obj 63 141 bus effet1;
 #X obj 103 171 bus effet2;
 #X obj 133 141 bus effet3;
@@ -397,11 +392,11 @@
 #X obj 286 153 loadbang;
 #X msg 286 175 10;
 #X obj 285 48 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
--262144 -1 -1 255 256;
-#X obj 285 79 j.remote /master/limit;
+-262144 -1 -1 0 256;
+#X obj 285 79 ossia.remote /master/limit;
 #X text 279 27 Ne pas oublié de monter le limiteur;
 #X obj 447 256 pack f f;
-#N canvas 0 22 1920 301 output 0;
+#N canvas 0 50 1920 301 output 0;
 #X obj 63 141 bus effet1;
 #X obj 103 171 bus effet2;
 #X obj 133 141 bus effet3;
@@ -820,24 +815,22 @@ son de 3 à 7;
 #X connect 13 0 3 0;
 #X connect 14 0 12 1;
 #X restore 80 125 pd audio-record;
-#X obj 70 371 j.minuit_device;
-#N canvas 564 240 462 215 simulation_light 0;
+#N canvas 564 298 579 215 simulation_light 0;
 #X obj 158 179 pd~ -ninsig 0 -noutsig 0, f 25;
-#X obj 158 44 loadbang;
+#X obj 158 14 loadbang;
 #X obj 158 66 del 10000;
-#X obj 48 87 r light_simulator;
-#X msg 158 91 pd~ start -nogui ./abs/light_simulator.pd;
+#X obj 23 90 r light_simulator;
 #X msg 180 119 pd~ start ./abs/light_simulator.pd;
 #X msg 194 150 pd~ stop;
-#X connect 1 0 2 0;
-#X connect 2 0 4 0;
+#X msg 158 91 pd~ start -nogui -lib Gem ./abs/light_simulator.pd;
+#X connect 2 0 6 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 598 44 664 917 effet 1;
-#N canvas 715 200 431 789 sends 0;
+#N canvas 821 163 664 917 effet 1;
+#N canvas 715 258 431 789 sends 0;
 #X obj 3 -157 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 3 -137 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
@@ -983,17 +976,17 @@ son de 3 à 7;
 #X text 179 -215 ch2;
 #X text 252 -215 ch3;
 #X text 326 -214 ch4;
-#X obj 244 -196 send.view /ch3;
 #X obj 3 -177 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;
-#X obj 314 -196 send.view /ch4;
 #X obj 106 -196 send.view /ch1;
-#X obj 175 -196 send.view /ch2;
 #X text 77 -176 2;
+#X obj 244 -196 send.view /ch3;
+#X obj 314 -196 send.view /ch4;
+#X obj 175 -196 send.view /ch2;
 #X coords 0 789 1 788 1000 1255 0;
 #X restore 100 555 pd sends;
-#N canvas 116 627 585 175 audiograph 1;
-#N canvas 333 410 767 475 audio-input 1;
+#N canvas 113 698 657 175 audiograph 0;
+#N canvas 330 452 767 475 audio-input 0;
 #X obj -7 188 adc~ 1;
 #X obj 78 376 outlet~;
 #X obj 138 376 outlet~;
@@ -1033,7 +1026,7 @@ son de 3 à 7;
 #X obj 258 376 outlet~;
 #X obj 163 188 adc~ 4;
 #X obj 550 375 outlet~;
-#X obj 549 213 adc~ 5;
+#X obj 549 213 adc~ 5, f 64;
 #X connect 0 0 11 0;
 #X connect 4 0 12 0;
 #X connect 5 0 13 0;
@@ -1082,50 +1075,35 @@ son de 3 à 7;
 #X connect 34 0 35 0;
 #X connect 36 0 34 0;
 #X connect 38 0 37 0;
-#X restore 53 43 pd audio-input, f 64;
+#X restore 53 43 pd audio-input;
 #X obj 53 16 inlet;
-#N canvas 41 190 450 300 master 0;
-#X obj 87 58 j.parameter master/brightness @type decimal;
-#X floatatom 50 59 5 0 0 0 - - -, f 5;
-#X floatatom 50 79 5 0 0 0 - - -, f 5;
-#X floatatom 50 99 5 0 0 0 - - -, f 5;
-#X floatatom 50 119 5 0 0 0 - - -, f 5;
-#X obj 87 78 j.parameter master/pitch @type decimal;
-#X obj 87 98 j.parameter master/spec @type decimal;
-#X obj 87 118 j.parameter master/send @type decimal;
-#X floatatom 50 140 5 0 0 0 - - -, f 5;
-#X obj 87 138 j.parameter master/limit @type decimal;
+#N canvas 41 277 450 300 master 0;
+#X obj 87 56 ossia.param master/brightness @type float;
+#X obj 87 98 ossia.param master/spec @type float;
+#X obj 87 118 ossia.param master/send @type float;
+#X obj 87 138 ossia.param master/limit @type float;
 #X obj 87 161 s dmxlimit;
-#X connect 0 0 1 0;
-#X connect 1 0 0 0;
-#X connect 2 0 5 0;
-#X connect 3 0 6 0;
-#X connect 4 0 7 0;
-#X connect 5 0 2 0;
-#X connect 6 0 3 0;
-#X connect 7 0 4 0;
-#X connect 8 0 9 0;
-#X connect 9 0 8 0;
-#X connect 9 0 10 0;
+#X obj 88 78 ossia.param master/pitch @type float;
+#X connect 3 0 4 0;
 #X restore 357 21 pd master;
 #X obj 140 16 inlet;
+#X obj 511 97 track.model_ ch5;
 #X obj 52 97 track.model ch1;
-#X obj 156 97 track.model ch2;
-#X obj 259 98 track.model ch3;
-#X obj 365 97 track.model ch4;
-#X obj 472 98 track.model ch5;
-#X connect 0 0 4 0;
-#X connect 0 1 5 0;
-#X connect 0 2 6 0;
+#X obj 166 97 track.model ch2;
+#X obj 395 97 track.model ch4;
+#X obj 279 97 track.model ch3;
+#X connect 0 0 5 0;
+#X connect 0 1 6 0;
+#X connect 0 2 8 0;
 #X connect 0 3 7 0;
-#X connect 0 4 8 0;
+#X connect 0 4 4 0;
 #X connect 1 0 0 0;
 #X connect 3 0 0 1;
 #X restore 100 595 pd audiograph;
-#X obj 59 681 / 100;
-#X floatatom 59 663 5 0 200 1 % - -, f 5;
-#X text 19 662 master;
-#N canvas 0 22 450 300 view 0;
+#X obj 59 703 / 100;
+#X floatatom 59 685 5 0 200 1 % - -, f 5;
+#X text 11 683 master;
+#N canvas 0 50 450 300 view 0;
 #X obj 55 52 player.view player.1;
 #X restore 100 575 pd view;
 #X text 22 51 threshold;
@@ -1185,36 +1163,36 @@ l'intensité de la tâche.;
 #X text 46 483 level;
 #X text 22 272 smoothing;
 #X obj 59 642 * 100;
-#X obj 120 662 j.remote /master/send;
-#X obj 321 552 j.remote /master/brightness;
-#X obj 321 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
-#X obj 341 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 120 662 ossia.remote /master/send;
+#X obj 401 552 ossia.remote /master/brightness;
+#X obj 401 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 10100 1;
+#X obj 421 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 361 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1444 1;
-#X obj 381 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 441 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X text 262 660 master;
-#X text 293 782 bright;
-#X text 322 797 pitch;
-#X text 381 782 send;
-#X text 364 807 freq;
-#X obj 341 572 j.remote /master/pitch;
-#X obj 361 592 j.remote /master/spec;
-#X obj 381 612 j.remote /master/send;
+#X obj 461 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 354 639 master;
+#X text 373 782 bright;
+#X text 402 797 pitch;
+#X text 461 782 send;
+#X text 444 807 freq;
+#X obj 421 572 ossia.remote /master/pitch;
+#X obj 441 592 ossia.remote /master/spec;
+#X obj 461 612 ossia.remote /master/send;
 #X text 34 424 salaire;
 #X text 34 444 profit;
 #X text -41 466 limiteur de vitesse;
 #X obj 198 551 nbx 3 28 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 24
--262144 -1 -1 255 256;
-#X obj 198 582 j.remote /master/limit;
+-262144 -1 -1 0 256;
+#X obj 198 582 ossia.remote /master/limit;
 #X obj 184 748 mtof;
 #X floatatom 182 717 5 0 0 0 - - -, f 5;
 #X floatatom 184 770 5 0 0 0 - - -, f 5;
 #X floatatom 22 586 5 0 0 0 - - -, f 5;
 #X text -2 601 << audio >>;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 0 93 450 300 (subpatch) 0;
 #X floatatom 102 102 5 0 0 0 - - -, f 5;
 #X obj 85 46 * 100;
 #X obj 84 69 i;
@@ -1222,8 +1200,8 @@ l'intensité de la tâche.;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
-#X coords 0 -1 1 1 35 20 2 100 100;
-#X restore 361 832 pd;
+#X coords 0 -1 1 1 40 20 2 100 100;
+#X restore 441 832 pd;
 #X text 100 6 ch1;
 #X text 205 6 ch2;
 #X text 331 5 ch3;
@@ -1234,11 +1212,12 @@ l'intensité de la tâche.;
 #X obj 300 22 track.view ch3;
 #X obj 405 23 track.view ch4;
 #X obj 510 23 track.view ch5;
+#X msg 59 664 set \$1;
 #X connect 2 0 26 0;
 #X connect 3 0 2 0;
 #X connect 20 0 1 0;
-#X connect 25 0 3 0;
-#X connect 26 0 25 0;
+#X connect 25 0 61 0;
+#X connect 26 1 25 0;
 #X connect 27 0 28 0;
 #X connect 28 0 27 0;
 #X connect 29 0 37 0;
@@ -1253,12 +1232,13 @@ l'intensité de la tâche.;
 #X connect 45 0 47 0;
 #X connect 46 0 45 0;
 #X connect 48 0 1 1;
+#X connect 61 0 3 0;
 #X restore 80 145 pd effet;
 #N canvas 106 71 976 624 cues 0;
 #X obj 519 191 j.cue;
 #X msg 757 406 write cue-list.txt;
 #X text 576 76 Read and write cue files;
-#X obj 606 307 c.menu @size 172 17 @fontname "Helvetica" @fontweight
+#X obj 606 307 c.menu @size 172 14 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @presetname "(null)" @hover 0 @items "pitch" "brightness" "freq" "all"
 "4mic" @states 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
@@ -1301,11 +1281,11 @@ l'intensité de la tâche.;
 #X msg 672 407 vis 1;
 #X msg 879 406 recall \$1;
 #X msg 534 409 vis 1;
-#N canvas 784 22 418 321 cue-update 0;
+#N canvas 784 50 418 321 cue-update 0;
 #X obj 2 1 cnv 15 400 200 empty empty empty 400 300 0 14 -261682 -66577
 0;
 #N canvas 872 381 806 427 select 0;
-#X obj 106 119 c.menu @size 172 17 @fontname "Helvetica" @fontweight
+#X obj 106 119 c.menu @size 172 14 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @presetname "(null)" @hover 0 @items "pitch" "brightness" "freq" "all"
 "4mic" @states 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
@@ -1376,11 +1356,11 @@ l'intensité de la tâche.;
 #X msg 573 337 delete blbal;
 #N canvas 0 108 450 300 cue-move 0;
 #N canvas 0 136 450 300 cue-move 0;
-#X obj 106 107 c.menu @size 172 17 @fontname "Helvetica" @fontweight
+#X obj 106 107 c.menu @size 172 14 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @presetname "(null)" @hover 0 @items "pitch" "brightness" "freq" "all"
-"4mic" @states 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5 0.5
-1 @textcolor 0 0 0 1;
+"4mic" @states 0 0 0 0 0 @bgcolor 0.75 0.75 0.75 1 @bdcolor 0.5 0.5
+0.5 1 @textcolor 0 0 0 1;
 #N canvas 519 214 469 357 fillmenu 0;
 #X msg 200 112 clear;
 #X obj 144 220 list;
@@ -1578,7 +1558,7 @@ l'intensité de la tâche.;
 #X connect 42 0 0 0;
 #X coords 0 -1 1 1 200 80 2 600 300;
 #X restore 47 20 pd cues;
-#N canvas 0 22 225 584 table 0;
+#N canvas 0 50 225 584 table 0;
 #N canvas 320 257 450 300 gauss 0;
 #X obj 26 13 inlet;
 #X obj 27 253 outlet;
@@ -1634,3 +1614,6 @@ l'intensité de la tâche.;
 #X connect 17 0 0 0;
 #X connect 18 0 8 0;
 #X restore 70 239 pd table;
+#X obj 70 396 ossia.device aveuglant;
+#X msg 88 373 register;
+#X connect 17 0 16 0;

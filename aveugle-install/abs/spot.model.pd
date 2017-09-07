@@ -1,19 +1,13 @@
-#N canvas 545 46 780 950 10;
+#N canvas 542 93 933 950 10;
 #X obj 266 713 *;
 #X obj 266 808 f;
 #X obj 266 787 t b f;
 #X obj 266 829 pack f f;
-#N canvas 37 450 240 188 table-\$1 1;
+#N canvas 34 490 240 188 table-\$1 1;
 #N canvas 296 261 627 288 (subpatch) 0;
 #X array \$0-vague-\$1 48 float 1;
-#A 0 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
-1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
-1.80182e-05 0.0254225 0.757191 0.476074 0.0063186 1.56239e-05 1.56239e-05
-1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
-1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
-1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
-1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
-1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 47 -1 200 140 1 0 0;
 #X restore 15 19 graph;
 #X restore 420 828 pd table-\$1;
@@ -30,7 +24,7 @@
 #X obj 134 538 /;
 #X obj 134 560 * 12;
 #X obj 134 582 + 60;
-#X floatatom 251 425 5 0 0 0 - - -, f 5;
+#X floatatom 278 462 5 0 0 0 - - -, f 5;
 #X floatatom 211 425 5 0 0 0 - - -, f 5;
 #X obj 211 445 t b f;
 #X obj 252 499 -;
@@ -50,24 +44,19 @@
 #X msg 226 288 resize \$1;
 #X obj 220 16 inlet;
 #X obj 134 280 t f f, f 9;
-#X floatatom 278 648 5 0 0 0 - - -, f 5;
+#X floatatom 270 648 5 0 0 0 - - -, f 5;
 #X text 254 46 spot position;
 #X obj 134 759 tabwrite \$0-vague-\$1;
 #X obj 423 289 loadbang;
-#X msg 357 327 45;
-#X msg 445 324 70;
-#X obj 212 356 j.parameter \$1/input/min @type decimal @dataspace time
-@unit midinote;
-#X obj 444 409 j.parameter \$1/input/max @type decimal @dataspace time
-@unit midinote;
-#X obj 285 591 j.parameter \$1/proj/width @type decimal @description
+#X msg 386 327 45;
+#X obj 285 591 ossia.param \$1/proj/width @type float @description
 "spread width of light blob";
-#X obj 314 639 j.parameter \$1/level @type decimal @range 0 1 @description
+#X obj 314 639 ossia.param \$1/level @type float @range 0 1 @description
 "output level";
 #X obj 266 755 *;
 #X obj 304 717 inlet;
 #X obj 314 676 / 100;
-#N canvas 0 22 1920 301 output 0;
+#N canvas 0 50 1920 301 output 0;
 #X obj 63 141 bus effet1;
 #X obj 103 171 bus effet2;
 #X obj 133 141 bus effet3;
@@ -188,11 +177,13 @@
 #X obj 206 219 f 0;
 #X obj 95 218 value proj-num;
 #X obj 272 320 s \$0-vague-\$1;
-#X connect 0 0 47 0;
+#X obj 278 439 ossia.param \$1/input/max @type float @default 70;
+#X obj 239 357 ossia.param \$1/input/min @type float @default 45;
+#X connect 0 0 44 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 2 1 3 1;
-#X connect 3 0 50 0;
+#X connect 3 0 47 0;
 #X connect 5 0 31 1;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
@@ -210,9 +201,7 @@
 #X connect 15 0 16 0;
 #X connect 16 0 22 0;
 #X connect 17 0 20 0;
-#X connect 17 0 44 0;
 #X connect 18 0 19 0;
-#X connect 18 0 43 0;
 #X connect 19 0 20 0;
 #X connect 19 1 20 1;
 #X connect 19 1 16 1;
@@ -221,51 +210,47 @@
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
 #X connect 24 0 13 0;
-#X connect 25 0 45 0;
-#X connect 25 0 51 0;
-#X connect 30 0 67 0;
-#X connect 31 0 54 0;
+#X connect 25 0 48 0;
+#X connect 30 0 64 0;
+#X connect 31 0 51 0;
 #X connect 32 0 14 0;
 #X connect 33 0 34 0;
-#X connect 34 0 67 0;
+#X connect 34 0 64 0;
 #X connect 35 0 5 0;
 #X connect 36 0 9 0;
 #X connect 36 1 14 1;
 #X connect 36 1 33 0;
-#X connect 37 0 46 0;
 #X connect 40 0 41 0;
-#X connect 40 0 42 0;
-#X connect 40 0 64 0;
-#X connect 41 0 43 0;
-#X connect 42 0 44 0;
-#X connect 43 0 18 0;
-#X connect 44 0 17 0;
-#X connect 45 0 25 0;
-#X connect 46 0 37 0;
-#X connect 46 0 49 0;
-#X connect 47 0 2 0;
-#X connect 48 0 47 1;
-#X connect 49 0 0 1;
-#X connect 51 0 53 0;
-#X connect 53 0 23 1;
+#X connect 40 0 61 0;
+#X connect 41 0 66 0;
+#X connect 42 0 25 0;
+#X connect 43 0 37 0;
+#X connect 43 0 46 0;
+#X connect 44 0 2 0;
+#X connect 45 0 44 1;
+#X connect 46 0 0 1;
+#X connect 48 0 50 0;
+#X connect 50 0 23 1;
+#X connect 50 0 49 0;
+#X connect 51 0 63 0;
+#X connect 51 1 62 0;
+#X connect 51 2 22 1;
+#X connect 51 3 30 0;
+#X connect 51 4 56 0;
+#X connect 52 0 54 0;
 #X connect 53 0 52 0;
-#X connect 54 0 66 0;
-#X connect 54 1 65 0;
-#X connect 54 2 22 1;
-#X connect 54 3 30 0;
-#X connect 54 4 59 0;
-#X connect 55 0 57 0;
-#X connect 56 0 55 0;
-#X connect 57 0 58 0;
-#X connect 57 0 62 0;
-#X connect 58 0 57 1;
-#X connect 59 0 56 0;
-#X connect 59 1 60 0;
-#X connect 60 0 57 1;
-#X connect 61 0 59 0;
-#X connect 62 0 50 0;
-#X connect 63 0 8 1;
-#X connect 64 0 45 0;
-#X connect 65 0 10 1;
-#X connect 65 0 32 1;
-#X connect 66 0 36 0;
+#X connect 54 0 55 0;
+#X connect 54 0 59 0;
+#X connect 55 0 54 1;
+#X connect 56 0 53 0;
+#X connect 56 1 57 0;
+#X connect 57 0 54 1;
+#X connect 58 0 56 0;
+#X connect 59 0 47 0;
+#X connect 60 0 8 1;
+#X connect 61 0 42 0;
+#X connect 62 0 10 1;
+#X connect 62 0 32 1;
+#X connect 63 0 36 0;
+#X connect 65 0 17 0;
+#X connect 66 0 18 0;

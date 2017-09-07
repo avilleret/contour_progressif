@@ -23,10 +23,10 @@
 -1 -1 0 256;
 #X obj 103 143 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
-#X obj 144 103 j.parameter threshold @type decimal @range -70 0;
-#X obj 144 123 j.parameter ratio @type decimal @range 0 10 @default
+#X obj 144 103 ossia.param threshold @type float @range -70 0;
+#X obj 144 123 ossia.param ratio @type float @range 0 10 @default
 3;
-#X obj 144 143 j.parameter gain @type decimal @range 0 10 @default
+#X obj 144 143 ossia.param gain @type float @range 0 10 @default
 3;
 #X connect 0 0 2 0;
 #X connect 1 0 13 0;

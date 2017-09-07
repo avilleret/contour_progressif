@@ -9,14 +9,14 @@
 #X obj 101 241 numbox3;
 #X obj 101 261 numbox3;
 #X text 91 82 busSend;
-#X obj 175 120 j.remote \$1/send-2 @type decimal @range 0 100;
-#X obj 175 140 j.remote \$1/send-3 @type decimal @range 0 100;
-#X obj 175 160 j.remote \$1/send-4 @type decimal @range 0 100;
-#X obj 175 180 j.remote \$1/send-5 @type decimal @range 0 100;
-#X obj 175 200 j.remote \$1/send-6 @type decimal @range 0 100;
-#X obj 175 220 j.remote \$1/send-7 @type decimal @range 0 100;
-#X obj 175 240 j.remote \$1/send-8 @type decimal @range 0 100;
-#X obj 175 260 j.remote \$1/send-9 @type decimal @range 0 100;
+#X obj 175 120 ossia.remote \$1/send-2 @type float @range 0 100;
+#X obj 175 140 ossia.remote \$1/send-3 @type float @range 0 100;
+#X obj 175 160 ossia.remote \$1/send-4 @type float @range 0 100;
+#X obj 175 180 ossia.remote \$1/send-5 @type float @range 0 100;
+#X obj 175 200 ossia.remote \$1/send-6 @type float @range 0 100;
+#X obj 175 220 ossia.remote \$1/send-7 @type float @range 0 100;
+#X obj 175 240 ossia.remote \$1/send-8 @type float @range 0 100;
+#X obj 175 260 ossia.remote \$1/send-9 @type float @range 0 100;
 #X text 95 891 -------;
 #X obj 101 281 numbox3;
 #X obj 101 301 numbox3;
@@ -27,24 +27,24 @@
 #X obj 101 401 numbox3;
 #X obj 101 421 numbox3;
 #X obj 101 441 numbox3;
-#X obj 175 280 j.remote \$1/send-10 @type decimal @range 0 100;
-#X obj 175 300 j.remote \$1/send-11 @type decimal @range 0 100;
-#X obj 175 320 j.remote \$1/send-12 @type decimal @range 0 100;
-#X obj 175 339 j.remote \$1/send-13 @type decimal @range 0 100;
-#X obj 175 360 j.remote \$1/send-14 @type decimal @range 0 100;
-#X obj 175 380 j.remote \$1/send-15 @type decimal @range 0 100;
-#X obj 175 401 j.remote \$1/send-16 @type decimal @range 0 100;
-#X obj 175 420 j.remote \$1/send-17 @type decimal @range 0 100;
-#X obj 175 440 j.remote \$1/send-18 @type decimal @range 0 100;
+#X obj 175 280 ossia.remote \$1/send-10 @type float @range 0 100;
+#X obj 175 300 ossia.remote \$1/send-11 @type float @range 0 100;
+#X obj 175 320 ossia.remote \$1/send-12 @type float @range 0 100;
+#X obj 175 339 ossia.remote \$1/send-13 @type float @range 0 100;
+#X obj 175 360 ossia.remote \$1/send-14 @type float @range 0 100;
+#X obj 175 380 ossia.remote \$1/send-15 @type float @range 0 100;
+#X obj 175 401 ossia.remote \$1/send-16 @type float @range 0 100;
+#X obj 175 420 ossia.remote \$1/send-17 @type float @range 0 100;
+#X obj 175 440 ossia.remote \$1/send-18 @type float @range 0 100;
 #X obj 101 461 numbox3;
 #X obj 101 481 numbox3;
-#X obj 175 461 j.remote \$1/send-19 @type decimal @range 0 100;
-#X obj 175 480 j.remote \$1/send-20 @type decimal @range 0 100;
+#X obj 175 461 ossia.remote \$1/send-19 @type float @range 0 100;
+#X obj 175 480 ossia.remote \$1/send-20 @type float @range 0 100;
 #X obj 100 903 numbox3;
-#X obj 174 902 j.remote \$1/send-fx/vague.1/level @type decimal @range
+#X obj 174 902 ossia.remote \$1/send-fx/vague.1/level @type float @range
 0 100;
 #X obj 100 923 numbox3;
-#X obj 174 922 j.remote \$1/send-fx/vague.1/largeur @type decimal @range
+#X obj 174 922 ossia.remote \$1/send-fx/vague.1/largeur @type float @range
 0 100, f 63;
 #X obj 100 943 numbox3;
 #X text 93 971 -------;
@@ -55,25 +55,25 @@
 #X obj 100 1023 numbox3;
 #X text 93 1051 -------;
 #X obj 100 1043 numbox3;
-#X obj 174 942 j.remote \$1/send-fx/vague.2/level @type decimal @range
+#X obj 174 942 ossia.remote \$1/send-fx/vague.2/level @type float @range
 0 100;
-#X obj 174 962 j.remote \$1/send-fx/vague.2/largeur @type decimal @range
+#X obj 174 962 ossia.remote \$1/send-fx/vague.2/largeur @type float @range
 0 100, f 63;
-#X obj 174 982 j.remote \$1/send-fx/vague.3/level @type decimal @range
+#X obj 174 982 ossia.remote \$1/send-fx/vague.3/level @type float @range
 0 100;
-#X obj 175 1002 j.remote \$1/send-fx/vague.3/largeur @type decimal
+#X obj 175 1002 ossia.remote \$1/send-fx/vague.3/largeur @type float
 @range 0 100, f 63;
-#X obj 174 1022 j.remote \$1/send-fx/foret/level @type decimal @range
+#X obj 174 1022 ossia.remote \$1/send-fx/foret/level @type float @range
 0 100;
-#X obj 174 1042 j.remote \$1/send-fx/foret/speed @type decimal @range
+#X obj 174 1042 ossia.remote \$1/send-fx/foret/speed @type float @range
 0 100;
 #X text 93 931 -------;
 #X obj 100 1063 numbox3;
 #X text 93 1091 -------;
 #X obj 100 1083 numbox3;
-#X obj 174 1062 j.remote \$1/send-fx/Rwalk/level @type decimal @range
+#X obj 174 1062 ossia.remote \$1/send-fx/Rwalk/level @type float @range
 0 100;
-#X obj 174 1082 j.remote \$1/send-fx/Rwalk/speed @type decimal @range
+#X obj 174 1082 ossia.remote \$1/send-fx/Rwalk/speed @type float @range
 0 100;
 #X obj 101 501 numbox3;
 #X obj 101 521 numbox3;
@@ -95,29 +95,29 @@
 #X obj 101 841 numbox3;
 #X obj 101 861 numbox3;
 #X obj 101 881 numbox3;
-#X obj 175 500 j.remote \$1/send-21 @type decimal @range 0 100;
-#X obj 175 520 j.remote \$1/send-22 @type decimal @range 0 100;
-#X obj 175 539 j.remote \$1/send-23 @type decimal @range 0 100;
-#X obj 175 560 j.remote \$1/send-24 @type decimal @range 0 100;
-#X obj 175 580 j.remote \$1/send-25 @type decimal @range 0 100;
-#X obj 175 601 j.remote \$1/send-26 @type decimal @range 0 100;
-#X obj 175 620 j.remote \$1/send-27 @type decimal @range 0 100;
-#X obj 175 640 j.remote \$1/send-28 @type decimal @range 0 100;
-#X obj 175 661 j.remote \$1/send-29 @type decimal @range 0 100;
-#X obj 175 680 j.remote \$1/send-30 @type decimal @range 0 100;
-#X obj 175 700 j.remote \$1/send-31 @type decimal @range 0 100;
-#X obj 175 720 j.remote \$1/send-32 @type decimal @range 0 100;
-#X obj 175 739 j.remote \$1/send-33 @type decimal @range 0 100;
-#X obj 175 760 j.remote \$1/send-34 @type decimal @range 0 100;
-#X obj 175 780 j.remote \$1/send-35 @type decimal @range 0 100;
-#X obj 175 801 j.remote \$1/send-36 @type decimal @range 0 100;
-#X obj 175 820 j.remote \$1/send-37 @type decimal @range 0 100;
-#X obj 175 840 j.remote \$1/send-38 @type decimal @range 0 100;
-#X obj 175 860 j.remote \$1/send-39 @type decimal @range 0 100;
-#X obj 175 880 j.remote \$1/send-40 @type decimal @range 0 100;
+#X obj 175 500 ossia.remote \$1/send-21 @type float @range 0 100;
+#X obj 175 520 ossia.remote \$1/send-22 @type float @range 0 100;
+#X obj 175 539 ossia.remote \$1/send-23 @type float @range 0 100;
+#X obj 175 560 ossia.remote \$1/send-24 @type float @range 0 100;
+#X obj 175 580 ossia.remote \$1/send-25 @type float @range 0 100;
+#X obj 175 601 ossia.remote \$1/send-26 @type float @range 0 100;
+#X obj 175 620 ossia.remote \$1/send-27 @type float @range 0 100;
+#X obj 175 640 ossia.remote \$1/send-28 @type float @range 0 100;
+#X obj 175 661 ossia.remote \$1/send-29 @type float @range 0 100;
+#X obj 175 680 ossia.remote \$1/send-30 @type float @range 0 100;
+#X obj 175 700 ossia.remote \$1/send-31 @type float @range 0 100;
+#X obj 175 720 ossia.remote \$1/send-32 @type float @range 0 100;
+#X obj 175 739 ossia.remote \$1/send-33 @type float @range 0 100;
+#X obj 175 760 ossia.remote \$1/send-34 @type float @range 0 100;
+#X obj 175 780 ossia.remote \$1/send-35 @type float @range 0 100;
+#X obj 175 801 ossia.remote \$1/send-36 @type float @range 0 100;
+#X obj 175 820 ossia.remote \$1/send-37 @type float @range 0 100;
+#X obj 175 840 ossia.remote \$1/send-38 @type float @range 0 100;
+#X obj 175 860 ossia.remote \$1/send-39 @type float @range 0 100;
+#X obj 175 880 ossia.remote \$1/send-40 @type float @range 0 100;
 #X msg 224 76 dump;
 #X obj 449 119 print remote_dump;
-#X obj 175 100 j.remote \$1/send-1 @type decimal @range 0 100;
+#X obj 175 100 ossia.remote \$1/send-1 @type float @range 0 100;
 #X connect 0 0 108 0;
 #X connect 1 0 10 0;
 #X connect 2 0 11 0;

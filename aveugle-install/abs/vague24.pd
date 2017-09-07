@@ -44,9 +44,9 @@
 #X obj 134 90 f;
 #X obj 134 487 -;
 #X floatatom 234 192 5 0 0 0 - - -, f 5;
-#X obj 268 190 j.parameter proj/offset @type integer @description "projector
+#X obj 268 190 ossia.param proj/offset @type integer @description "projector
 index to start with";
-#X obj 285 591 j.parameter proj/spread @type decimal @description "spread
+#X obj 285 591 ossia.param proj/spread @type float @description "spread
 width of light blob";
 #X obj 355 640 inlet;
 #X obj 356 728 * 1;
@@ -110,17 +110,17 @@ width of light blob";
 #X restore 266 811 pd output;
 #X obj 133 280 t f f, f 9;
 #X floatatom 369 682 5 0 0 0 - - -, f 5;
-#X obj 405 673 j.parameter level @type decimal @range 0 1 @description
+#X obj 405 673 ossia.param level @type float @range 0 1 @description
 "output level";
 #X text 254 46 spot position;
 #X obj 557 155 print dumpout;
 #X msg 433 113 dump;
-#X obj 177 144 j.parameter proj/number @type integer @description "number
+#X obj 177 144 ossia.param proj/number @type integer @description "number
 of projectors to use";
 #X obj 134 759 tabwrite \$0-vague-\$1;
-#X obj 207 355 j.parameter input/min @type decimal @dataspace time
+#X obj 207 355 ossia.param input/min @type float @dataspace time
 @unit midinote;
-#X obj 383 408 j.parameter input/max @type decimal @dataspace time
+#X obj 383 408 ossia.param input/max @type float @dataspace time
 @unit midinote;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;

@@ -1,7 +1,7 @@
-#N canvas 367 387 441 482 10;
+#N canvas 367 445 441 482 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
-#N canvas 337 577 1338 501 master 0;
+#N canvas 73 236 1338 501 master 0;
 #N canvas 701 488 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -20,17 +20,17 @@
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
 #X connect 7 0 3 0;
-#X restore 43 8 pd metro;
+#X restore 33 8 pd metro;
 #X obj 109 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 21 256;
+-1 -1 1 256;
 #X obj 109 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 18 256;
+-1 -1 4 256;
 #X obj 109 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 19 256;
+-1 -1 3 256;
 #X obj 109 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 17 256;
+-1 -1 5 256;
 #X obj 109 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 20 256;
+-1 -1 2 256;
 #N canvas 654 94 450 300 panic 0;
 #X obj 73 14 inlet;
 #X obj 75 40 s dmx-reset;
@@ -38,20 +38,20 @@
 #X restore 116 27 pd panic;
 #X obj 115 9 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 43 48 bus_master 1;
+#X obj 33 48 bus_master 1;
 #X text 3 361 Pour chaque circuit entrer le;
 #X text 12 375 numéro de grada dans la case dmx_ch;
 #X obj 289 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 15 256;
+-1 -1 6 256;
 #X obj 289 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 12 256;
+-1 -1 9 256;
 #X obj 289 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 13 256;
+-1 -1 8 256;
 #X obj 289 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 11 256;
+-1 -1 10 256;
 #X obj 289 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 14 256;
-#N canvas 605 374 559 378 send_DMX 0;
+-1 -1 7 256;
+#N canvas 523 155 559 378 send_DMX 0;
 #N canvas 54 478 341 328 list-creation 0;
 #X msg 236 81 231;
 #X obj 137 85 until;
@@ -94,7 +94,6 @@
 #X obj 295 103 l;
 #X obj 144 12 r value;
 #X obj 178 39 r index;
-#X msg 249 213 devicename /dev/tty.usbserial-EN093215;
 #X obj 249 189 loadbang;
 #X obj 123 119 list;
 #X obj 69 75 r send-dmx;
@@ -110,69 +109,67 @@
 #X msg 310 257 devices;
 #X msg 333 157 open 1;
 #X obj 380 250 s dmx-reset;
-#X obj 211 283 comport 1;
 #X obj 169 117 list length;
 #X floatatom 169 139 5 0 0 0 - - -, f 5;
 #X obj 154 238 spigot 0;
-#X connect 0 0 14 2;
-#X connect 0 0 6 1;
-#X connect 1 0 14 2;
-#X connect 2 0 14 0;
-#X connect 3 0 14 1;
-#X connect 4 0 18 0;
-#X connect 5 0 4 0;
+#X obj 211 283 comport 32;
+#X connect 0 0 13 2;
+#X connect 0 0 5 1;
+#X connect 1 0 13 2;
+#X connect 2 0 13 0;
+#X connect 3 0 13 1;
+#X connect 4 0 16 0;
+#X connect 5 0 7 0;
 #X connect 5 0 17 0;
-#X connect 6 0 8 0;
-#X connect 6 0 19 0;
-#X connect 7 0 6 0;
-#X connect 8 1 21 0;
-#X connect 9 0 10 0;
-#X connect 9 0 13 0;
-#X connect 9 1 12 0;
-#X connect 11 0 18 0;
-#X connect 13 0 21 1;
-#X connect 14 0 1 0;
-#X connect 14 0 6 1;
-#X connect 15 0 18 0;
-#X connect 16 0 18 0;
-#X connect 18 1 9 0;
+#X connect 6 0 5 0;
+#X connect 7 1 19 0;
+#X connect 8 0 9 0;
+#X connect 8 0 12 0;
+#X connect 8 1 11 0;
+#X connect 10 0 20 0;
+#X connect 12 0 19 1;
+#X connect 13 0 1 0;
+#X connect 13 0 5 1;
+#X connect 14 0 20 0;
+#X connect 15 0 20 0;
+#X connect 17 0 18 0;
 #X connect 19 0 20 0;
-#X connect 21 0 18 0;
-#X restore 43 28 pd send_DMX;
+#X connect 20 1 8 0;
+#X restore 33 28 pd send_DMX;
 #X obj 479 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 10 256;
+-1 -1 11 256;
 #X obj 479 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 7 256;
+-1 -1 14 256;
 #X obj 479 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 8 256;
+-1 -1 13 256;
 #X obj 479 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 6 256;
+-1 -1 15 256;
 #X obj 479 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 9 256;
+-1 -1 12 256;
 #X obj 659 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 5 256;
+-1 -1 16 256;
 #X obj 659 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 2 256;
+-1 -1 19 256;
 #X obj 659 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 3 256;
+-1 -1 18 256;
 #X obj 659 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 20 256;
 #X obj 659 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 4 256;
+-1 -1 17 256;
 #X text 316 359 1 - 9 : cyliodes;
 #X text 316 392 13 - 15 : PAR COUR;
 #X text 316 379 10 - 12 : PAR JARDIN;
 #X text 316 404 16 - 18 : PC;
 #X obj 849 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 0 256;
+-1 -1 21 256;
 #X obj 849 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 0 256;
+-1 -1 24 256;
 #X obj 849 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 0 256;
+-1 -1 23 256;
 #X obj 849 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 849 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 0 256;
+-1 -1 22 256;
 #X obj 1029 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 1029 261 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
@@ -193,78 +190,78 @@
 -1 -1 0 256;
 #X obj 1219 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 72 256;
-#X obj 43 108 bus_master 2;
-#X obj 43 168 bus_master 3;
-#X obj 43 228 bus_master 4;
-#X obj 43 288 bus_master 5;
-#X obj 223 47 bus_master 6;
-#X obj 223 108 bus_master 7;
-#X obj 223 168 bus_master 8;
-#X obj 223 288 bus_master 10;
-#X obj 413 48 bus_master 11;
-#X obj 413 108 bus_master 12;
-#X obj 413 168 bus_master 13;
-#X obj 413 227 bus_master 14;
-#X obj 413 288 bus_master 15;
-#X obj 593 47 bus_master 16;
-#X obj 593 108 bus_master 17;
-#X obj 593 168 bus_master 18;
-#X obj 593 227 bus_master 19;
-#X obj 593 288 bus_master 20;
-#X obj 783 48 bus_master 21;
-#X obj 783 108 bus_master 22;
-#X obj 783 168 bus_master 23;
-#X obj 783 228 bus_master 24;
-#X obj 783 288 bus_master 25;
-#X obj 963 47 bus_master 26;
-#X obj 963 109 bus_master 27;
-#X obj 963 168 bus_master 28;
-#X obj 963 228 bus_master 29;
-#X obj 963 288 bus_master 30;
-#X obj 1153 48 bus_master 31;
-#X obj 1153 108 bus_master 32;
-#X obj 1153 168 bus_master 33;
-#X obj 1153 227 bus_master 34;
-#X obj 1153 288 bus_master 35;
-#X obj 223 227 bus_master 9;
+#X obj 33 108 bus_master 2;
+#X obj 33 168 bus_master 3;
+#X obj 33 228 bus_master 4;
+#X obj 33 288 bus_master 5;
+#X obj 213 47 bus_master 6;
+#X obj 213 108 bus_master 7;
+#X obj 213 168 bus_master 8;
+#X obj 213 288 bus_master 10;
+#X obj 403 48 bus_master 11;
+#X obj 403 108 bus_master 12;
+#X obj 403 168 bus_master 13;
+#X obj 403 227 bus_master 14;
+#X obj 403 288 bus_master 15;
+#X obj 583 47 bus_master 16;
+#X obj 583 108 bus_master 17;
+#X obj 583 168 bus_master 18;
+#X obj 583 227 bus_master 19;
+#X obj 583 288 bus_master 20;
+#X obj 773 48 bus_master 21;
+#X obj 773 108 bus_master 22;
+#X obj 773 168 bus_master 23;
+#X obj 773 228 bus_master 24;
+#X obj 773 288 bus_master 25;
+#X obj 953 47 bus_master 26;
+#X obj 953 109 bus_master 27;
+#X obj 953 168 bus_master 28;
+#X obj 953 228 bus_master 29;
+#X obj 953 288 bus_master 30;
+#X obj 1143 48 bus_master 31;
+#X obj 1143 108 bus_master 32;
+#X obj 1143 168 bus_master 33;
+#X obj 1143 227 bus_master 34;
+#X obj 1143 288 bus_master 35;
+#X obj 213 227 bus_master 9;
 #X obj 665 422 s proj-num;
 #X obj 665 401 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 20 256;
-#X obj 43 320 enttec_out;
-#X obj 43 80 enttec_out;
-#X obj 43 260 enttec_out;
-#X obj 43 200 enttec_out;
-#X obj 43 140 enttec_out;
-#X obj 223 80 enttec_out;
-#X obj 223 260 enttec_out;
-#X obj 223 200 enttec_out;
-#X obj 223 320 enttec_out;
-#X obj 223 140 enttec_out;
-#X obj 413 80 enttec_out;
-#X obj 413 260 enttec_out;
-#X obj 413 200 enttec_out;
-#X obj 413 320 enttec_out;
-#X obj 413 140 enttec_out;
-#X obj 593 80 enttec_out;
-#X obj 593 260 enttec_out;
-#X obj 593 200 enttec_out;
-#X obj 593 320 enttec_out;
-#X obj 593 140 enttec_out;
-#X obj 783 80 enttec_out;
-#X obj 783 260 enttec_out;
-#X obj 783 200 enttec_out;
-#X obj 783 320 enttec_out;
-#X obj 783 140 enttec_out;
-#X obj 963 80 enttec_out;
-#X obj 963 260 enttec_out;
-#X obj 963 200 enttec_out;
-#X obj 963 320 enttec_out;
-#X obj 963 140 enttec_out;
-#X obj 1153 80 enttec_out;
-#X obj 1153 260 enttec_out;
-#X obj 1153 200 enttec_out;
-#X obj 1153 320 enttec_out;
-#X obj 1153 140 enttec_out;
+#X obj 33 320 enttec_out;
+#X obj 33 80 enttec_out;
+#X obj 33 260 enttec_out;
+#X obj 33 200 enttec_out;
+#X obj 33 140 enttec_out;
+#X obj 213 80 enttec_out;
+#X obj 213 260 enttec_out;
+#X obj 213 200 enttec_out;
+#X obj 213 320 enttec_out;
+#X obj 213 140 enttec_out;
+#X obj 403 80 enttec_out;
+#X obj 403 260 enttec_out;
+#X obj 403 200 enttec_out;
+#X obj 403 320 enttec_out;
+#X obj 403 140 enttec_out;
+#X obj 583 80 enttec_out;
+#X obj 583 260 enttec_out;
+#X obj 583 200 enttec_out;
+#X obj 583 320 enttec_out;
+#X obj 583 140 enttec_out;
+#X obj 773 80 enttec_out;
+#X obj 773 260 enttec_out;
+#X obj 773 200 enttec_out;
+#X obj 773 320 enttec_out;
+#X obj 773 140 enttec_out;
+#X obj 953 80 enttec_out;
+#X obj 953 260 enttec_out;
+#X obj 953 200 enttec_out;
+#X obj 953 320 enttec_out;
+#X obj 953 140 enttec_out;
+#X obj 1143 80 enttec_out;
+#X obj 1143 260 enttec_out;
+#X obj 1143 200 enttec_out;
+#X obj 1143 320 enttec_out;
+#X obj 1143 140 enttec_out;
 #X obj 665 359 loadbang;
 #X obj 665 381 del 1000;
 #N canvas 195 267 668 341 check 0;
@@ -539,7 +536,7 @@
 #X connect 27 2 28 0;
 #X connect 28 0 25 1;
 #X connect 29 0 24 0;
-#X restore 225 14 pd check;
+#X restore 215 14 pd check;
 #X text 148 78 5kW;
 #X text 701 197 2kW;
 #X text 891 321 5kW;
@@ -829,7 +826,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 821 163 664 917 effet 1;
+#N canvas 821 84 664 708 effet 1;
 #N canvas 715 258 431 789 sends 0;
 #X obj 3 -157 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -1166,7 +1163,7 @@ l'intensité de la tâche.;
 #X obj 120 662 ossia.remote /master/send;
 #X obj 401 552 ossia.remote /master/brightness;
 #X obj 401 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 10100 1;
+-1 -1 0 1;
 #X obj 421 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 441 648 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144

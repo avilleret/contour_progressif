@@ -1,4 +1,4 @@
-#N canvas 367 445 441 482 10;
+#N canvas 324 242 441 482 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
 #N canvas 73 236 1338 501 master 0;
@@ -619,7 +619,7 @@
 #X connect 117 0 118 0;
 #X connect 118 0 81 0;
 #X restore 70 199 pd master;
-#N canvas 745 440 508 200 init 0;
+#N canvas 745 498 508 200 init 0;
 #X msg 62 131 dsp 1;
 #X obj 62 25 loadbang;
 #X obj 62 45 del 1000;
@@ -662,13 +662,14 @@
 #X restore 123 103 pd midisetting;
 #X obj 62 67 t b b b;
 #X obj 182 42 declare -lib Jamoma -lib zexy -lib Cream;
-#X obj 107 131 selectAudioDevice (0)PreSonus_FP10_(0121);
+#X obj 107 153 print;
+#X obj 107 131 selectAudioDevice UMC404HD_192k_(hardware);
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;
 #X connect 6 0 0 0;
-#X connect 6 1 8 0;
-#X connect 6 2 5 0;
+#X connect 6 1 9 0;
+#X connect 9 0 8 0;
 #X restore 70 219 pd init;
 #X text 25 313 Antoine Villeret pour Contour Progressif / Mylène Benoit
 ;
@@ -826,7 +827,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 821 84 664 708 effet 1;
+#N canvas 751 62 664 708 effet 1;
 #N canvas 715 258 431 789 sends 0;
 #X obj 3 -157 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -1611,6 +1612,8 @@ l'intensité de la tâche.;
 #X connect 17 0 0 0;
 #X connect 18 0 8 0;
 #X restore 70 239 pd table;
-#X obj 70 396 ossia.device aveuglant;
-#X msg 88 373 register;
+#X obj 68 435 ossia.device aveuglant;
+#X msg 86 412 namespace;
+#X obj 68 457 print;
+#X connect 16 0 18 0;
 #X connect 17 0 16 0;

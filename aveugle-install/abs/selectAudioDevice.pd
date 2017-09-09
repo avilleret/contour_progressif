@@ -1,4 +1,4 @@
-#N canvas 106 114 741 710 10;
+#N canvas 147 55 741 710 10;
 #X text 260 104 audiosettings - query and manipulate audio-settings
 ;
 #X msg 48 172 listdevices;
@@ -29,9 +29,9 @@
 #X obj 377 441 sel \$1;
 #X obj 80 94 inlet;
 #X obj 473 487 outlet;
-#X msg 310 669 driver portaudio \, params @input \$1 8 \, params @output
-\$1 8;
 #X obj 48 261 mediasettings/audiosettings;
+#X msg 310 669 driver ALSA \, params @input \$1 4 \, params @output
+\$1 4;
 #X connect 1 0 14 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
@@ -47,7 +47,7 @@
 #X connect 12 0 11 0;
 #X connect 13 0 16 0;
 #X connect 14 0 13 0;
-#X connect 14 1 29 0;
+#X connect 14 1 28 0;
 #X connect 14 2 15 0;
 #X connect 15 0 13 1;
 #X connect 16 0 24 0;
@@ -58,9 +58,9 @@
 #X connect 21 0 1 0;
 #X connect 22 0 18 0;
 #X connect 24 0 19 0;
-#X connect 24 1 28 0;
+#X connect 24 1 29 0;
 #X connect 25 0 10 0;
 #X connect 25 1 12 0;
 #X connect 26 0 1 0;
-#X connect 28 0 29 0;
-#X connect 29 0 3 0;
+#X connect 28 0 3 0;
+#X connect 29 0 28 0;

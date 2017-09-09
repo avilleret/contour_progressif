@@ -1,4 +1,4 @@
-#N canvas 196 513 858 290 10;
+#N canvas 196 542 858 290 10;
 #X obj 263 8 inlet~;
 #X obj 30 173 env-follower.model \$1/env-follower;
 #X obj 30 243 send.model \$1/send;
@@ -63,7 +63,7 @@ after iir" @accessèmode get;
 #X connect 12 0 10 0;
 #X connect 13 1 9 0;
 #X restore 315 160 pd brightness;
-#N canvas 0 320 1001 411 pitch 0;
+#N canvas 0 349 1001 411 pitch 1;
 #X obj 143 87 unpack;
 #X obj 188 189 mapping/iir 5;
 #X obj 143 109 moses 30;
@@ -82,25 +82,25 @@ after iir" @accessèmode get;
 #X connect 1 0 2 0;
 #X connect 3 1 0 0;
 #X connect 4 1 1 0;
-#X restore 299 284 pd master;
-#X floatatom 321 312 5 0 0 0 - - -, f 5;
+#X restore 317 275 pd master;
+#X floatatom 339 303 5 0 0 0 - - -, f 5;
 #X obj 188 306 spot.model \$1/pitch;
 #X obj 73 30 inlet~;
 #X obj 415 360 switch~ 512 1 0.25;
 #X obj 415 318 > 0;
-#X obj 415 340 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 415 340 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 188 134 mapping/resample 50;
 #X floatatom 198 156 5 0 0 0 - - -, f 5;
 #X obj 155 10 loadbang;
 #X msg 155 32 amp-range 20 80 \, vibrato 50 0.5 \, reattack 100 10
 ;
-#X obj 196 218 ossia.param \$1/pitch @description "Tracked pitch after
-iir" @access_mode get;
 #X obj 415 274 ossia.remote /\$1/pitch/level;
+#X obj 196 218 ossia.param \$1/pitch @description "Tracked pitch after
+iir";
 #X connect 0 0 2 0;
 #X connect 1 0 8 0;
-#X connect 1 0 17 0;
+#X connect 1 0 18 0;
 #X connect 2 1 13 0;
 #X connect 3 0 1 1;
 #X connect 4 0 3 0;
@@ -114,7 +114,7 @@ iir" @access_mode get;
 #X connect 13 0 1 0;
 #X connect 15 0 16 0;
 #X connect 16 0 5 0;
-#X connect 18 1 11 0;
+#X connect 17 1 11 0;
 #X restore 438 160 pd pitch;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;

@@ -1,4 +1,4 @@
-#N canvas 0 93 932 785 10;
+#N canvas 1 84 932 708 10;
 #X floatatom 406 214 5 0 0 0 - - -, f 5;
 #X obj 794 297 r \$1/pitch;
 #X floatatom 794 319 5 0 0 0 - - -, f 5;
@@ -6,13 +6,13 @@
 #X obj 406 131 nbx 3 14 -99 100 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
 #X obj 406 151 nbx 3 14 0 1000 0 1 empty empty empty 0 -8 0 10 -262144
--1 -1 12 256;
+-1 -1 300 256;
 #X obj 406 171 nbx 3 14 0 1000 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 3 256;
 #X floatatom 491 81 5 0 0 0 - - -, f 5;
 #X msg 510 106 dump;
 #X obj 464 106 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 772 1;
+-1 -1 12700 1;
 #X text 342 130 threshold;
 #X text 372 150 gain;
 #X text 354 171 release;
@@ -68,7 +68,7 @@
 #X obj 509 563 ossia.remote \$1/constantq/proj/level;
 #X obj 509 443 ossia.remote \$1/constantq/proj/offset;
 #X obj 444 106 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3793 1;
+-1 -1 3534 1;
 #X obj 510 231 cyclone/speedlim 100;
 #X obj 264 76 cyclone/speedlim 100;
 #X floatatom 264 98 5 0 0 0 - - -, f 5;
@@ -87,6 +87,8 @@
 #X obj 510 212 ossia.remote \$1/brightness;
 #X obj 464 59 ossia.remote \$1/env-follower/loudness;
 #X obj 424 39 ossia.remote \$1/env-follower/loudness_pre;
+#X obj 806 171 print;
+#X msg 614 106 getaddress;
 #X connect 1 0 2 0;
 #X connect 4 0 39 0;
 #X connect 5 0 40 0;
@@ -107,6 +109,7 @@
 #X connect 31 0 50 0;
 #X connect 32 0 54 0;
 #X connect 39 0 4 0;
+#X connect 39 2 82 0;
 #X connect 40 0 5 0;
 #X connect 41 0 6 0;
 #X connect 42 0 21 0;
@@ -141,4 +144,5 @@
 #X connect 80 0 7 0;
 #X connect 80 0 9 0;
 #X connect 81 0 66 0;
+#X connect 83 0 39 0;
 #X coords 0 -1 1 1 100 510 1 400 100;

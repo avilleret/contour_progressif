@@ -1,7 +1,7 @@
-#N canvas 145 140 441 482 10;
+#N canvas 145 169 441 482 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
-#N canvas 73 236 1338 501 master 0;
+#N canvas 73 265 1338 501 master 1;
 #N canvas 701 488 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -51,7 +51,7 @@
 -1 -1 10 256;
 #X obj 289 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 7 256;
-#N canvas 523 155 559 378 send_DMX 0;
+#N canvas 523 184 559 378 send_DMX 1;
 #N canvas 54 478 341 328 list-creation 0;
 #X msg 236 81 231;
 #X obj 137 85 until;
@@ -103,7 +103,7 @@
 1;
 #X msg 266 256 close;
 #X obj 320 349 print COMPORT;
-#X obj 199 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 199 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 144 76 list-abs/list-replace;
 #X msg 310 257 devices;
@@ -111,8 +111,8 @@
 #X obj 380 250 s dmx-reset;
 #X obj 169 117 list length;
 #X floatatom 169 139 5 0 0 0 - - -, f 5;
-#X obj 154 238 spigot 0;
 #X obj 211 283 comport 32;
+#X obj 154 238 spigot 1;
 #X connect 0 0 13 2;
 #X connect 0 0 5 1;
 #X connect 1 0 13 2;
@@ -122,19 +122,19 @@
 #X connect 5 0 7 0;
 #X connect 5 0 17 0;
 #X connect 6 0 5 0;
-#X connect 7 1 19 0;
+#X connect 7 1 20 0;
 #X connect 8 0 9 0;
 #X connect 8 0 12 0;
 #X connect 8 1 11 0;
-#X connect 10 0 20 0;
-#X connect 12 0 19 1;
+#X connect 10 0 19 0;
+#X connect 12 0 20 1;
 #X connect 13 0 1 0;
 #X connect 13 0 5 1;
-#X connect 14 0 20 0;
-#X connect 15 0 20 0;
+#X connect 14 0 19 0;
+#X connect 15 0 19 0;
 #X connect 17 0 18 0;
-#X connect 19 0 20 0;
-#X connect 20 1 8 0;
+#X connect 19 1 8 0;
+#X connect 20 0 19 0;
 #X restore 33 28 pd send_DMX;
 #X obj 479 81 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 11 256;
@@ -827,7 +827,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 751 149 664 708 effet 1;
+#N canvas 751 178 664 708 effet 1;
 #N canvas 715 258 431 789 sends 0;
 #X obj 3 -157 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -1615,8 +1615,8 @@ l'intensité de la tâche.;
 #X obj 68 435 ossia.device aveuglant;
 #X msg 86 412 namespace;
 #X obj 68 457 print;
-#N canvas 1 166 468 544 preset 1;
-#N canvas 1 224 731 559 /ch1 1;
+#N canvas 1 195 468 544 preset 1;
+#N canvas 96 446 731 559 /ch1 0;
 #X obj 121 218 ossia.remote \$1/pitch/proj/width;
 #X obj 121 238 ossia.remote \$1/pitch/input/min;
 #X obj 121 258 ossia.remote \$1/pitch/input/max;

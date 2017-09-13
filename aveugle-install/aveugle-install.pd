@@ -1,7 +1,7 @@
-#N canvas 93 96 441 529 10;
+#N canvas 93 125 441 529 10;
 #X declare -path abs -path abs_light;
 #X declare -lib Jamoma -lib zexy -lib Cream;
-#N canvas 73 381 1338 501 master 1;
+#N canvas 3 136 1338 501 master 1;
 #N canvas 701 488 450 300 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -673,7 +673,7 @@
 #X restore 70 219 pd init;
 #X text 25 313 Antoine Villeret pour Contour Progressif / Mylène Benoit
 ;
-#N canvas 81 519 465 446 README 0;
+#N canvas 46 289 465 446 README 0;
 #X text 30 128 Troubleshooting :;
 #X text 44 149 1- Le son ne controle pas les lumières ?;
 #X text 44 169 Vérifier le branchement de la carte son (Firewire +
@@ -813,7 +813,7 @@ son de 3 à 7;
 #X connect 13 0 3 0;
 #X connect 14 0 12 1;
 #X restore 80 125 pd audio-record;
-#N canvas 564 298 579 215 simulation_light 0;
+#N canvas 564 327 579 215 simulation_light 0;
 #X obj 158 179 pd~ -ninsig 0 -noutsig 0, f 25;
 #X obj 158 14 loadbang;
 #X obj 158 66 del 10000;
@@ -827,7 +827,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 550 55 671 708 effet 1;
+#N canvas 550 84 671 708 effet 1;
 #N canvas 715 287 431 789 sends 0;
 #X obj 3 -157 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -1204,23 +1204,33 @@ l'intensité de la tâche.;
 #X text 31 509 reverse;
 #X msg 59 664 set \$1;
 #X obj 300 22 track.view ch3;
-#X obj 195 727 nbx 5 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+#X obj 195 697 nbx 5 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 10 256;
-#N canvas 0 151 450 300 directs 0;
-#X obj 114 33 inlet;
-#X obj 114 55 bus effet21;
-#X obj 124 75 bus effet22;
-#X obj 133 95 bus effet23;
-#X obj 144 115 bus effet24;
+#N canvas 1 180 450 300 directs 0;
+#X obj 40 82 inlet;
+#X obj 40 104 bus effet21;
+#X obj 137 82 inlet;
+#X obj 226 81 inlet;
+#X obj 323 81 inlet;
+#X obj 137 104 bus effet22;
+#X obj 226 103 bus effet23;
+#X obj 323 103 bus effet24;
 #X connect 0 0 1 0;
-#X connect 0 0 2 0;
-#X connect 0 0 3 0;
-#X connect 0 0 4 0;
-#X restore 195 744 pd directs;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X restore 195 784 pd directs;
 #X obj 80 22 track.view ch1;
 #X obj 190 22 track.view ch2;
 #X obj 405 23 track.view ch4;
 #X obj 510 23 track.view ch5;
+#X obj 217 717 nbx 5 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 10 256;
+#X obj 239 737 nbx 5 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 10 256;
+#X obj 262 757 nbx 5 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 10 256;
+#X text 115 737 PC micros :;
 #X connect 2 0 26 0;
 #X connect 3 0 2 0;
 #X connect 20 0 1 0;
@@ -1240,6 +1250,9 @@ l'intensité de la tâche.;
 #X connect 45 0 1 1;
 #X connect 53 0 3 0;
 #X connect 55 0 56 0;
+#X connect 61 0 56 1;
+#X connect 62 0 56 2;
+#X connect 63 0 56 3;
 #X restore 80 145 pd effet;
 #N canvas 106 71 976 624 cues 0;
 #X obj 519 191 j.cue;
@@ -2024,7 +2037,7 @@ l'intensité de la tâche.;
 #X restore 320 154 pd preset;
 #X obj 17 483 route namespace;
 #X obj 17 505 print;
-#N canvas 1 108 450 300 check-projos 0;
+#N canvas 1 137 450 300 check-projos 1;
 #X obj 218 223 pack f f;
 #N canvas 0 50 1920 301 output 0;
 #X obj 63 141 bus effet1;

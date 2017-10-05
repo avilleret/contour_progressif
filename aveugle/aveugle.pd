@@ -159,7 +159,7 @@
 #X obj 659 201 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 6 256;
 #X obj 659 321 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
--1 -1 0 256;
+-1 -1 23 256;
 #X obj 659 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 19 256;
 #X text 316 359 1 - 9 : cyliodes;
@@ -831,7 +831,7 @@ son de 3 à 7;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 165 pd simulation_light;
-#N canvas 504 26 664 917 effet 1;
+#N canvas 698 38 664 917 effet 1;
 #N canvas 994 42 331 667 sends 0;
 #X obj 3 -299 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
 0;

@@ -1,28 +1,28 @@
-#N canvas 768 82 718 708 10;
-#X obj 74 -72 ossia.param \$1-5 @type float @range 0 100;
-#X obj 74 -52 ossia.param \$1-6 @type float @range 0 100;
-#X obj 74 -32 ossia.param \$1-7 @type float @range 0 100;
-#X obj 74 -12 ossia.param \$1-8 @type float @range 0 100;
-#X obj 74 8 ossia.param \$1-9 @type float @range 0 100;
+#N canvas 370 224 718 708 10;
+#X obj 74 -72 ossia.param send.5 @type float @range 0 100;
+#X obj 74 -52 ossia.param send.6 @type float @range 0 100;
+#X obj 74 -32 ossia.param send.7 @type float @range 0 100;
+#X obj 74 -12 ossia.param send.8 @type float @range 0 100;
+#X obj 74 8 ossia.param send.9 @type float @range 0 100;
 #X obj -134 -91 outlet;
 #X text -6 639 -------;
-#X obj 74 28 ossia.param \$1-10 @type float @range 0 100;
-#X obj 74 48 ossia.param \$1-11 @type float @range 0 100;
-#X obj 74 68 ossia.param \$1-12 @type float @range 0 100;
-#X obj 74 87 ossia.param \$1-13 @type float @range 0 100;
-#X obj 74 108 ossia.param \$1-14 @type float @range 0 100;
-#X obj 74 128 ossia.param \$1-15 @type float @range 0 100;
-#X obj 74 149 ossia.param \$1-16 @type float @range 0 100;
-#X obj 74 168 ossia.param \$1-17 @type float @range 0 100;
-#X obj 74 188 ossia.param \$1-18 @type float @range 0 100;
-#X obj 74 209 ossia.param \$1-19 @type float @range 0 100;
-#X obj 74 228 ossia.param \$1-20 @type float @range 0 100;
+#X obj 74 28 ossia.param send.10 @type float @range 0 100;
+#X obj 74 48 ossia.param send.11 @type float @range 0 100;
+#X obj 74 68 ossia.param send.12 @type float @range 0 100;
+#X obj 74 87 ossia.param send.13 @type float @range 0 100;
+#X obj 74 108 ossia.param send.14 @type float @range 0 100;
+#X obj 74 128 ossia.param send.15 @type float @range 0 100;
+#X obj 74 149 ossia.param send.16 @type float @range 0 100;
+#X obj 74 168 ossia.param send.17 @type float @range 0 100;
+#X obj 74 188 ossia.param send.18 @type float @range 0 100;
+#X obj 74 209 ossia.param send.19 @type float @range 0 100;
+#X obj 74 228 ossia.param send.20 @type float @range 0 100;
 #X obj -153 -182 inlet;
 #X obj 1 653 numbox3;
-#X obj 75 652 ossia.param \$1-fx/vague.1/level @type float @range 0
+#X obj 75 652 ossia.param send.fx/vague.1/level @type float @range 0
 100;
 #X obj 1 673 numbox3;
-#X obj 75 672 ossia.param \$1-fx/vague.1/largeur @type float @range
+#X obj 75 672 ossia.param send.fx/vague.1/largeur @type float @range
 0 100, f 63;
 #X obj 1 693 numbox3;
 #X text -6 721 -------;
@@ -33,25 +33,25 @@
 #X obj 1 773 numbox3;
 #X text -6 801 -------;
 #X obj 1 793 numbox3;
-#X obj 75 692 ossia.param \$1-fx/vague.2/level @type float @range 0
+#X obj 75 692 ossia.param send.fx/vague.2/level @type float @range 0
 100;
-#X obj 75 712 ossia.param \$1-fx/vague.2/largeur @type float @range
+#X obj 75 712 ossia.param send.fx/vague.2/largeur @type float @range
 0 100, f 63;
-#X obj 75 732 ossia.param \$1-fx/vague.3/level @type float @range 0
+#X obj 75 732 ossia.param send.fx/vague.3/level @type float @range 0
 100;
-#X obj 76 752 ossia.param \$1-fx/vague.3/largeur @type float @range
+#X obj 76 752 ossia.param send.fx/vague.3/largeur @type float @range
 0 100, f 63;
-#X obj 75 772 ossia.param \$1-fx/foret/level @type float @range 0 100
+#X obj 75 772 ossia.param send.fx/foret/level @type float @range 0 100
 ;
-#X obj 75 792 ossia.param \$1-fx/foret/speed @type float @range 0 100
+#X obj 75 792 ossia.param send.fx/foret/speed @type float @range 0 100
 ;
 #X text -6 681 -------;
 #X obj 1 813 numbox3;
 #X text -6 841 -------;
 #X obj 1 833 numbox3;
-#X obj 75 812 ossia.param \$1-fx/Rwalk/level @type float @range 0 100
+#X obj 75 812 ossia.param send.fx/Rwalk/level @type float @range 0 100
 ;
-#X obj 75 832 ossia.param \$1-fx/Rwalk/speed @type float @range 0 100
+#X obj 75 832 ossia.param send.fx/Rwalk/speed @type float @range 0 100
 ;
 #N canvas 399 330 969 338 bus_fx 0;
 #X obj 56 25 inlet;
@@ -644,30 +644,30 @@
 #X connect 52 0 39 0;
 #X connect 52 0 25 0;
 #X restore -188 709 pd bus_send31-40;
-#X obj 74 248 ossia.param \$1-21 @type float @range 0 100;
-#X obj 74 268 ossia.param \$1-22 @type float @range 0 100;
-#X obj 74 287 ossia.param \$1-23 @type float @range 0 100;
-#X obj 74 308 ossia.param \$1-24 @type float @range 0 100;
-#X obj 74 328 ossia.param \$1-25 @type float @range 0 100;
-#X obj 74 349 ossia.param \$1-26 @type float @range 0 100;
-#X obj 74 368 ossia.param \$1-27 @type float @range 0 100;
-#X obj 74 388 ossia.param \$1-28 @type float @range 0 100;
-#X obj 74 409 ossia.param \$1-29 @type float @range 0 100;
-#X obj 74 428 ossia.param \$1-30 @type float @range 0 100;
-#X obj 74 448 ossia.param \$1-31 @type float @range 0 100;
-#X obj 74 468 ossia.param \$1-32 @type float @range 0 100;
-#X obj 74 487 ossia.param \$1-33 @type float @range 0 100;
-#X obj 74 508 ossia.param \$1-34 @type float @range 0 100;
-#X obj 74 528 ossia.param \$1-35 @type float @range 0 100;
-#X obj 74 549 ossia.param \$1-36 @type float @range 0 100;
-#X obj 74 568 ossia.param \$1-37 @type float @range 0 100;
-#X obj 74 588 ossia.param \$1-38 @type float @range 0 100;
-#X obj 74 608 ossia.param \$1-39 @type float @range 0 100;
-#X obj 74 628 ossia.param \$1-40 @type float @range 0 100;
-#X obj 70 -153 ossia.param \$1-1 @type float @range 0 100;
-#X obj 74 -132 ossia.param \$1-2 @type float @range 0 100;
-#X obj 74 -112 ossia.param \$1-3 @type float @range 0 100;
-#X obj 74 -91 ossia.param \$1-4 @type float @range 0 100;
+#X obj 74 248 ossia.param send.21 @type float @range 0 100;
+#X obj 74 268 ossia.param send.22 @type float @range 0 100;
+#X obj 74 287 ossia.param send.23 @type float @range 0 100;
+#X obj 74 308 ossia.param send.24 @type float @range 0 100;
+#X obj 74 328 ossia.param send.25 @type float @range 0 100;
+#X obj 74 349 ossia.param send.26 @type float @range 0 100;
+#X obj 74 368 ossia.param send.27 @type float @range 0 100;
+#X obj 74 388 ossia.param send.28 @type float @range 0 100;
+#X obj 74 409 ossia.param send.29 @type float @range 0 100;
+#X obj 74 428 ossia.param send.30 @type float @range 0 100;
+#X obj 74 448 ossia.param send.31 @type float @range 0 100;
+#X obj 74 468 ossia.param send.32 @type float @range 0 100;
+#X obj 74 487 ossia.param send.33 @type float @range 0 100;
+#X obj 74 508 ossia.param send.34 @type float @range 0 100;
+#X obj 74 528 ossia.param send.35 @type float @range 0 100;
+#X obj 74 549 ossia.param send.36 @type float @range 0 100;
+#X obj 74 568 ossia.param send.37 @type float @range 0 100;
+#X obj 74 588 ossia.param send.38 @type float @range 0 100;
+#X obj 74 608 ossia.param send.39 @type float @range 0 100;
+#X obj 74 628 ossia.param send.40 @type float @range 0 100;
+#X obj 70 -153 ossia.param send.1 @type float @range 0 100;
+#X obj 74 -132 ossia.param send.2 @type float @range 0 100;
+#X obj 74 -112 ossia.param send.3 @type float @range 0 100;
+#X obj 74 -91 ossia.param send.4 @type float @range 0 100;
 #X obj 0 -131 numbox3;
 #X obj 0 -111 numbox3;
 #X obj 0 -91 numbox3;
@@ -706,6 +706,7 @@
 #X obj -113 -162 t b f;
 #X obj -153 -118 * 1;
 #X obj 0 -155 numbox3;
+#X obj 384 -159 ø.model \$1;
 #X connect 0 0 82 0;
 #X connect 1 0 83 0;
 #X connect 2 0 84 0;

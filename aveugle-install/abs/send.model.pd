@@ -1,4 +1,4 @@
-#N canvas 370 224 718 708 10;
+#N canvas 601 199 718 708 10;
 #X obj 74 -72 ossia.param send.5 @type float @range 0 100;
 #X obj 74 -52 ossia.param send.6 @type float @range 0 100;
 #X obj 74 -32 ossia.param send.7 @type float @range 0 100;
@@ -19,8 +19,8 @@
 #X obj 74 228 ossia.param send.20 @type float @range 0 100;
 #X obj -153 -182 inlet;
 #X obj 1 653 numbox3;
-#X obj 75 652 ossia.param send.fx/vague.1/level @type float @range 0
-100;
+#X obj 75 652 ossia.param send.fx/vague.1/level @type float @range
+0 100;
 #X obj 1 673 numbox3;
 #X obj 75 672 ossia.param send.fx/vague.1/largeur @type float @range
 0 100, f 63;
@@ -33,26 +33,26 @@
 #X obj 1 773 numbox3;
 #X text -6 801 -------;
 #X obj 1 793 numbox3;
-#X obj 75 692 ossia.param send.fx/vague.2/level @type float @range 0
-100;
+#X obj 75 692 ossia.param send.fx/vague.2/level @type float @range
+0 100;
 #X obj 75 712 ossia.param send.fx/vague.2/largeur @type float @range
 0 100, f 63;
-#X obj 75 732 ossia.param send.fx/vague.3/level @type float @range 0
-100;
+#X obj 75 732 ossia.param send.fx/vague.3/level @type float @range
+0 100;
 #X obj 76 752 ossia.param send.fx/vague.3/largeur @type float @range
 0 100, f 63;
-#X obj 75 772 ossia.param send.fx/foret/level @type float @range 0 100
-;
-#X obj 75 792 ossia.param send.fx/foret/speed @type float @range 0 100
-;
+#X obj 75 772 ossia.param send.fx/foret/level @type float @range 0
+100;
+#X obj 75 792 ossia.param send.fx/foret/speed @type float @range 0
+100;
 #X text -6 681 -------;
 #X obj 1 813 numbox3;
 #X text -6 841 -------;
 #X obj 1 833 numbox3;
-#X obj 75 812 ossia.param send.fx/Rwalk/level @type float @range 0 100
-;
-#X obj 75 832 ossia.param send.fx/Rwalk/speed @type float @range 0 100
-;
+#X obj 75 812 ossia.param send.fx/Rwalk/level @type float @range 0
+100;
+#X obj 75 832 ossia.param send.fx/Rwalk/speed @type float @range 0
+100;
 #N canvas 399 330 969 338 bus_fx 0;
 #X obj 56 25 inlet;
 #X obj 96 268 *;
@@ -706,7 +706,7 @@
 #X obj -113 -162 t b f;
 #X obj -153 -118 * 1;
 #X obj 0 -155 numbox3;
-#X obj 384 -159 ø.model \$1;
+#X obj 384 -159 ø.model send;
 #X connect 0 0 82 0;
 #X connect 1 0 83 0;
 #X connect 2 0 84 0;

@@ -1,6 +1,5 @@
-#N canvas 425 166 858 290 10;
+#N canvas 551 87 858 290 10;
 #X obj 263 8 inlet~;
-#X obj 30 243 send.model \$1/send;
 #N canvas 702 564 693 254 master 0;
 #X obj 252 117 t b f;
 #X obj 232 153 *;
@@ -15,11 +14,10 @@
 #X restore 752 122 pd master;
 #X floatatom 772 162 5 0 0 0 - - -, f 5;
 #X obj 67 213 ossia.remote /master/send;
-#N canvas 562 342 796 423 brightness 1;
+#N canvas 562 342 796 423 brightness 0;
 #X obj 113 61 bang~;
 #X obj 113 181 mapping/iir 5;
 #X floatatom 295 92 5 0 0 0 - - -, f 5;
-#X obj 113 315 spot.model \$1/brightness;
 #X obj 113 223 * 100;
 #X floatatom 66 250 5 0 0 0 - - -, f 5;
 #X obj 113 99 tID/specBrightness~ 512;
@@ -39,30 +37,29 @@
 #X restore 254 285 pd master;
 #X obj 59 40 inlet~;
 #X floatatom 120 283 5 0 0 0 - - -, f 5;
+#X obj 113 315 spot.model \$1/brightness;
+#X obj 515 149 ø.model brightness;
+#X obj 295 53 ossia.param input/smoothing @type float @default 5 @description
+"iir filter coefficient";
 #X obj 124 248 ossia.param bright @description "Brightness after iir"
-@accessèmode get;
-#X obj 295 53 ossia.param brightness/input/smoothing @type float @default
-5 @description "iir filter coefficient";
-#X obj 515 149 ø.model \$1;
-#X connect 0 0 6 0;
-#X connect 1 0 4 0;
+@mode get;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
 #X connect 2 0 1 1;
-#X connect 4 0 3 0;
-#X connect 4 0 10 0;
-#X connect 5 0 3 0;
-#X connect 6 0 1 0;
-#X connect 7 0 3 1;
-#X connect 8 0 6 0;
-#X connect 10 0 9 0;
+#X connect 3 0 9 0;
+#X connect 3 0 12 0;
+#X connect 4 0 9 0;
+#X connect 5 0 1 0;
+#X connect 6 0 9 1;
+#X connect 7 0 5 0;
 #X connect 11 0 2 0;
+#X connect 12 0 8 0;
 #X restore 315 160 pd brightness;
-#N canvas 0 407 1001 411 pitch 0;
+#N canvas 2 601 1916 215 pitch 0;
 #X obj 143 87 unpack;
 #X obj 188 189 mapping/iir 5;
 #X obj 143 109 moses 30;
 #X floatatom 520 109 5 0 0 0 - - -, f 5;
-#X obj 520 72 ossia.param \$1/pitch/input/smoothing @type float @default
-5 @description "iir filter coefficient";
 #X obj 73 65 fiddle~ 1024 1 1 0;
 #N canvas 702 564 693 254 master 0;
 #X obj 252 117 t b f;
@@ -77,7 +74,6 @@
 #X connect 4 1 1 0;
 #X restore 317 275 pd master;
 #X floatatom 339 303 5 0 0 0 - - -, f 5;
-#X obj 188 306 spot.model \$1/pitch;
 #X obj 73 30 inlet~;
 #X obj 188 134 mapping/resample 50;
 #X floatatom 198 156 5 0 0 0 - - -, f 5;
@@ -85,32 +81,37 @@
 #X msg 155 32 amp-range 20 80 \, vibrato 50 0.5 \, reattack 100 10
 ;
 #X floatatom 196 250 5 0 0 0 - - -, f 5;
-#X obj 196 218 ossia.param \$1/pitchness @description "Tracked pitch
-after iir";
+#X obj 520 72 ossia.param input/smoothing @type float @default 5 @description
+"iir filter coefficient";
+#X obj 622 209 ø.model pitch;
+#X obj 188 306 spot.model;
+#X obj 196 218 ossia.param pitchness @description "Tracked pitch after
+iir" @mode get;
 #X connect 0 0 2 0;
-#X connect 1 0 8 0;
 #X connect 1 0 15 0;
-#X connect 2 1 10 0;
+#X connect 1 0 16 0;
+#X connect 2 1 8 0;
 #X connect 3 0 1 1;
-#X connect 4 0 3 0;
-#X connect 5 2 0 0;
-#X connect 6 0 7 0;
-#X connect 6 0 8 1;
-#X connect 9 0 5 0;
+#X connect 4 2 0 0;
+#X connect 5 0 6 0;
+#X connect 5 0 15 1;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 8 0 1 0;
 #X connect 10 0 11 0;
-#X connect 10 0 1 0;
-#X connect 12 0 13 0;
-#X connect 13 0 5 0;
-#X connect 15 0 14 0;
+#X connect 11 0 4 0;
+#X connect 13 0 3 0;
+#X connect 16 0 12 0;
 #X restore 438 160 pd pitch;
 #X obj 519 26 ø.model \$1;
 #X obj 30 173 env-follower.model env-follower;
 #X obj 559 160 constantq.model constantq;
+#X obj 30 243 send.model;
+#X connect 0 0 4 0;
 #X connect 0 0 5 0;
-#X connect 0 0 6 0;
+#X connect 0 0 7 0;
 #X connect 0 0 8 0;
-#X connect 0 0 9 0;
-#X connect 2 0 3 0;
-#X connect 2 0 9 1;
-#X connect 4 1 1 1;
-#X connect 8 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 8 1;
+#X connect 3 1 9 1;
+#X connect 7 0 9 0;

@@ -5,12 +5,14 @@
 #X obj 266 829 pack f f;
 #N canvas 34 490 240 188 table-\$1 0;
 #N canvas 296 261 627 288 (subpatch) 0;
-#X array \$0-vague-\$1 20 float 1;
-#A 0 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
+#X array \$0-vague-\$1 30 float 1;
+#A 0 0.000149833 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
-1.56239e-05 1.56239e-05;
-#X coords 0 1 19 -1 200 140 1 0 0;
+1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
+1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05 1.56239e-05
+;
+#X coords 0 1 29 -1 200 140 1 0 0;
 #X restore 15 19 graph;
 #X restore 420 828 pd table-\$1;
 #X floatatom 220 50 5 0 0 0 - - -, f 5;
@@ -175,12 +177,14 @@
 #X obj 206 219 f 0;
 #X obj 95 218 value proj-num;
 #X obj 272 320 s \$0-vague-\$1;
-#X obj 278 439 ossia.param input/max @type float @default 70;
-#X obj 239 357 ossia.param input/min @type float @default 45;
 #X obj 285 591 ossia.param proj/width @type float @description "spread
-width of light blob";
-#X obj 314 639 ossia.param level @type float @range 0 1 @description
+width of light blob" @range 1 500;
+#X obj 314 639 ossia.param level @type float @range 0 100 @description
 "output level";
+#X obj 239 357 ossia.param input/min @type float @default 45 @range
+0 127;
+#X obj 278 439 ossia.param input/max @type float @default 70 @range
+0 127;
 #X connect 0 0 42 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -224,7 +228,7 @@ width of light blob";
 #X connect 36 1 33 0;
 #X connect 40 0 41 0;
 #X connect 40 0 59 0;
-#X connect 41 0 64 0;
+#X connect 41 0 65 0;
 #X connect 42 0 2 0;
 #X connect 43 0 42 1;
 #X connect 44 0 0 1;
@@ -247,12 +251,12 @@ width of light blob";
 #X connect 56 0 54 0;
 #X connect 57 0 45 0;
 #X connect 58 0 8 1;
-#X connect 59 0 65 0;
+#X connect 59 0 63 0;
 #X connect 60 0 10 1;
 #X connect 60 0 32 1;
 #X connect 61 0 36 0;
-#X connect 63 0 17 0;
-#X connect 64 0 18 0;
-#X connect 65 0 25 0;
-#X connect 66 0 37 0;
-#X connect 66 0 44 0;
+#X connect 63 0 25 0;
+#X connect 64 0 37 0;
+#X connect 64 0 44 0;
+#X connect 65 0 18 0;
+#X connect 66 0 17 0;

@@ -369,8 +369,6 @@
 #X msg -202 48 31 63 125 250 500 1000 2000 4000 8000 16000;
 #X msg 302 565 0;
 #X floatatom 239 228 5 0 0 0 - - -, f 5;
-#X obj 527 506 ossia.param \$1/proj/speedlimiter @type float @description
-"proj brightness speed limiter" @default 100;
 #X obj 13 670 switch~;
 #X msg 13 572 set 512 1 0.5;
 #X obj 13 542 loadbang;
@@ -389,23 +387,26 @@
 #X msg 552 259 add2 0;
 #X obj 552 282 t a;
 #X floatatom 527 541 5 0 0 0 - - -, f 5;
-#X obj 371 122 ossia.param \$1/freq/bandnumber @type int @description
-"number of frequency bands" @default 1;
 #X obj 333 570 ossia.param \$1/proj/offset @type int @description "Position
 offset in projector line" @default 0;
 #X obj 376 660 ossia.param \$1/reverse @type bool @description "Reverse
 the list";
-#X obj 509 419 ossia.param \$1/proj/level @type float @dataspace gain
-@unit gain.dB @description "level" @default 0;
-#X obj 350 39 ossia.param \$1/freq/max @type float @dataspace time
-@unit time.Hz @description "higher bound of frequencies range" @default
-5000;
-#X obj 511 365 ossia.param \$1/scale.2 @type float @description "scale
-factor after dB conversion" @default 100;
+#X obj 371 122 ossia.param \$1/freq/bandnumber @type int @description
+"number of frequency bands" @default 1 @range 1 30;
+#X obj 350 39 ossia.param \$1/freq/max @type frequency @description
+"higher bound of frequencies range" @default 5000 @range 1000 10000
+;
+#X obj 304 -7 ossia.param \$1/freq/min @type float @type frequency
+@description "lower bound of frequencies range" @default 50 @range
+50 5000;
 #X obj 429 311 ossia.param \$1/scale.1 @type float @description "scale
-factor before dB conversion" @default 100;
-#X obj 304 -7 ossia.param \$1/freq/min @type float @unit time.Hz @description
-"lower bound of frequencies range" @default 50;
+factor before dB conversion" @default 100 @range 0 500;
+#X obj 511 365 ossia.param \$1/scale.2 @type float @description "scale
+factor after dB conversion" @default 100 @range 0 500;
+#X obj 509 419 ossia.param \$1/proj/level @type float @dataspace gain
+@unit gain.dB @description "level" @default 0 @range 0 200;
+#X obj 527 506 ossia.param \$1/proj/speedlimiter @type float @description
+"proj brightness speed limiter" @default 100 @range 0 500;
 #X connect 0 1 21 0;
 #X connect 2 0 29 0;
 #X connect 2 1 30 0;
@@ -440,13 +441,13 @@ factor before dB conversion" @default 100;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
 #X connect 11 1 10 1;
-#X connect 12 0 88 0;
+#X connect 12 0 87 0;
 #X connect 13 0 4 0;
 #X connect 14 0 17 0;
 #X connect 15 0 72 0;
+#X connect 17 0 80 0;
 #X connect 17 0 81 0;
-#X connect 17 0 82 0;
-#X connect 17 0 84 0;
+#X connect 17 0 83 0;
 #X connect 18 0 19 0;
 #X connect 19 0 17 1;
 #X connect 20 0 56 0;
@@ -476,35 +477,35 @@ factor before dB conversion" @default 100;
 #X connect 70 0 4 0;
 #X connect 71 0 4 0;
 #X connect 72 0 14 1;
-#X connect 74 0 16 1;
-#X connect 74 0 91 0;
+#X connect 75 0 74 0;
 #X connect 76 0 75 0;
-#X connect 77 0 76 0;
-#X connect 78 0 75 0;
-#X connect 79 0 58 0;
-#X connect 79 0 2 0;
-#X connect 80 0 81 1;
-#X connect 80 0 83 0;
-#X connect 81 0 79 0;
-#X connect 82 0 58 0;
-#X connect 82 0 2 0;
-#X connect 83 0 82 1;
-#X connect 84 0 85 0;
+#X connect 77 0 74 0;
+#X connect 78 0 58 0;
+#X connect 78 0 2 0;
+#X connect 79 0 80 1;
+#X connect 79 0 82 0;
+#X connect 80 0 78 0;
+#X connect 81 0 58 0;
+#X connect 81 0 2 0;
+#X connect 82 0 81 1;
+#X connect 83 0 84 0;
+#X connect 85 0 88 0;
 #X connect 86 0 89 0;
-#X connect 87 0 90 0;
-#X connect 88 0 10 0;
-#X connect 88 0 90 0;
-#X connect 88 1 10 2;
-#X connect 88 1 86 0;
-#X connect 88 2 87 0;
-#X connect 89 0 90 0;
-#X connect 90 0 72 0;
-#X connect 92 0 12 0;
-#X connect 93 0 18 0;
-#X connect 94 0 80 0;
-#X connect 95 0 63 0;
-#X connect 95 0 78 0;
-#X connect 96 0 8 0;
+#X connect 87 0 10 0;
+#X connect 87 0 89 0;
+#X connect 87 1 10 2;
+#X connect 87 1 85 0;
+#X connect 87 2 86 0;
+#X connect 88 0 89 0;
+#X connect 89 0 72 0;
+#X connect 91 0 18 0;
+#X connect 92 0 79 0;
+#X connect 93 0 12 0;
+#X connect 94 0 8 0;
+#X connect 95 0 7 0;
+#X connect 96 0 23 0;
 #X connect 97 0 25 0;
-#X connect 98 0 23 0;
-#X connect 99 0 7 0;
+#X connect 98 0 63 0;
+#X connect 98 0 77 0;
+#X connect 99 0 16 1;
+#X connect 99 0 90 0;

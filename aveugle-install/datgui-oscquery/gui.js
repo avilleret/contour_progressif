@@ -1,6 +1,9 @@
 window.onload = function() {
-    var ws = new WebSocket("ws://127.0.0.1:5678");
-    var main = new dat.GUI();
+    var ws = new WebSocket("ws://" + window.location.hostname + ":5678");
+    var main = new dat.GUI({
+      load: JSON,
+      preset: 'Flow'
+    });
 
     ws.onopen = function(mess) {
         // This way the protocol will always try to send 
@@ -121,7 +124,14 @@ window.onload = function() {
                         console.log(json["FULL_PATH"] + " : " + value);
                     })
                 }
-
+                else if (type == "I") // impulse
+                {
+                    var btn = { add:function(){ 
+                           ws.send('{"' + json["FULL_PATH"] + '":null}');
+                           console.log(json["FULL_PATH"]);
+                    }};
+                    gui.add(btn, 'add').name(name);
+                }
 
             }
 

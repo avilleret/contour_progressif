@@ -4,6 +4,7 @@ window.onload = function() {
       load: JSON,
       preset: 'Flow'
     });
+    var namespace = new Object;
 
     ws.onopen = function(mess) {
         // This way the protocol will always try to send 
@@ -18,8 +19,11 @@ window.onload = function() {
         console.log(mess.data);
         var json = JSON.parse(mess.data);
 
-        this.ouiouisquery = new Object;
-        this.ouiouisquery = parseOSCQuery(json, this.ouiouisquery, main, '/');
+        var content = json["CONTENTS"];
+
+        for(var prop in content) {
+            parseOSCQuery(content[prop], namespace, main, prop);
+        }
 
         function parseOSCQuery(json, obj, gui, name)
         {
@@ -134,11 +138,67 @@ window.onload = function() {
                 }
 
             }
+            else
+            {
+                var keys = Object.keys(json).forEach(function(key) {
+                    console.log(key + " " + json[key] )
+                    var nodes = key.split("/");
+                    var idx = 0;
+                    var o;
+                    function parseAddress(arr,idx,obj)
+                    {
+                        console.log("parsing: " + arr[idx]);
+                        console.log("object: " + obj);
+                        if(arr[idx]!="")
+                        {
+                            if (idx==arr.length-1)
+                            {
+                                console.log("set value");
+                                obj[nodes[idx]] = json[key];
+                            }
+                            else
+                            {
+                                //idx++;
+                                parseAddress(arr,idx+1,obj[nodes[idx]]);
+                            }
+                        } 
+                        else 
+                        {
+                            idx++;
+                            parseAddress(arr,idx,obj);
+                        }
+                    }
+                    // for(var i = 0; i < nodes.length; i++)
+                    // {
+                    //     if(nodes[i]!="")
+                    //     {
+                    //         console.log(nodes[i]);
+                    //         o = obj[nodes[i]];
+                    //         if (i==nodes.length-1)
+                    //         {
+                    //             console.log("set value");
+                    //             obj[nodes[i]] = json[key];
+                    //         }
+                    //     }
+                    // }
+                    parseAddress(nodes,idx,obj);
+
+                    console.log(nodes);
+                    if( key in obj )
+                    {
+                        obj[key] = json[key];
+                    }
+                });
+
+                var keys = Object.keys(obj).forEach(function(key) {
+                        console.log(key + " " + obj[key] )
+                });
+            }
 
             return obj;
         }
 
-        console.log(this.ouiouisquery);
+        //console.log(this.ouiouisquery);
 
     } 
 }

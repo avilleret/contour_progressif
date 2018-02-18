@@ -1,7 +1,7 @@
-#N canvas 962 47 476 1012 10;
+#N canvas 22 79 476 462 10;
 #X declare -path abs -path abs_light;
 #X declare -lib ossia -lib zexy -lib timbreID/timbreIDLib;
-#N canvas 962 47 316 1012 master 0;
+#N canvas 647 336 1146 505 master 1;
 #N canvas 962 50 476 1011 metro 0;
 #X obj 77 3 loadbang;
 #X obj 116 118 s metro_dmx;
@@ -51,7 +51,7 @@
 -1 -1 10 256;
 #X obj 289 141 nbx 3 14 0 512 0 1 empty empty dmx_ch 0 -8 0 10 -262144
 -1 -1 7 256;
-#N canvas 1374 74 270 985 send_DMX 0;
+#N canvas 482 47 476 1012 send_DMX 1;
 #N canvas 1602 47 316 1012 list-creation 0;
 #X obj 137 185 until;
 #X msg 137 219 0;
@@ -640,7 +640,7 @@
 #X text 25 223 Antoine Villeret pour Contour Progressif / Mylène Benoit
 ;
 #X text 59 107 >;
-#N canvas 962 47 316 1012 simulation_light 0;
+#N canvas 962 578 956 216 simulation_light 0;
 #X obj 158 179 pd~ -ninsig 0 -noutsig 0, f 25;
 #X obj 158 14 loadbang;
 #X obj 158 66 del 10000;
@@ -654,17 +654,17 @@
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 80 75 pd simulation_light;
-#N canvas 1154 47 620 622 effet 0;
-#N canvas 962 47 596 272 audiograph 0;
-#N canvas 2 431 1916 303 master 0;
+#N canvas 214 79 620 595 effet 1;
+#N canvas 22 79 596 272 audiograph 0;
+#N canvas 962 47 476 1012 master 1;
 #X obj 87 201 s dmxlimit;
 #X obj 87 56 ossia.param master/brightness @type float @default 1;
 #X obj 87 77 ossia.param master/pitch @type float @default 1;
 #X obj 87 98 ossia.param master/spec @type float @default 1;
-#X obj 87 118 ossia.param master/send @type float @default 0;
 #X obj 87 168 ossia.param master/limit @type float @default 255 @range
 0 255;
-#X connect 5 0 0 0;
+#X obj 87 118 ossia.param master/send @type float @default 255;
+#X connect 4 0 0 0;
 #X restore 150 20 pd master;
 #X obj 52 97 track.model ch1;
 #X obj 53 63 adc~ 1;
@@ -754,7 +754,7 @@ l'intensité de la tâche.;
 #X obj 329 133 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 349 133 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X text 242 124 master;
 #X text 261 267 bright;
 #X text 290 282 pitch;
@@ -785,7 +785,7 @@ l'intensité de la tâche.;
 #X text 81 519 reverse;
 #X msg 283 493 set \$1;
 #X obj 130 32 track.view ch1;
-#N canvas 1282 47 636 1012 sends_remote 0;
+#N canvas 1282 47 316 1012 sends_remote 0;
 #X obj 3 66 cnv 15 1000 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 3 86 cnv 15 1000 20 empty empty empty 20 12 0 14 -162280 -66577
@@ -1007,9 +1007,9 @@ l'intensité de la tâche.;
 #X connect 17 0 0 0;
 #X connect 18 0 8 0;
 #X restore 70 149 pd table;
-#N canvas 1154 47 380 1012 check-projos 0;
+#N canvas 1602 47 316 1012 check-projos 0;
 #X obj 218 223 pack f f;
-#N canvas 0 50 1920 301 output 0;
+#N canvas 1682 74 236 985 output 0;
 #X obj 63 141 bus effet1;
 #X obj 103 171 bus effet2;
 #X obj 133 141 bus effet3;
@@ -1189,7 +1189,7 @@ l'intensité de la tâche.;
 #X connect 20 0 10 0;
 #X connect 21 0 1 0;
 #X restore 82 371 pd preset-save;
-#N canvas 1442 47 476 1012 preset-load 1;
+#N canvas 962 755 956 304 preset-load 0;
 #X obj 53 501 ossia;
 #X obj 63 118 ø.param preset.1 @access set @type impulse;
 #X obj 73 158 ø.param preset.2 @access set @type impulse;

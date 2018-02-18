@@ -1,0 +1,9 @@
+[Unit]
+Description=Blindcase
+
+[Service]
+Type=simple
+ExecStart=/home/pi/contour_progressif/aveugle-install/start.sh
+
+[Install]
+WantedBy=multi-user.target

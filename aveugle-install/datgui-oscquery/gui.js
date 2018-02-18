@@ -1,10 +1,10 @@
 window.onload = function() {
     var ws = new WebSocket("ws://" + window.location.hostname + ":5678");
-    var main = new dat.GUI({
-      load: JSON,
-      preset: 'Flow'
-    });
+    var main = new dat.GUI({ autoPlace: false, width: 300});
     var namespace = new Object;
+
+    var customContainer = document.getElementById('gui');
+    customContainer.appendChild(main.domElement);
 
     ws.onopen = function(mess) {
         // This way the protocol will always try to send 
@@ -19,10 +19,15 @@ window.onload = function() {
         console.log(mess.data);
         var json = JSON.parse(mess.data);
 
-        var content = json["CONTENTS"];
+        if ("CONTENTS" in json)
+        {
+            var content = json["CONTENTS"];
 
-        for(var prop in content) {
-            parseOSCQuery(content[prop], namespace, main, prop);
+            for(var prop in content) {
+                parseOSCQuery(content[prop], namespace, main, prop);
+            }
+        } else {
+            parseOSCQuery(json, namespace, main, '/');
         }
 
         function parseOSCQuery(json, obj, gui, name)
@@ -47,7 +52,7 @@ window.onload = function() {
                     obj[name] = json["VALUE"];
 
                     var range = json["RANGE"];
-                    var ctl = gui.add(obj, name, range["MIN"], range["MAX"], 0.1);
+                    var ctl = gui.add(obj, name, range["MIN"], range["MAX"], 0.1).listen();
                     
                     ctl.onChange(function(value) {
                         ws.send('{"' + json["FULL_PATH"] + '":' + value + '}');
@@ -58,7 +63,7 @@ window.onload = function() {
                     obj[name] = json["VALUE"];
 
                     var range = json["RANGE"];
-                    var ctl = gui.add(obj, name, range.MIN, range.MAX, 1);
+                    var ctl = gui.add(obj, name, range.MIN, range.MAX, 1).listen();
                     
                     ctl.onChange(function(value) {
                         ws.send('{"' + json["FULL_PATH"] + '":' + value + '}');
@@ -143,55 +148,14 @@ window.onload = function() {
                 var keys = Object.keys(json).forEach(function(key) {
                     console.log(key + " " + json[key] )
                     var nodes = key.split("/");
-                    var idx = 0;
-                    var o;
-                    function parseAddress(arr,idx,obj)
-                    {
-                        console.log("parsing: " + arr[idx]);
-                        console.log("object: " + obj);
-                        if(arr[idx]!="")
-                        {
-                            if (idx==arr.length-1)
-                            {
-                                console.log("set value");
-                                obj[nodes[idx]] = json[key];
-                            }
-                            else
-                            {
-                                //idx++;
-                                parseAddress(arr,idx+1,obj[nodes[idx]]);
-                            }
-                        } 
-                        else 
-                        {
-                            idx++;
-                            parseAddress(arr,idx,obj);
-                        }
-                    }
-                    // for(var i = 0; i < nodes.length; i++)
-                    // {
-                    //     if(nodes[i]!="")
-                    //     {
-                    //         console.log(nodes[i]);
-                    //         o = obj[nodes[i]];
-                    //         if (i==nodes.length-1)
-                    //         {
-                    //             console.log("set value");
-                    //             obj[nodes[i]] = json[key];
-                    //         }
-                    //     }
-                    // }
-                    parseAddress(nodes,idx,obj);
 
-                    console.log(nodes);
-                    if( key in obj )
-                    {
-                        obj[key] = json[key];
-                    }
+                    console.log(nodes[1] + " " + json[key])
+                    obj[nodes[1]] = json[key];
+
                 });
 
                 var keys = Object.keys(obj).forEach(function(key) {
-                        console.log(key + " " + obj[key] )
+                    console.log(key + " " + obj[key] )
                 });
             }
 

@@ -1006,41 +1006,40 @@ l'intensité de la tâche.;
 #X obj 204 50 loadbang;
 #X msg 283 40 get protocols;
 #X msg 327 77 stop 0;
-#N canvas 459 431 956 606 preset-save 1;
-#X msg 53 98 preset save preset-0.txt;
-#X msg 63 138 preset save preset-1.txt;
-#X msg 73 178 preset save preset-2.txt;
-#X msg 83 218 preset save preset-3.txt;
-#X msg 93 258 preset save preset-4.txt;
-#X msg 103 298 preset save preset-5.txt;
-#X msg 113 338 preset save preset-6.txt;
-#X msg 123 378 preset save preset-7.txt;
-#X msg 133 418 preset save preset-8.txt;
-#X msg 143 458 preset save preset-9.txt;
-#X obj 336 534 ø.model save;
-#X obj 53 78 ø.param preset.0 @access set @type impulse @recall_safe
+#N canvas 482 250 956 606 preset-save 0;
+#X msg 53 38 preset save preset-0.txt;
+#X msg 63 78 preset save preset-1.txt;
+#X msg 73 118 preset save preset-2.txt;
+#X msg 83 158 preset save preset-3.txt;
+#X msg 93 198 preset save preset-4.txt;
+#X msg 103 238 preset save preset-5.txt;
+#X msg 113 278 preset save preset-6.txt;
+#X msg 123 318 preset save preset-7.txt;
+#X msg 133 358 preset save preset-8.txt;
+#X msg 143 398 preset save preset-9.txt;
+#X obj 336 474 ø.model save;
+#X obj 53 18 ø.param preset.0 @access set @type impulse @recall_safe
 1;
-#X obj 63 118 ø.param preset.1 @access set @type impulse @recall_safe
+#X obj 63 58 ø.param preset.1 @access set @type impulse @recall_safe
 1;
-#X obj 73 158 ø.param preset.2 @access set @type impulse @recall_safe
+#X obj 73 98 ø.param preset.2 @access set @type impulse @recall_safe
 1;
-#X obj 83 198 ø.param preset.3 @access set @type impulse @recall_safe
+#X obj 83 138 ø.param preset.3 @access set @type impulse @recall_safe
 1;
-#X obj 93 238 ø.param preset.4 @access set @type impulse @recall_safe
+#X obj 93 178 ø.param preset.4 @access set @type impulse @recall_safe
 1;
-#X obj 103 278 ø.param preset.5 @access set @type impulse @recall_safe
+#X obj 103 218 ø.param preset.5 @access set @type impulse @recall_safe
 1;
-#X obj 113 318 ø.param preset.6 @access set @type impulse @recall_safe
+#X obj 113 258 ø.param preset.6 @access set @type impulse @recall_safe
 1;
-#X obj 123 358 ø.param preset.7 @access set @type impulse @recall_safe
+#X obj 123 298 ø.param preset.7 @access set @type impulse @recall_safe
 1;
-#X obj 133 398 ø.param preset.8 @access set @type impulse @recall_safe
+#X obj 133 338 ø.param preset.8 @access set @type impulse @recall_safe
 1;
-#X obj 143 438 ø.param preset.9 @access set @type impulse @recall_safe
+#X obj 143 378 ø.param preset.9 @access set @type impulse @recall_safe
 1;
-#X obj 53 546 pack s s s;
-#X obj 53 587 ossia;
-#X obj 53 567 route symbol;
+#X obj 53 486 pack s s s;
+#X obj 53 527 ossia;
 #N canvas 735 403 450 300 make-full-path 0;
 #X obj 122 100 ggee/getdir;
 #X obj 122 79 t b s;
@@ -1056,18 +1055,20 @@ l'intensité de la tâche.;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 5 0 1 0;
-#X restore 122 524 pd make-full-path;
-#X obj 53 501 unpack s s s;
-#X connect 0 0 25 0;
-#X connect 1 0 25 0;
-#X connect 2 0 25 0;
-#X connect 3 0 25 0;
-#X connect 4 0 25 0;
-#X connect 5 0 25 0;
-#X connect 6 0 25 0;
-#X connect 7 0 25 0;
-#X connect 8 0 25 0;
-#X connect 9 0 25 0;
+#X restore 122 464 pd make-full-path;
+#X obj 53 441 unpack s s s;
+#X obj 53 548 print;
+#X obj 53 507 list trim;
+#X connect 0 0 24 0;
+#X connect 1 0 24 0;
+#X connect 2 0 24 0;
+#X connect 3 0 24 0;
+#X connect 4 0 24 0;
+#X connect 5 0 24 0;
+#X connect 6 0 24 0;
+#X connect 7 0 24 0;
+#X connect 8 0 24 0;
+#X connect 9 0 24 0;
 #X connect 11 0 0 0;
 #X connect 12 0 1 0;
 #X connect 13 0 2 0;
@@ -1078,15 +1079,16 @@ l'intensité de la tâche.;
 #X connect 18 0 7 0;
 #X connect 19 0 8 0;
 #X connect 20 0 9 0;
-#X connect 21 0 23 0;
-#X connect 23 0 22 0;
-#X connect 24 0 21 2;
-#X connect 25 0 21 0;
-#X connect 25 1 21 1;
-#X connect 25 2 24 0;
+#X connect 21 0 26 0;
+#X connect 22 0 25 0;
+#X connect 23 0 21 2;
+#X connect 24 0 21 0;
+#X connect 24 1 21 1;
+#X connect 24 2 23 0;
+#X connect 26 0 22 0;
 #X restore 361 141 pd preset-save;
 #N canvas 699 306 946 666 preset-load 0;
-#X obj 86 618 ø.model load;
+#X obj 160 578 ø.model load;
 #X msg 53 98 preset load preset-0.txt;
 #X msg 63 138 preset load preset-1.txt;
 #X msg 73 178 preset load preset-2.txt;
@@ -1120,7 +1122,6 @@ l'intensité de la tâche.;
 #X obj 53 501 unpack s s s;
 #X obj 53 554 pack s s s;
 #X obj 53 595 ossia;
-#X obj 53 575 route symbol;
 #N canvas 735 403 450 300 make-full-path 0;
 #X obj 122 100 ggee/getdir;
 #X obj 122 79 t b s;
@@ -1137,6 +1138,8 @@ l'intensité de la tâche.;
 #X connect 4 0 6 0;
 #X connect 5 0 1 0;
 #X restore 122 528 pd make-full-path;
+#X obj 53 616 print;
+#X obj 53 575 list trim;
 #X connect 1 0 21 0;
 #X connect 2 0 21 0;
 #X connect 3 0 21 0;
@@ -1159,10 +1162,11 @@ l'intensité de la tâche.;
 #X connect 20 0 10 0;
 #X connect 21 0 22 0;
 #X connect 21 1 22 1;
-#X connect 21 2 25 0;
-#X connect 22 0 24 0;
-#X connect 24 0 23 0;
-#X connect 25 0 22 2;
+#X connect 21 2 24 0;
+#X connect 22 0 26 0;
+#X connect 23 0 25 0;
+#X connect 24 0 22 2;
+#X connect 26 0 23 0;
 #X restore 361 161 pd preset-load;
 #X connect 11 0 10 0;
 #X connect 12 0 10 0;

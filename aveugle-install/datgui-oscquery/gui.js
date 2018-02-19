@@ -126,7 +126,7 @@ window.onload = function() {
                     obj[name] = json["VALUE"];
 
                     var range = json["RANGE"];
-                    var ctl = gui.add(obj, name, range);
+                    var ctl = gui.add(obj, name, range).listen();
                     
                     ctl.onFinishChange(function(value) {
                         ws.send('{"' + json["FULL_PATH"] + '":"' + value + '"}');

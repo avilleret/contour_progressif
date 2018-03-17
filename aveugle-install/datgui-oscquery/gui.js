@@ -7,16 +7,16 @@ window.onload = function() {
     customContainer.appendChild(main.domElement);
 
     ws.onopen = function(mess) {
-        // This way the protocol will always try to send 
+        // This way the protocol will always try to send
         // data through websockets.
         ws.send("/?SET_PORT=0");
         ws.send("/");
     }
 
     ws.onmessage = function(mess) {
-        // An OSCQuery value json looks like 
+        // An OSCQuery value json looks like
         // { "/the/addr" : 123 }
-        console.log(mess.data);
+        // console.log(mess.data);
         var json = JSON.parse(mess.data);
 
         if ("CONTENTS" in json)
@@ -32,7 +32,7 @@ window.onload = function() {
 
         function parseOSCQuery(json, obj, gui, name)
         {
-            console.log(json);
+            // console.log(json);
 
             if ("CONTENTS" in json)
             {
@@ -43,7 +43,7 @@ window.onload = function() {
                     parseOSCQuery(content[prop], obj, folder, prop);
                 }
             }
-            
+
             if (("FULL_PATH" in json) && ("VALUE" in json) && json["ACCESS"] == 3 )
             {
                 type = json["TYPE"];
@@ -53,7 +53,21 @@ window.onload = function() {
 
                     var range = json["RANGE"];
                     var ctl = gui.add(obj, name, range["MIN"], range["MAX"], 0.1).listen();
-                    
+
+            		    if (name.startsWith("freq."))
+            		    {
+                      console.log(name + " starts with 'freq.'")
+                      ctl.color="#FF0000";
+            		    }
+            		    else if (name.startsWith("brightness."))
+            		    {
+                      console.log(name + " starts with 'brightness.'")
+            		    }
+            		    else if (name.startsWith("pitch."))
+            		    {
+                      console.log(name + " starts with 'pitch'.'")
+            		    }
+
                     ctl.onChange(function(value) {
                         ws.send('{"' + json["FULL_PATH"] + '":' + value + '}');
                     })
@@ -64,7 +78,7 @@ window.onload = function() {
 
                     var range = json["RANGE"];
                     var ctl = gui.add(obj, name, range.MIN, range.MAX, 1).listen();
-                    
+
                     ctl.onChange(function(value) {
                         ws.send('{"' + json["FULL_PATH"] + '":' + value + '}');
                     })
@@ -72,8 +86,8 @@ window.onload = function() {
                 else if (type == "ff")
                 {
                     console.log(json);
-                    obj[name] = { 
-                        x : json["VALUE"][0], 
+                    obj[name] = {
+                        x : json["VALUE"][0],
                         y : json["VALUE"][1]
                     }
                     var range_x = json["RANGE"][0];
@@ -96,16 +110,16 @@ window.onload = function() {
                 }
                 else if (type  == "fff")
                 {
-                    obj[json["FULL_PATH"]] = { 
-                        x : json["VALUE"][0], 
+                    obj[json["FULL_PATH"]] = {
+                        x : json["VALUE"][0],
                         y : json["VALUE"][1],
                         z : json["VALUE"][2]
                     }
                 }
                 else if (type  == "ffff")
                 {
-                    obj[json["FULL_PATH"]] = { 
-                        r : json["VALUE"][0], 
+                    obj[json["FULL_PATH"]] = {
+                        r : json["VALUE"][0],
                         g : json["VALUE"][1],
                         b : json["VALUE"][2],
                         a : json["VALUE"][3]
@@ -116,7 +130,7 @@ window.onload = function() {
                     obj[name] = json["VALUE"];
 
                     var ctl = gui.add(obj, name);
-                    
+
                     ctl.onChange(function(value) {
                         ws.send('{"' + json["FULL_PATH"] + '":' + value + '}');
                     })
@@ -127,7 +141,7 @@ window.onload = function() {
 
                     var range = json["RANGE"];
                     var ctl = gui.add(obj, name, range).listen();
-                    
+
                     ctl.onFinishChange(function(value) {
                         ws.send('{"' + json["FULL_PATH"] + '":"' + value + '"}');
                         console.log(json["FULL_PATH"] + " : " + value);
@@ -135,7 +149,7 @@ window.onload = function() {
                 }
                 else if (type == "I") // impulse
                 {
-                    var btn = { add:function(){ 
+                    var btn = { add:function(){
                            ws.send('{"' + json["FULL_PATH"] + '":null}');
                            console.log(json["FULL_PATH"]);
                     }};
@@ -146,16 +160,16 @@ window.onload = function() {
             else
             {
                 var keys = Object.keys(json).forEach(function(key) {
-                    console.log(key + " " + json[key] )
+                    // console.log(key + " " + json[key] )
                     var nodes = key.split("/");
 
-                    console.log(nodes[1] + " " + json[key])
+                    // console.log(nodes[1] + " " + json[key])
                     obj[nodes[1]] = json[key];
 
                 });
 
                 var keys = Object.keys(obj).forEach(function(key) {
-                    console.log(key + " " + obj[key] )
+		// console.log(key + " " + obj[key] )
                 });
             }
 
@@ -164,5 +178,5 @@ window.onload = function() {
 
         //console.log(this.ouiouisquery);
 
-    } 
+    }
 }

@@ -266,8 +266,8 @@ newDevice:/alex/send-fx/vague.3/level 0.000000
 newDevice:/celia/brightness/input/max 97.313728
 newDevice:/celia/brightness/input/min 7.588236
 newDevice:/celia/brightness/input/smoothing 5.000000
-newDevice:/celia/brightness/level 81.000000
-newDevice:/celia/brightness/proj/width 215.000000
+newDevice:/celia/brightness/level 200.000000
+newDevice:/celia/brightness/proj/width 264.000000
 newDevice:/celia/constantq/freq/bandnumber 1
 newDevice:/celia/constantq/freq/max 4000.000000
 newDevice:/celia/constantq/freq/min 400.000000

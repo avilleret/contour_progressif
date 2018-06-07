@@ -1,0 +1,11 @@
+#N canvas 12 321 482 410 10;
+#X obj 254 250 paramFX \$1 /foret/speed;
+#X obj 254 200 paramFX \$1 /vague/3/largeur;
+#X obj 254 150 paramFX \$1 /vague/2/largeur;
+#X obj 254 100 paramFX \$1 /vague/1/largeur;
+#X obj 64 100 paramFX \$1 /vague/1/level;
+#X obj 64 150 paramFX \$1 /vague/2/level;
+#X obj 66 200 paramFX \$1 /vague/3/level;
+#X obj 65 250 paramFX \$1 /foret/level;
+#X obj 64 300 paramFX \$1 /Rwalk/level;
+#X obj 254 300 paramFX \$1 /Rwalk/speed;

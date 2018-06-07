@@ -1,0 +1,56 @@
+#N canvas 783 455 600 453 10;
+#X obj 103 163 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 129 1;
+#X floatatom 104 138 5 0 0 0 - - -, f 5;
+#X obj 103 309 outlet;
+#X obj 34 66 inlet~;
+#X obj 158 164 -;
+#X obj 158 189 * 3;
+#X obj 158 230 max 0;
+#X obj 34 88 env~ 1024;
+#X obj 103 71 nbx 3 14 -99 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 22 256;
+#X obj 103 91 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 100 256;
+#X obj 103 111 nbx 3 14 0 1000 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 31 256;
+#X obj 158 251 mapping/env+ 20;
+#X msg 147 36 dump;
+#X obj 463 70 print env-follwer;
+#X obj 144 71 j.parameter \$1/threshold @type decimal @range 0 100
+;
+#X obj 144 111 j.parameter \$1/release @type decimal @range 0 1000
+@default 3;
+#X obj 158 308 j.return \$1/loudness @type decimal @dataspace gain
+@unit dB @range 0 100 @description "loudness in dB";
+#X obj 182 164 / 100;
+#X obj 144 91 j.parameter \$1/gain @type decimal @range 0 10 @default
+300;
+#X obj 34 378 j.return \$1/loudness_pre @type decimal @dataspace gain
+@unit dB @range 0 100 @description "loudness in dB before processing"
+;
+#X obj 201 215 max 1;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 1 0;
+#X connect 7 0 19 0;
+#X connect 8 0 14 0;
+#X connect 9 0 18 0;
+#X connect 10 0 15 0;
+#X connect 11 0 0 0;
+#X connect 11 0 16 0;
+#X connect 12 0 14 0;
+#X connect 14 0 8 0;
+#X connect 14 0 4 1;
+#X connect 14 1 13 0;
+#X connect 15 0 10 0;
+#X connect 15 0 20 0;
+#X connect 17 0 5 1;
+#X connect 18 0 9 0;
+#X connect 18 0 17 0;
+#X connect 20 0 11 1;
+#X coords 0 453 1 452 40 230 0;

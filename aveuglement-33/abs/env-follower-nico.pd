@@ -1,0 +1,59 @@
+#N canvas 724 516 504 485 10;
+#X obj 103 195 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 104 170 5 0 0 0 - - -, f 5;
+#X obj 104 411 outlet;
+#X obj 207 236 moses;
+#X obj 104 58 inlet~;
+#X obj 208 286 -;
+#X obj 208 334 +;
+#X floatatom 255 201 5 0 0 0 - - -, f 5;
+#X floatatom 208 443 5 0 0 0 - - -, f 5;
+#X obj 256 222 t f;
+#X obj 208 311 * 3;
+#X obj 208 357 min 100;
+#X obj 208 378 max 0;
+#X obj 207 212 +;
+#X obj 104 80 env~ 1024;
+#X obj 25 115 dbtorms;
+#X obj 25 136 * 100;
+#X obj 103 103 nbx 3 14 -99 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 -14 256;
+#X obj 103 123 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 103 143 nbx 3 14 0 100 0 1 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 144 103 j.parameter threshold @type decimal @range -70 0;
+#X obj 144 123 j.parameter ratio @type decimal @range 0 10 @default
+3;
+#X obj 144 143 j.parameter gain @type decimal @range 0 10 @default
+3;
+#X connect 0 0 2 0;
+#X connect 1 0 13 0;
+#X connect 3 0 5 0;
+#X connect 3 1 0 0;
+#X connect 4 0 14 0;
+#X connect 5 0 10 0;
+#X connect 6 0 11 0;
+#X connect 7 0 9 0;
+#X connect 9 0 5 1;
+#X connect 9 0 6 1;
+#X connect 9 0 3 1;
+#X connect 10 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 8 0;
+#X connect 12 0 0 0;
+#X connect 13 0 3 0;
+#X connect 14 0 1 0;
+#X connect 15 0 16 0;
+#X connect 16 0 1 0;
+#X connect 17 0 20 0;
+#X connect 18 0 21 0;
+#X connect 19 0 22 0;
+#X connect 20 0 17 0;
+#X connect 20 0 7 0;
+#X connect 21 0 18 0;
+#X connect 21 0 10 1;
+#X connect 22 0 19 0;
+#X connect 22 0 13 1;
+#X coords 0 485 1 484 40 230 0;

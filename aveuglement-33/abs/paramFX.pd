@@ -1,0 +1,21 @@
+#N canvas 0 94 570 458 10;
+#X obj 26 188 *;
+#X obj 104 148 t b f;
+#X floatatom 104 122 5 0 200 0 - - -, f 5;
+#X obj 26 147 r \$1;
+#X obj 139 119 cnv 15 120 20 empty empty \$2 2 10 0 14 -233017 -66577
+0;
+#X floatatom 34 168 5 0 0 0 - - -, f 5;
+#X obj 131 171 / 100;
+#X obj 26 209 bus lum\$2;
+#X obj 123 97 j.remote /\$1/\$2;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 1 1 6 0;
+#X connect 2 0 1 0;
+#X connect 2 0 8 0;
+#X connect 3 0 0 0;
+#X connect 3 0 5 0;
+#X connect 6 0 0 1;
+#X connect 8 0 2 0;
+#X coords 0 -1 1 1 180 40 1 100 100;
